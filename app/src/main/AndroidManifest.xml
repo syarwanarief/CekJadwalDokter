@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuUtama.Drawer"></activity>
+        <activity android:name=".MenuUtama.Drawer" />
+        <activity android:name=".DaftarDokterSpesialis.advent" />
+        <activity android:name=".InfoDokter.DokterGigi"></activity>
     </application>
 
 </manifest>
