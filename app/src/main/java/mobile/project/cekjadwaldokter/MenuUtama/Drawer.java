@@ -31,10 +31,6 @@ public class Drawer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
 
-
-        if (getIntent().getBooleanExtra("Keluar",false)){
-            finish();
-        }
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -54,10 +50,8 @@ public class Drawer extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     case R.id.beranda:
                         Intent intent = new Intent(Drawer.this, Drawer.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
-
                         return true;
                     case R.id.navigation2:
                         Toast.makeText(getApplicationContext(),"Profil Telah Dipilih",Toast.LENGTH_SHORT).show();
@@ -84,13 +78,11 @@ public class Drawer extends AppCompatActivity {
             public void onDrawerClosed(View drawerView) {
                 // Kode di sini akan merespons setelah drawer menutup disini kita biarkan kosong
                 super.onDrawerClosed(drawerView);
-                finish();
             }
             @Override
             public void onDrawerOpened(View drawerView) {
                 //  Kode di sini akan merespons setelah drawer terbuka disini kita biarkan kosong
                 super.onDrawerOpened(drawerView);
-
             }
         };
         //Mensetting actionbarToggle untuk drawer layout
@@ -107,8 +99,6 @@ public class Drawer extends AppCompatActivity {
         }
     }
     public void onBackPressed() {
-
-
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("Keluar")
@@ -117,12 +107,9 @@ public class Drawer extends AppCompatActivity {
                 {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(Drawer.this, Drawer.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        intent.putExtra("Keluar", true);
-                        startActivity(intent);
                         finish();
-                        }
+                        System.exit(0);
+                    }
 
                 })
                 .setNegativeButton("Tidak", null)
