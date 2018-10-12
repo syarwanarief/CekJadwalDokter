@@ -20,7 +20,7 @@
         android:layout_toRightOf="@+id/imV"
         android:text="TextView"
         android:textColor="#fffd7f"
-        android:textSize="10pt"
+        android:textSize="20dp"
         />
 
     <TextView
@@ -30,7 +30,8 @@
         android:layout_alignLeft="@+id/tv_nama"
         android:layout_below="@+id/tv_nama"
         android:text="TextView"
-        android:textColor="#02808f"
+        android:textColor="#fffd7f"
+        android:textSize="15dp"
         />
 
 </RelativeLayout>
