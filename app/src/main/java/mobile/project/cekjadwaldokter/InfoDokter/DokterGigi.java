@@ -61,6 +61,7 @@ public class DokterGigi extends AppCompatActivity {
                     //dengan intent activity
                     case R.id.beranda:
                         Intent intent = new Intent(DokterGigi.this, Drawer.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
                         return true;
@@ -89,6 +90,7 @@ public class DokterGigi extends AppCompatActivity {
             public void onDrawerClosed(View drawerView) {
                 // Kode di sini akan merespons setelah drawer menutup disini kita biarkan kosong
                 super.onDrawerClosed(drawerView);
+                finish();
             }
             @Override
             public void onDrawerOpened(View drawerView) {

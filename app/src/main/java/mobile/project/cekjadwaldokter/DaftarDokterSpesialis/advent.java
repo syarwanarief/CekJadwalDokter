@@ -52,6 +52,7 @@ public class advent extends AppCompatActivity {
                     //dengan intent activity
                     case R.id.beranda:
                         Intent intent = new Intent(advent.this, Drawer.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
                         return true;
