@@ -50,7 +50,7 @@ public class advent extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
                     //dengan intent activity
-                    case R.id.navigation1:
+                    case R.id.beranda:
                         Intent intent = new Intent(advent.this, Drawer.class);
                         startActivity(intent);
                         finish();

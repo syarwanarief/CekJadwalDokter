@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="all">
         <item
-            android:id="@+id/navigation1"
+            android:id="@+id/beranda"
             android:checked="false"
             android:icon="@drawable/ic_beranda"
             android:title="Beranda" />

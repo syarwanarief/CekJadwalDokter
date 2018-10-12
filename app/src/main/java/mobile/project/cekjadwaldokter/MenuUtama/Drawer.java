@@ -1,10 +1,13 @@
 package mobile.project.cekjadwaldokter.MenuUtama;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -21,10 +24,13 @@ public class Drawer extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
 
+    boolean DoubleBackToExit = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
+
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -42,7 +48,7 @@ public class Drawer extends AppCompatActivity {
                 drawerLayout.closeDrawers();
                 //Memeriksa untuk melihat item yang akan dilklik dan melalukan aksi
                 switch (menuItem.getItemId()){
-                    case R.id.navigation1:
+                    case R.id.beranda:
                         Intent intent = new Intent(Drawer.this, Drawer.class);
                         startActivity(intent);
                         finish();
@@ -84,6 +90,30 @@ public class Drawer extends AppCompatActivity {
         //memanggil synstate
         actionBarDrawerToggle.syncState();
 
+    }
+
+    public void BackPress(){
+        if (DoubleBackToExit){
+            super.onBackPressed();
+            return;
+        }
+    }
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Keluar")
+                .setMessage("Yakin Ingin Keluar?")
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        System.exit(0);
+                    }
+
+                })
+                .setNegativeButton("Tidak", null)
+                .show();
     }
 
     public void advent(View view) {
