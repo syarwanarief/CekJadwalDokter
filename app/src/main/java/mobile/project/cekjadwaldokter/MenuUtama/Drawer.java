@@ -42,10 +42,10 @@ public class Drawer extends AppCompatActivity {
                 drawerLayout.closeDrawers();
                 //Memeriksa untuk melihat item yang akan dilklik dan melalukan aksi
                 switch (menuItem.getItemId()){
-                    // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
-                    //dengan intent activity
                     case R.id.navigation1:
-                        Toast.makeText(getApplicationContext(), "Beranda Telah Dipilih", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Drawer.this, Drawer.class);
+                        startActivity(intent);
+                        finish();
                         return true;
                     case R.id.navigation2:
                         Toast.makeText(getApplicationContext(),"Profil Telah Dipilih",Toast.LENGTH_SHORT).show();
