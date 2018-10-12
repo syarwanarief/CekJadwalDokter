@@ -120,4 +120,7 @@ public class Drawer extends AppCompatActivity {
         Intent intent = new Intent(Drawer.this, advent.class);
         startActivity(intent);
     }
+
+    public void gigi(View view) {
+    }
 }
