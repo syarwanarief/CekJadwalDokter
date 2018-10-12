@@ -27,8 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:background="#FFFF9900"
+            android:background="#FF008070"
             android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/icon_splash"/>
         </LinearLayout>
 
         <LinearLayout
@@ -50,11 +54,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
-                        android:src="@drawable/FFTeamnew"/>
+                        android:src="@mipmap/ic_launcher"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -62,7 +66,7 @@
                         android:text="RS. Abdul Moeloek"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -80,11 +84,11 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/icon_splash" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -92,7 +96,7 @@
                         android:text="RS. Advent B.Lampung"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -109,8 +113,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:src="@mipmap/ic_launcher" />
@@ -121,7 +125,7 @@
                         android:text="RS. Imanuel Way Halim"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -146,8 +150,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:src="@mipmap/ic_launcher" />
@@ -158,7 +162,7 @@
                         android:text="RS. A Dadi Tjokrodipo"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -175,8 +179,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:src="@mipmap/ic_launcher" />
@@ -187,7 +191,7 @@
                         android:text="RS. Urip Sumoharja"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -204,8 +208,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:src="@mipmap/ic_launcher" />
@@ -216,7 +220,7 @@
                         android:text="RSIA Restu Bunda"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -241,8 +245,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:src="@mipmap/ic_launcher" />
@@ -253,7 +257,7 @@
                         android:text="RSIA Puri Betik Hati"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -270,8 +274,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:src="@mipmap/ic_launcher" />
@@ -282,7 +286,7 @@
                         android:text="RS. Kartika"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -299,8 +303,8 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         android:src="@mipmap/ic_launcher" />
@@ -311,7 +315,7 @@
                         android:text="RS. Bumi Waras"
                         android:textAlignment="center"
                         android:textColor="#000"
-                        android:textSize="10dp"
+                        android:textSize="12dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
