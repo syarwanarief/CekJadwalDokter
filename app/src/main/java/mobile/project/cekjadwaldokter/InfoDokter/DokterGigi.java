@@ -1,5 +1,6 @@
 package mobile.project.cekjadwaldokter.InfoDokter;
 
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,6 +17,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.advent;
+import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
 
 public class DokterGigi extends AppCompatActivity {
@@ -57,7 +60,9 @@ public class DokterGigi extends AppCompatActivity {
                     // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
                     //dengan intent activity
                     case R.id.navigation1:
-                        Toast.makeText(getApplicationContext(), "Beranda Telah Dipilih", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(DokterGigi.this, Drawer.class);
+                        startActivity(intent);
+                        finish();
                         return true;
                     case R.id.navigation2:
                         Toast.makeText(getApplicationContext(),"Profil Telah Dipilih",Toast.LENGTH_SHORT).show();

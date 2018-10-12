@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import mobile.project.cekjadwaldokter.InfoDokter.DokterGigi;
+import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
 
 public class advent extends AppCompatActivity {
@@ -50,7 +51,9 @@ public class advent extends AppCompatActivity {
                     // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
                     //dengan intent activity
                     case R.id.navigation1:
-                        Toast.makeText(getApplicationContext(), "Beranda Telah Dipilih", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(advent.this, Drawer.class);
+                        startActivity(intent);
+                        finish();
                         return true;
                     case R.id.navigation2:
                         Toast.makeText(getApplicationContext(),"Profil Telah Dipilih",Toast.LENGTH_SHORT).show();
