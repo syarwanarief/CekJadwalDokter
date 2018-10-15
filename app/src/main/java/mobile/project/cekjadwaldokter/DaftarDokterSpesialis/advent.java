@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import mobile.project.cekjadwaldokter.InfoDokter.DokterGigi;
+import mobile.project.cekjadwaldokter.InfoDokter.HariPrakter;
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
 
@@ -90,7 +91,7 @@ public class advent extends AppCompatActivity {
     }
 
     public void gigi(View view) {
-        Intent intent = new Intent(advent.this, DokterGigi.class);
+        Intent intent = new Intent(advent.this, HariPrakter.class);
         startActivity(intent);
     }
 }

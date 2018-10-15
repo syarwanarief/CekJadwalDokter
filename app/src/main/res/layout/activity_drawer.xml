@@ -16,8 +16,7 @@
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-
-        android:background="#FF008070">
+        android:background="#FFF">
 
         <include
             android:id="@+id/toolbar"
@@ -25,24 +24,32 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="5dp">
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#FFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/round_bg">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/icon_splash"/>
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#FF008080"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -54,8 +61,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="@drawable/round_bg">
+                    android:background="@drawable/round_bg"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -85,9 +92,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-
-                    android:background="@drawable/round_bg">
+                    android:background="@drawable/round_bg"
+                    android:orientation="vertical">
 
                     <ImageView
                         android:layout_width="70dp"
@@ -111,13 +117,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
-
-                android:background="@drawable/round_bg">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/round_bg"
                     android:orientation="vertical">
 
                     <ImageView
@@ -149,12 +154,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_bg">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/round_bg"
                     android:orientation="vertical">
 
                     <ImageView
@@ -179,12 +184,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_bg">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/round_bg"
                     android:orientation="vertical">
 
                     <ImageView
@@ -209,12 +214,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_bg">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/round_bg"
                     android:orientation="vertical">
 
                     <ImageView
@@ -222,12 +227,12 @@
                         android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
-                        android:src="@mipmap/ic_launcher" />
+                        android:src="@drawable/logo_rs_dkt" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RSIA Restu Bunda"
+                        android:text="RS. DKT"
                         android:textAlignment="center"
                         android:textColor="#000"
                         android:textSize="12dp"
@@ -246,12 +251,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_bg">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/round_bg"
                     android:orientation="vertical">
 
                     <ImageView
@@ -264,7 +269,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RSIA Puri Betik Hati"
+                        android:text="RS. Graha Husada"
                         android:textAlignment="center"
                         android:textColor="#000"
                         android:textSize="12dp"
@@ -276,12 +281,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_bg">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/round_bg"
                     android:orientation="vertical">
 
                     <ImageView
@@ -294,7 +299,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="RS. Kartika"
+                        android:text="RS. Pertamina Bintang Amin"
                         android:textAlignment="center"
                         android:textColor="#000"
                         android:textSize="12dp"
@@ -306,12 +311,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_bg">
+                android:layout_weight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/round_bg"
                     android:orientation="vertical">
 
                     <ImageView
@@ -332,19 +337,25 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:orientation="horizontal">
 
+</LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="20dp"
             android:orientation="horizontal">
-
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="Aplikasi Ini Dibuat Untuk Membantu Masyarakat Lampung yang ingin mengetahui jadwal dokter spesialis untuk penanganan penyakit tertentu"
                 android:id="@+id/marquee"
-                android:padding="30dp"
+                android:textAlignment="textEnd"
+                android:textSize="14dp"
+                android:textColor="#000"
                 android:scrollHorizontally="true"
                 android:ellipsize="marquee"
                 android:marqueeRepeatLimit="marquee_forever"
