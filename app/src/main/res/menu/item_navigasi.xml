@@ -6,34 +6,24 @@
             android:checked="false"
             android:icon="@drawable/ic_beranda"
             android:title="Beranda" />
-        <item
-            android:id="@+id/navigation2"
-            android:checked="false"
-            android:icon="@drawable/ic_profil"
-            android:title="Profil" />
-        <item
-            android:id="@+id/navigation3"
-            android:checked="false"
-            android:icon="@drawable/ic_daftar"
-            android:title="Daftar" />
 
     </group>
 
 
     <item
-        android:id="@+id/navigasi_kategori_2"
-        android:title="Menu">
+        android:id="@+id/lainnya"
+        android:title="Lainnya">
         <menu>
             <item
-                android:id="@+id/navigation4"
+                android:id="@+id/bantuan"
                 android:checked="false"
-                android:icon="@drawable/ic_setting"
-                android:title="Help" />
+                android:icon="@drawable/help"
+                android:title="Bantuan" />
             <item
-                android:id="@+id/navigation5"
+                android:id="@+id/tentang"
                 android:checked="false"
                 android:icon="@drawable/ic_about"
-                android:title="@string/navigation_view_item_5" />
+                android:title="Tentang" />
 
         </menu>
     </item>

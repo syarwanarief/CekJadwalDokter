@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.advent;
@@ -30,6 +31,10 @@ public class Drawer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
+
+        //marquee
+        TextView textberjalan=(TextView)findViewById(R.id.marquee);
+        textberjalan.setSelected(true);
 
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -53,17 +58,11 @@ public class Drawer extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                         return true;
-                    case R.id.navigation2:
-                        Toast.makeText(getApplicationContext(),"Profil Telah Dipilih",Toast.LENGTH_SHORT).show();
+                    case R.id.bantuan:
+                        Toast.makeText(getApplicationContext(),"Bantuan telah dipilih",Toast.LENGTH_SHORT).show();
                         return true;
-                    case R.id.navigation3:
-                        Toast.makeText(getApplicationContext(),"Daftar Telah Dipilih",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.navigation4:
-                        Toast.makeText(getApplicationContext(),"Setting telah dipilih",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.navigation5:
-                        Toast.makeText(getApplicationContext(),"About telah dipilih",Toast.LENGTH_SHORT).show();
+                    case R.id.tentang:
+                        Toast.makeText(getApplicationContext(),"Bantuan telah dipilih",Toast.LENGTH_SHORT).show();
                         return true;
                     default:
                         Toast.makeText(getApplicationContext(),"Kesalahan Terjadi ",Toast.LENGTH_SHORT).show();

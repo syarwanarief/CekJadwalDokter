@@ -94,7 +94,7 @@
                         android:layout_height="70dp"
                         android:layout_weight="1"
                         android:layout_gravity="center"
-                        android:src="@drawable/icon_splash" />
+                        android:src="@drawable/logo_advent" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -338,6 +338,17 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aplikasi Ini Dibuat Untuk Membantu Masyarakat Lampung yang ingin mengetahui jadwal dokter spesialis untuk penanganan penyakit tertentu"
+                android:id="@+id/marquee"
+                android:padding="30dp"
+                android:scrollHorizontally="true"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true" />
         </LinearLayout>
         </LinearLayout>
     </LinearLayout>
