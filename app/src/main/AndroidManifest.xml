@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MenuUtama.Drawer" />
         <activity android:name=".DaftarDokterSpesialis.advent" />
-        <activity android:name=".InfoDokter.DokterGigi"></activity>
+        <activity android:name=".InfoDokter.DokterGigi" />
+        <activity android:name=".InfoDokter.HariPrakter"></activity>
     </application>
 
 </manifest>
