@@ -14,14 +14,18 @@ import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.advent;
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
 
 public class DokterGigi extends AppCompatActivity {
+
+    //database
+    ArrayList<String> nama = new ArrayList<>();
+    ListView listview;
 
     private Toolbar toolbar;
     private NavigationView navigationView;
@@ -40,6 +44,8 @@ public class DokterGigi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dokter_gigi);
+        //database
+
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -65,17 +71,11 @@ public class DokterGigi extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                         return true;
-                    case R.id.navigation2:
-                        Toast.makeText(getApplicationContext(),"Profil Telah Dipilih",Toast.LENGTH_SHORT).show();
+                    case R.id.bantuan:
+                        Toast.makeText(getApplicationContext(),"Bantuan telah dipilih",Toast.LENGTH_SHORT).show();
                         return true;
-                    case R.id.navigation3:
-                        Toast.makeText(getApplicationContext(),"Daftar Telah Dipilih",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.navigation4:
-                        Toast.makeText(getApplicationContext(),"Setting telah dipilih",Toast.LENGTH_SHORT).show();
-                        return true;
-                    case R.id.navigation5:
-                        Toast.makeText(getApplicationContext(),"About telah dipilih",Toast.LENGTH_SHORT).show();
+                    case R.id.tentang:
+                        Toast.makeText(getApplicationContext(),"Bantuan telah dipilih",Toast.LENGTH_SHORT).show();
                         return true;
                     default:
                         Toast.makeText(getApplicationContext(),"Kesalahan Terjadi ",Toast.LENGTH_SHORT).show();
@@ -126,5 +126,7 @@ public class DokterGigi extends AppCompatActivity {
         Adapter = new SimpleAdapter(this, mylist, R.layout.list_spesialis,
                 new String[] {"list", "latin", "gbr"}, new int[] {R.id.tv_nama, R.id.tv_ltn, R.id.imV});
         lv.setAdapter(Adapter);
+
     }
+
 }
