@@ -15,4 +15,8 @@ public class HariPrakter extends AppCompatActivity {
         setContentView(R.layout.activity_hari_prakter);
     }
 
+    public void senin(View view) {
+        Intent intent = new Intent(HariPrakter.this, DokterGigi.class);
+        startActivity(intent);
+    }
 }

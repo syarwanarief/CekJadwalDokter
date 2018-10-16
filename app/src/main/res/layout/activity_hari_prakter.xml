@@ -6,8 +6,7 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".MenuUtama.Drawer">
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -37,26 +36,22 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
-                        android:id="@+id/senin"
+                        android:onClick="senin"
                         android:background="#FFF">
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon_splash"/>
-
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textSize="18dp"
                             android:textColor="#000"
                             android:gravity="center"
+                            android:layout_marginLeft="30dp"
                             android:text="Senin"
                             tools:ignore="DuplicateIds" /></LinearLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"></LinearLayout>
+                    android:layout_height="1dp"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -68,23 +63,19 @@
                         android:layout_height="70dp"
                         android:background="#FFF">
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon_splash"/>
-
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textSize="18dp"
                             android:textColor="#000"
                             android:gravity="center"
-                            android:text="Selasa"/></LinearLayout>
+                            android:layout_marginLeft="30dp"
+                            android:text="Selasa"
+                            tools:ignore="DuplicateIds" /></LinearLayout>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"></LinearLayout>
+                    android:layout_height="1dp"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -96,23 +87,19 @@
                         android:layout_height="70dp"
                         android:background="#FFF">
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon_splash"/>
-
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textSize="18dp"
                             android:textColor="#000"
                             android:gravity="center"
-                            android:text="Rabu"/></LinearLayout>
+                            android:layout_marginLeft="30dp"
+                            android:text="Rabu"
+                            tools:ignore="DuplicateIds" /></LinearLayout>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"></LinearLayout>
+                    android:layout_height="1dp"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -124,23 +111,19 @@
                         android:layout_height="70dp"
                         android:background="#FFF">
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon_splash"/>
-
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textSize="18dp"
                             android:textColor="#000"
                             android:gravity="center"
-                            android:text="Kamis"/></LinearLayout>
+                            android:layout_marginLeft="30dp"
+                            android:text="Kamis"
+                            tools:ignore="DuplicateIds" /></LinearLayout>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"></LinearLayout>
+                    android:layout_height="1dp"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -152,23 +135,19 @@
                         android:layout_height="70dp"
                         android:background="#FFF">
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon_splash"/>
-
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textSize="18dp"
                             android:textColor="#000"
                             android:gravity="center"
-                            android:text="Jum'at"/></LinearLayout>
+                            android:layout_marginLeft="30dp"
+                            android:text="Jum'at"
+                            tools:ignore="DuplicateIds" /></LinearLayout>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"></LinearLayout>
+                    android:layout_height="1dp"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -180,23 +159,19 @@
                         android:layout_height="70dp"
                         android:background="#FFF">
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon_splash"/>
-
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textSize="18dp"
                             android:textColor="#000"
                             android:gravity="center"
-                            android:text="Sabtu"/></LinearLayout>
+                            android:layout_marginLeft="30dp"
+                            android:text="Sabtu"
+                            tools:ignore="DuplicateIds" /></LinearLayout>
                 </LinearLayout>
-
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="5dp"></LinearLayout>
+                    android:layout_height="1dp"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -208,19 +183,19 @@
                         android:layout_height="70dp"
                         android:background="#FFF">
 
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/icon_splash"/>
-
                         <TextView
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:textSize="18dp"
                             android:textColor="#000"
                             android:gravity="center"
-                            android:text="Minggu"/></LinearLayout>
+                            android:layout_marginLeft="30dp"
+                            android:text="Minggu"
+                            tools:ignore="DuplicateIds" /></LinearLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"></LinearLayout>
 
             </LinearLayout>
 

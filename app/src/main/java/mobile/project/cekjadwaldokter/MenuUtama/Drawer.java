@@ -12,8 +12,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewFlipper;
 
 import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.advent;
 import mobile.project.cekjadwaldokter.R;
@@ -27,10 +29,21 @@ public class Drawer extends AppCompatActivity {
 
     boolean DoubleBackToExit = false;
 
+    //flipper
+    ViewFlipper v_flipper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
+
+        //flipper
+        int images[] = {R.drawable.indonesia_sehat, R.drawable.dbd, R.drawable.germas};
+
+        v_flipper = findViewById(R.id.v_flipper);
+
+        for (int image: images){
+            flipperImage(image);
+        }
 
         //marquee
         TextView textberjalan=(TextView)findViewById(R.id.marquee);
@@ -122,4 +135,17 @@ public class Drawer extends AppCompatActivity {
 
     public void gigi(View view) {
     }
+
+    public void flipperImage (int image){
+        ImageView imageView = new ImageView(this);
+        imageView.setBackgroundResource(image);
+
+        v_flipper.addView(imageView);
+        v_flipper.setFlipInterval(5000);
+        v_flipper.setAutoStart(true);
+
+        v_flipper.setInAnimation(this, android.R.anim.slide_in_left);
+        v_flipper.setInAnimation(this, android.R.anim.slide_out_right);
+    }
+
 }
