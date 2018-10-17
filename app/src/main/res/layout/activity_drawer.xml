@@ -12,8 +12,8 @@
         android:layout_height="match_parent"
         android:measureWithLargestChild="false"
         android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
         android:background="#FFFFFFCC">
 
         <include
@@ -22,349 +22,291 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="5dp">
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#FFF">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_height="230dp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp">
             <ViewFlipper
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="230dp"
                 android:layout_centerVertical = "true"
                 android:id="@+id/v_flipper"></ViewFlipper>
         </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-            </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1">
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rs_abdul_moeloek"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. Abdul Moeloek"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:onClick="advent">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rs_advent" />
-
-                    <TextView
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. Advent B.Lampung"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_menu">
+
+                            <ImageView
+                                android:id="@+id/imageview"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/rs_a_dadi_tjokrodipo"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="RS. A. Dadi Tjokrodipo"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/imageview"
+                                android:textColor="#000"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_menu"
+                            android:onClick="advent">
+
+                            <ImageView
+                                android:id="@+id/imageview1"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/rs_advent"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="RS. Advent"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/imageview1"
+                                android:textColor="#000"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_menu">
+
+                            <ImageView
+                                android:id="@+id/imageview2"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/logo_rs_dkt"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="RS. DKT"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/imageview2"
+                                android:textColor="#000"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_menu">
+
+                            <ImageView
+                                android:id="@+id/imageview3"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/rs_imanuel"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="RS. Imanuel Way Halim"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/imageview3"
+                                android:textColor="#000"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1">
-
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rs_imanuel" />
-
-                    <TextView
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. Imanuel Way Halim"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
+                        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">s
+                        <RelativeLayout
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_menu">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1">
+                            <ImageView
+                                android:id="@+id/imageview4"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/rs_abdul_moeloek"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="RS. Abdul Moeloek"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/imageview4"
+                                android:textColor="#000"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
-                    android:orientation="vertical">
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rs_a_dadi_tjokrodipo" />
-
-                    <TextView
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. A Dadi Tjokrodipo"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
+                        android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1">
+                        <RelativeLayout
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_menu">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
-                    android:orientation="vertical">
+                            <ImageView
+                                android:id="@+id/imageview5"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/rs_bumi_waras"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="RS. Bumi Waras"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/imageview5"
+                                android:textColor="#000"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rs_urip_sumoharjo" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
 
-                    <TextView
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. Urip Sumoharja"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
+                        android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1">
+                        <RelativeLayout
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_menu">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
-                    android:orientation="vertical">
+                            <ImageView
+                                android:id="@+id/imageview6"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/rs_graha_husada"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="RS. Graha Husada"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/imageview6"
+                                android:textColor="#000"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/logo_rs_dkt" />
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
 
-                    <TextView
+                    <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. DKT"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:padding="20dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/bg_menu">
+
+                            <ImageView
+                                android:id="@+id/imageview7"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginRight="20dp"
+                                android:src="@drawable/rs_urip_sumoharjo"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="RS. Urip Sumoharjo"
+                                android:layout_centerVertical="true"
+                                android:layout_toRightOf="@+id/imageview7"
+                                android:textColor="#000"
+                                android:textSize="12dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+                    </android.support.v7.widget.CardView>
+
                 </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rs_graha_husada" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. Graha Husada"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
                 </LinearLayout>
+
+            </ScrollView>
+
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rs_pertamina_bintang_amin" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. Pertamina Bintang Amin"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_menu"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
-                        android:layout_weight="1"
-                        android:layout_gravity="center"
-                        android:src="@drawable/rs_bumi_waras" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RS. Bumi Waras"
-                        android:textAlignment="center"
-                        android:textColor="#000"
-                        android:textSize="12dp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1"
-    android:orientation="horizontal">
-
-</LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Aplikasi Ini Dibuat Untuk Membantu Masyarakat Lampung yang ingin mengetahui jadwal dokter spesialis untuk penanganan penyakit tertentu"
-                android:id="@+id/marquee"
-                android:textAlignment="textEnd"
-                android:textSize="14dp"
-                android:textColor="#000"
-                android:scrollHorizontally="true"
-                android:ellipsize="marquee"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:singleLine="true" />
-        </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
