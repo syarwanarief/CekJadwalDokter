@@ -14,7 +14,7 @@
         android:orientation="vertical"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:background="#FFFFFFCC">
+        android:background="#FFDE03">
 
         <include
             android:id="@+id/toolbar"
@@ -40,7 +40,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="#FFDE03">
 
                 <LinearLayout
                     android:layout_weight="1"
@@ -58,7 +59,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
                             android:layout_marginBottom="5dp"
-                            android:background="@drawable/bg_menu">
+                            android:background="#FFF">
 
                             <ImageView
                                 android:id="@+id/imageview"
@@ -89,7 +90,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
                             android:layout_marginBottom="5dp"
-                            android:background="@drawable/bg_menu"
+                            android:background="#FFF"
                             android:onClick="advent">
 
                             <ImageView
@@ -121,7 +122,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
                             android:layout_marginBottom="5dp"
-                            android:background="@drawable/bg_menu">
+                            android:background="#FFF">
 
                             <ImageView
                                 android:id="@+id/imageview2"
@@ -152,7 +153,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
                             android:layout_marginBottom="5dp"
-                            android:background="@drawable/bg_menu">
+                            android:background="#FFF">
 
                             <ImageView
                                 android:id="@+id/imageview3"
@@ -189,7 +190,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:background="@drawable/bg_menu">
+                            android:background="#FFF">
 
                             <ImageView
                                 android:id="@+id/imageview4"
@@ -219,7 +220,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:background="@drawable/bg_menu">
+                            android:background="#FFF">
 
                             <ImageView
                                 android:id="@+id/imageview5"
@@ -249,7 +250,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:background="@drawable/bg_menu">
+                            android:background="#FFF">
 
                             <ImageView
                                 android:id="@+id/imageview6"
@@ -279,7 +280,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:background="@drawable/bg_menu">
+                            android:background="#FFF">
 
                             <ImageView
                                 android:id="@+id/imageview7"
