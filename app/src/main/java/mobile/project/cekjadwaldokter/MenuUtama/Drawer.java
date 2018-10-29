@@ -44,6 +44,9 @@ public class Drawer extends AppCompatActivity {
         for (int image: images){
             flipperImage(image);
         }
+        //marquee
+        TextView textberjalan=(TextView)findViewById(R.id.marquee);
+        textberjalan.setSelected(true);
 
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
