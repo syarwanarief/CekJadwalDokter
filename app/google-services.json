@@ -54,6 +54,14 @@
           }
         },
         {
+          "client_id": "239830156860-2uhnjlrk71edr50gabiapkhsdd2v830p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mobile.project.cekjadwaldokter",
+            "certificate_hash": "1b66f468e3eca68129a3c0c3b45a59385788b1d8"
+          }
+        },
+        {
           "client_id": "239830156860-tthbl1coenvqe8nc6cgsr84ugdf29dad.apps.googleusercontent.com",
           "client_type": 3
         }

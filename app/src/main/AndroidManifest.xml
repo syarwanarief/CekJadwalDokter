@@ -2,10 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mobile.project.cekjadwaldokter">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Cek Jadwal Dokter"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -21,8 +22,8 @@
         <activity android:name=".MenuUtama.Drawer" />
         <activity android:name=".DaftarDokterSpesialis.advent" />
         <activity android:name=".InfoDokter.DokterGigi" />
-        <activity android:name=".InfoDokter.HariPrakter"></activity>
+        <activity android:name=".InfoDokter.HariPrakter" />
+        <activity android:name=".InfoDokter.NamaDokter"></activity>
     </application>
-
 
 </manifest>
