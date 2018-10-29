@@ -24,6 +24,8 @@
         <activity android:name=".InfoDokter.DokterGigi" />
         <activity android:name=".InfoDokter.HariPrakter" />
         <activity android:name=".InfoDokter.NamaDokter"></activity>
+        <activity android:name=".InfoDokter.HariPrakter"></activity>
     </application>
+
 
 </manifest>
