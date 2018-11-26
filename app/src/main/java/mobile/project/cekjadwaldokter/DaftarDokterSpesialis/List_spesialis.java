@@ -9,21 +9,14 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-import mobile.project.cekjadwaldokter.InfoDokter.DokterGigi;
 import mobile.project.cekjadwaldokter.InfoDokter.HariPrakter;
 import mobile.project.cekjadwaldokter.InfoDokter.NamaDokter;
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
 
-public class advent extends AppCompatActivity {
+public class List_spesialis extends AppCompatActivity {
 
     private Toolbar toolbar;
     private NavigationView navigationView;
@@ -53,7 +46,7 @@ public class advent extends AppCompatActivity {
                     // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
                     //dengan intent activity
                     case R.id.beranda:
-                        Intent intent = new Intent(advent.this, Drawer.class);
+                        Intent intent = new Intent(List_spesialis.this, Drawer.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
@@ -92,11 +85,11 @@ public class advent extends AppCompatActivity {
     }
 
     public void gigi(View view) {
-        Intent intent = new Intent(advent.this, HariPrakter.class);
+        Intent intent = new Intent(List_spesialis.this, HariPrakter.class);
         startActivity(intent);
     }
     public void namaDokter(View view) {
-        Intent intent = new Intent(advent.this, NamaDokter.class);
+        Intent intent = new Intent(List_spesialis.this, NamaDokter.class);
         startActivity(intent);
     }
 }
