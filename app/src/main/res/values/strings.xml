@@ -22,4 +22,10 @@
         completions."
     </string>
 
+    <string name="TempAdvent">title</string>
+    <string name="TempMoeloek">title</string>
+    <string name="TempImanuel">title</string>
+    <string name="TempDadi">title</string>
+    <string name="TempDKT">title</string>
+
 </resources>

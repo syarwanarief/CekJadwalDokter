@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.List_spesialis;
+import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.List_spesialis_Advent;
 import mobile.project.cekjadwaldokter.R;
 
 public class Drawer extends AppCompatActivity {
@@ -130,7 +130,7 @@ public class Drawer extends AppCompatActivity {
     }
 
     public void advent(View view) {
-        Intent intent = new Intent(Drawer.this, List_spesialis.class);
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
         startActivity(intent);
     }
 
@@ -149,6 +149,34 @@ public class Drawer extends AppCompatActivity {
 
     public void musik(View view) {
         Intent intent = new Intent(Drawer.this, Musik.class);
+        startActivity(intent);
+    }
+
+    public void KlikDadi(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        String dadi = null;
+        intent.putExtra("dadi", dadi);
+        startActivity(intent);
+    }
+
+    public void KlikImanuel(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        String imanuel = null;
+        intent.putExtra("imanuel", imanuel);
+        startActivity(intent);
+    }
+
+    public void KlikMoeloek(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        String moeloek = null;
+        intent.putExtra("moeloek", moeloek);
+        startActivity(intent);
+    }
+
+    public void KlikDKT(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        String dkt = null;
+        intent.putExtra("dkt", dkt);
         startActivity(intent);
     }
 }

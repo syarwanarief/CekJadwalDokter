@@ -71,7 +71,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="#FFF"
-                            android:padding="20dp">
+                            android:padding="20dp"
+                            android:onClick="KlikDadi">
 
                             <ImageView
                                 android:id="@+id/imageview"
@@ -137,7 +138,8 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0dp"
                             android:background="#FFF"
-                            android:padding="20dp">
+                            android:padding="20dp"
+                            android:onClick="KlikDKT">
 
                             <ImageView
                                 android:id="@+id/imageview2"
@@ -179,7 +181,8 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0dp"
                             android:background="#FFF"
-                            android:padding="20dp">
+                            android:padding="20dp"
+                            android:onClick="KlikImanuel">
 
                             <ImageView
                                 android:id="@+id/imageview3"
@@ -213,7 +216,8 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="0dp"
                             android:background="#FFF"
-                            android:padding="20dp">
+                            android:padding="20dp"
+                            android:onClick="KlikMoeloek">
 
                             <ImageView
                                 android:id="@+id/imageview4"

@@ -25,14 +25,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuUtama.Drawer" />
-        <activity android:name=".DaftarDokterSpesialis.List_spesialis" />
+        <activity android:name=".DaftarDokterSpesialis.List_spesialis_Advent" />
         <activity android:name=".InfoDokter.DokterGigi" />
         <activity android:name=".InfoDokter.HariPrakter" />
         <activity android:name=".InfoDokter.NamaDokter" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".MenuUtama.Musik"></activity>
+        <activity
+            android:name=".MenuUtama.Musik"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".listSpesialis"></activity>
     </application>
 
 </manifest>

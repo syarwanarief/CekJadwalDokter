@@ -9,239 +9,202 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_margin="5dp"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:orientation="vertical">
+        android:layout_marginTop="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_weight="0.8"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingTop="100dp"
+            android:layout_gravity="center"
+            android:gravity="center">
 
-            <android.support.v7.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@drawable/gamolanbg">
 
-                <EditText
-                    android:id="@+id/noteText"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:textAlignment="viewStart"
-                    android:maxLines="10"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-            </android.support.v7.widget.CardView>
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playDo">
 
+                    <ImageView
+                        android:id="@+id/icDo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:src="@drawable/noteji"
+                        android:onClick="playDo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:text="Do"
+                        android:textColor="#000"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playRe">
+
+                    <ImageView
+                        android:id="@+id/icRe"
+                        android:layout_width="match_parent"
+                        android:layout_height="190dp"
+                        android:src="@drawable/notero" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:text="Re"
+                        android:textColor="#000"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playMi">
+
+                    <ImageView
+                        android:id="@+id/icMi"
+                        android:layout_width="match_parent"
+                        android:layout_height="178dp"
+                        android:src="@drawable/notelu" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:text="Mi"
+                        android:textColor="#000"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playFa">
+
+                    <ImageView
+                        android:id="@+id/icFa"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@drawable/notepat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:textColor="#000"
+                        android:text="Fa"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playSo">
+
+                    <ImageView
+                        android:id="@+id/icSo"
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        android:src="@drawable/notemo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:textColor="#000"
+                        android:text="So"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playLa">
+
+                    <ImageView
+                        android:id="@+id/icLa"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:src="@drawable/notenem" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:textColor="#000"
+                        android:layout_margin="5dp"
+                        android:text="La"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playSi">
+
+                    <ImageView
+                        android:id="@+id/icSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="155dp"
+                        android:src="@drawable/notetu" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:textColor="#000"
+                        android:text="Si"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+            </LinearLayout>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:baselineAligned="false"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:onClick="playDo">
-
-                <ImageView
-                    android:id="@+id/icDo"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/rs_a_dadi_tjokrodipo" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="Do"
-                    android:textAlignment="center"
-                    android:textSize="20pt" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:onClick="playRe">
-
-                <ImageView
-                    android:id="@+id/icRe"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/rs_a_dadi_tjokrodipo" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="Re"
-                    android:textAlignment="center"
-                    android:textSize="20pt" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:onClick="playMi">
-
-                <ImageView
-                    android:id="@+id/icMi"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/rs_a_dadi_tjokrodipo" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="Mi"
-                    android:textAlignment="center"
-                    android:textSize="20pt" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:onClick="playFa">
-
-                <ImageView
-                    android:id="@+id/icFa"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/rs_a_dadi_tjokrodipo" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="Fa"
-                    android:textAlignment="center"
-                    android:textSize="20pt" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:onClick="playSo">
-
-                <ImageView
-                    android:id="@+id/icSo"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/rs_a_dadi_tjokrodipo" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="So"
-                    android:textAlignment="center"
-                    android:textSize="20pt" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:onClick="playLa">
-
-                <ImageView
-                    android:id="@+id/icLa"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/rs_a_dadi_tjokrodipo" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="La"
-                    android:textAlignment="center"
-                    android:textSize="20pt" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:onClick="playSi">
-
-                <ImageView
-                    android:id="@+id/icSi"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/rs_a_dadi_tjokrodipo" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="Si"
-                    android:textAlignment="center"
-                    android:textSize="20pt" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:onClick="playDoo">
-
-                <ImageView
-                    android:id="@+id/icDoo"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:src="@drawable/rs_a_dadi_tjokrodipo" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="5dp"
-                    android:text="Do'"
-                    android:textAlignment="center"
-                    android:textSize="20pt" />
-
-            </LinearLayout>
-
-
-        </LinearLayout>
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>
