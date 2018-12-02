@@ -75,7 +75,7 @@ public class Drawer extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Bantuan telah dipilih", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.tentang:
-                        Toast.makeText(getApplicationContext(), "Bantuan telah dipilih", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Tentang telah dipilih", Toast.LENGTH_SHORT).show();
                         return true;
                     default:
                         Toast.makeText(getApplicationContext(), "Kesalahan Terjadi ", Toast.LENGTH_SHORT).show();
@@ -129,12 +129,6 @@ public class Drawer extends AppCompatActivity {
                 .show();
     }
 
-    public void advent(View view) {
-        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
-        startActivity(intent);
-    }
-
-
     public void flipperImage (int image){
         ImageView imageView = new ImageView(this);
         imageView.setBackgroundResource(image);
@@ -154,29 +148,57 @@ public class Drawer extends AppCompatActivity {
 
     public void KlikDadi(View view) {
         Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
-        String dadi = null;
-        intent.putExtra("dadi", dadi);
+        Bundle b = new Bundle();
+        String string = "dadi";
+        b.putString("key", string);
+        String string1 = "Spesialis RS. A. Dadi";
+        b.putString("key1", string1);
+        intent.putExtras(b);
         startActivity(intent);
     }
 
     public void KlikImanuel(View view) {
         Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
-        String imanuel = null;
-        intent.putExtra("imanuel", imanuel);
+        Bundle b = new Bundle();
+        String string = "imanuel";
+        b.putString("key", string);
+        String string1 = "Spesialis RS. Imanuel";
+        b.putString("key1", string1);
+        intent.putExtras(b);
         startActivity(intent);
     }
 
     public void KlikMoeloek(View view) {
         Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
-        String moeloek = null;
-        intent.putExtra("moeloek", moeloek);
+        Bundle b = new Bundle();
+        String string = "moeloek";
+        b.putString("key", string);
+        String string1 = "Spesialis RS. Abdul Moeloek";
+        b.putString("key1", string1);
+        intent.putExtras(b);
         startActivity(intent);
     }
 
     public void KlikDKT(View view) {
         Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
-        String dkt = null;
-        intent.putExtra("dkt", dkt);
+        Bundle b = new Bundle();
+        String string = "dkt";
+        b.putString("key", string);
+        String string1 = "Spesialis RS. DKT";
+        b.putString("key1", string1);
+        intent.putExtras(b);
         startActivity(intent);
+    }
+
+    public void advent(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        Bundle b = new Bundle();
+        String string = "advent";
+        b.putString("key", string);
+        String string1 = "Spesialis RS. Advent";
+        b.putString("key1", string1);
+        intent.putExtras(b);
+        startActivity(intent);
+
     }
 }

@@ -17,7 +17,7 @@
             <item
             android:id="@+id/musik"
             android:checked="false"
-            android:icon="@drawable/help"
+            android:icon="@drawable/musik"
             android:title="Musik" />
             <item
                 android:id="@+id/bantuan"

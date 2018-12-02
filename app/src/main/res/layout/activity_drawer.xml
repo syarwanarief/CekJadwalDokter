@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFDE03"
+        android:background="#FF0DBFAC"
         android:measureWithLargestChild="false"
         android:orientation="vertical"
         android:paddingLeft="10dp"
@@ -52,7 +52,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFDE03"
+                android:background="#FF0DBFAC"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -260,7 +260,7 @@
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:layout_marginRight="20dp"
-                                android:src="@drawable/rs_bumi_waras" />
+                                android:src="@drawable/musik" />
 
                             <TextView
                                 android:layout_width="match_parent"

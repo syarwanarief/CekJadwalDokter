@@ -1,55 +1,220 @@
 package mobile.project.cekjadwaldokter.DaftarDokterSpesialis;
 
 import android.content.Intent;
+import android.os.storage.StorageManager;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import mobile.project.cekjadwaldokter.InfoDokter.HariPrakter;
-import mobile.project.cekjadwaldokter.InfoDokter.NamaDokter;
+import java.util.ArrayList;
+import java.util.List;
+
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
+import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapter;
+import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModul;
 
 public class List_spesialis_Advent extends AppCompatActivity {
 
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-    DatabaseReference db;
+    List<FirebaseModul> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advent);
+        ActionBar actionBar = getSupportActionBar();
+        Bundle extras = getIntent().getExtras();
+        //actionBar.setTitle(extras.getString("key1"));
+        String bundle = extras.getString("key");
 
         //display data here
-        ListView list = (ListView) findViewById(R.id.idSpesialis);
-        String newString;
-        Bundle extras = getIntent().getExtras();
-        if (extras.toString() == "dadi") {
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.idSpesialis);
+
+        if (bundle.equals("dadi")) {
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis A Dadi");
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                        FirebaseModul model = new FirebaseModul();
+                        list = new ArrayList<FirebaseModul>();
+                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        String vSpesialis = value.getSpesialis();
+                        String gambar = value.getImage();
+                        model.setSpesialis(vSpesialis);
+                        model.setImage(gambar);
+                        list.add(model);
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        recyclerView.setAdapter(adapter);
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
 
-        } else if (extras.toString() == "imanuel") {
+        } else if (bundle.equals("imanuel")) {
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Imanuel");
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    FirebaseModul model = new FirebaseModul();
+                    list = new ArrayList<FirebaseModul>();
+
+                    for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        String vSpesialis = value.getSpesialis();
+                        String gambar = value.getImage();
+                        model.setSpesialis(vSpesialis);
+                        model.setImage(gambar);
+                        list.add(model);
+
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        recyclerView.setAdapter(adapter);
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
 
-        } else if (extras.toString() == "moeloek") {
+        } else if (bundle.equals("moeloek")) {
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Abdul Moeloek");
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    FirebaseModul model = new FirebaseModul();
+                    list = new ArrayList<FirebaseModul>();
+
+                    for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        String vSpesialis = value.getSpesialis();
+                        String gambar = value.getImage();
+                        model.setSpesialis(vSpesialis);
+                        model.setImage(gambar);
+                        list.add(model);
+
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        recyclerView.setAdapter(adapter);
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+        } else if (bundle.equals("advent")) {
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Advent");
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                    FirebaseModul model = new FirebaseModul();
+                    list = new ArrayList<FirebaseModul>();
+
+                    for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        String vSpesialis = value.getSpesialis();
+                        String gambar = value.getImage();
+                        model.setSpesialis(vSpesialis);
+                        model.setImage(gambar);
+                        list.add(model);
+
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        recyclerView.setAdapter(adapter);
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
 
 
-        } else if (extras.toString() == "advent") {
+        } else if (bundle.equals("dkt")) {
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis DKT");
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                    FirebaseModul model = new FirebaseModul();
+                    list = new ArrayList<FirebaseModul>();
 
-        } else if (extras.toString() == "dkt") {
+                    for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
+                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        String vSpesialis = value.getSpesialis();
+                        String gambar = value.getImage();
+                        model.setSpesialis(vSpesialis);
+                        model.setImage(gambar);
+                        list.add(model);
 
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        recyclerView.setLayoutManager(layoutManager);
+                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+                        recyclerView.setAdapter(adapter);
 
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
         }
 
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
