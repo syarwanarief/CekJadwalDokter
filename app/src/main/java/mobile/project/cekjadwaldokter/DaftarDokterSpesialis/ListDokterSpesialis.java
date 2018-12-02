@@ -1,7 +1,6 @@
 package mobile.project.cekjadwaldokter.DaftarDokterSpesialis;
 
 import android.content.Intent;
-import android.os.storage.StorageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -32,7 +31,7 @@ import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapter;
 import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModul;
 
-public class List_spesialis_Advent extends AppCompatActivity {
+public class ListDokterSpesialis extends AppCompatActivity {
 
     private Toolbar toolbar;
     private NavigationView navigationView;
@@ -42,11 +41,12 @@ public class List_spesialis_Advent extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_advent);
+        setContentView(R.layout.activity_list_dokter_spesialis);
         ActionBar actionBar = getSupportActionBar();
         Bundle extras = getIntent().getExtras();
-        //actionBar.setTitle(extras.getString("key1"));
         String bundle = extras.getString("key");
+        TextView textView = (TextView) findViewById(R.id.vtext);
+        textView.setText(extras.getString("key1"));
 
         //display data here
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.idSpesialis);
@@ -66,8 +66,8 @@ public class List_spesialis_Advent extends AppCompatActivity {
                         model.setSpesialis(vSpesialis);
                         model.setImage(gambar);
                         list.add(model);
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
@@ -99,8 +99,8 @@ public class List_spesialis_Advent extends AppCompatActivity {
                         model.setImage(gambar);
                         list.add(model);
 
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
@@ -133,8 +133,8 @@ public class List_spesialis_Advent extends AppCompatActivity {
                         model.setImage(gambar);
                         list.add(model);
 
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
@@ -166,8 +166,8 @@ public class List_spesialis_Advent extends AppCompatActivity {
                         model.setImage(gambar);
                         list.add(model);
 
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
@@ -200,8 +200,8 @@ public class List_spesialis_Advent extends AppCompatActivity {
                         model.setImage(gambar);
                         list.add(model);
 
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,List_spesialis_Advent.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(List_spesialis_Advent.this,1);
+                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
@@ -237,7 +237,7 @@ public class List_spesialis_Advent extends AppCompatActivity {
                     // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
                     //dengan intent activity
                     case R.id.beranda:
-                        Intent intent = new Intent(List_spesialis_Advent.this, Drawer.class);
+                        Intent intent = new Intent(ListDokterSpesialis.this, Drawer.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();

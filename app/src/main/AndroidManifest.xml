@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuUtama.Drawer" />
-        <activity android:name=".DaftarDokterSpesialis.List_spesialis_Advent"
+        <activity android:name=".DaftarDokterSpesialis.ListDokterSpesialis"
             android:label="Daftar Spesialis"/>
         <activity android:name=".InfoDokter.NamaDokter" />
         <activity

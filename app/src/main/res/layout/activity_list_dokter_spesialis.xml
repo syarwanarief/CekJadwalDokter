@@ -18,6 +18,27 @@
             android:id="@+id/toolbar"
             layout="@layout/layout_toolbar" />
 
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#FFF">
+            <TextView
+                android:id="@+id/vtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:textColor="#000"
+                android:text="text"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+        </RelativeLayout>
+
         <android.support.v7.widget.RecyclerView
 
             android:id="@+id/idSpesialis"

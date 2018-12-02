@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.List_spesialis_Advent;
+import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.ListDokterSpesialis;
 import mobile.project.cekjadwaldokter.R;
 
 public class Drawer extends AppCompatActivity {
@@ -147,55 +147,55 @@ public class Drawer extends AppCompatActivity {
     }
 
     public void KlikDadi(View view) {
-        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        Intent intent = new Intent(Drawer.this, ListDokterSpesialis.class);
         Bundle b = new Bundle();
         String string = "dadi";
         b.putString("key", string);
-        String string1 = "Spesialis RS. A. Dadi";
+        String string1 = "Dokter Spesialis RS. A. Dadi";
         b.putString("key1", string1);
         intent.putExtras(b);
         startActivity(intent);
     }
 
     public void KlikImanuel(View view) {
-        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        Intent intent = new Intent(Drawer.this, ListDokterSpesialis.class);
         Bundle b = new Bundle();
         String string = "imanuel";
         b.putString("key", string);
-        String string1 = "Spesialis RS. Imanuel";
+        String string1 = "Dokter Spesialis RS. Imanuel";
         b.putString("key1", string1);
         intent.putExtras(b);
         startActivity(intent);
     }
 
     public void KlikMoeloek(View view) {
-        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        Intent intent = new Intent(Drawer.this, ListDokterSpesialis.class);
         Bundle b = new Bundle();
         String string = "moeloek";
         b.putString("key", string);
-        String string1 = "Spesialis RS. Abdul Moeloek";
+        String string1 = "Dokter Spesialis RS. Abdul Moeloek";
         b.putString("key1", string1);
         intent.putExtras(b);
         startActivity(intent);
     }
 
     public void KlikDKT(View view) {
-        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        Intent intent = new Intent(Drawer.this, ListDokterSpesialis.class);
         Bundle b = new Bundle();
         String string = "dkt";
         b.putString("key", string);
-        String string1 = "Spesialis RS. DKT";
+        String string1 = "Dokter Spesialis RS. DKT";
         b.putString("key1", string1);
         intent.putExtras(b);
         startActivity(intent);
     }
 
     public void advent(View view) {
-        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        Intent intent = new Intent(Drawer.this, ListDokterSpesialis.class);
         Bundle b = new Bundle();
         String string = "advent";
         b.putString("key", string);
-        String string1 = "Spesialis RS. Advent";
+        String string1 = "Dokter Spesialis RS. Advent";
         b.putString("key1", string1);
         intent.putExtras(b);
         startActivity(intent);
