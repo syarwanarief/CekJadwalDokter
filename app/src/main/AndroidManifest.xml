@@ -4,12 +4,17 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon_splash"
         android:label="Cek Jadwal Dokter"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/icon_splash"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".WelcomeActivity">
@@ -20,12 +25,18 @@
             </intent-filter>
         </activity>
         <activity android:name=".MenuUtama.Drawer" />
-        <activity android:name=".DaftarDokterSpesialis.advent" />
+        <activity android:name=".DaftarDokterSpesialis.List_spesialis_Advent" />
         <activity android:name=".InfoDokter.DokterGigi" />
         <activity android:name=".InfoDokter.HariPrakter" />
-        <activity android:name=".InfoDokter.NamaDokter"></activity>
-        <activity android:name=".InfoDokter.HariPrakter"></activity>
+        <activity android:name=".InfoDokter.NamaDokter" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".MenuUtama.Musik"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="landscape"></activity>
+        <activity android:name=".listSpesialis"></activity>
     </application>
-
 
 </manifest>

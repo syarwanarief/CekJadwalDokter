@@ -1,6 +1,5 @@
 package mobile.project.cekjadwaldokter.MenuUtama;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +12,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
-import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.advent;
+import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.List_spesialis_Advent;
 import mobile.project.cekjadwaldokter.R;
 
 public class Drawer extends AppCompatActivity {
@@ -41,13 +39,14 @@ public class Drawer extends AppCompatActivity {
 
         v_flipper = findViewById(R.id.v_flipper);
 
-        for (int image: images){
+        for (int image : images) {
             flipperImage(image);
         }
 
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         // Menginisiasi  NavigationView
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         //Mengatur Navigasi View Item yang akan dipanggil untuk menangani item klik menu navigasi
@@ -56,29 +55,35 @@ public class Drawer extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 //Memeriksa apakah item tersebut dalam keadaan dicek  atau tidak,
-                if(menuItem.isChecked()) menuItem.setChecked(false);
+                if (menuItem.isChecked()) menuItem.setChecked(false);
                 else menuItem.setChecked(true);
                 //Menutup  drawer item klik
                 drawerLayout.closeDrawers();
                 //Memeriksa untuk melihat item yang akan dilklik dan melalukan aksi
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.beranda:
                         Intent intent = new Intent(Drawer.this, Drawer.class);
                         startActivity(intent);
                         finish();
                         return true;
+                    case R.id.musik:
+                        Intent intent1 = new Intent(Drawer.this, Musik.class);
+                        startActivity(intent1);
+                        finish();
+                        return true;
                     case R.id.bantuan:
-                        Toast.makeText(getApplicationContext(),"Bantuan telah dipilih",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Bantuan telah dipilih", Toast.LENGTH_SHORT).show();
                         return true;
                     case R.id.tentang:
-                        Toast.makeText(getApplicationContext(),"Bantuan telah dipilih",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Bantuan telah dipilih", Toast.LENGTH_SHORT).show();
                         return true;
                     default:
-                        Toast.makeText(getApplicationContext(),"Kesalahan Terjadi ",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Kesalahan Terjadi ", Toast.LENGTH_SHORT).show();
                         return true;
                 }
             }
         });
+
         // Menginisasi Drawer Layout dan ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
@@ -125,12 +130,10 @@ public class Drawer extends AppCompatActivity {
     }
 
     public void advent(View view) {
-        Intent intent = new Intent(Drawer.this, advent.class);
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
         startActivity(intent);
     }
 
-    public void gigi(View view) {
-    }
 
     public void flipperImage (int image){
         ImageView imageView = new ImageView(this);
@@ -144,4 +147,36 @@ public class Drawer extends AppCompatActivity {
         v_flipper.setInAnimation(this, android.R.anim.slide_out_right);
     }
 
+    public void musik(View view) {
+        Intent intent = new Intent(Drawer.this, Musik.class);
+        startActivity(intent);
+    }
+
+    public void KlikDadi(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        String dadi = null;
+        intent.putExtra("dadi", dadi);
+        startActivity(intent);
+    }
+
+    public void KlikImanuel(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        String imanuel = null;
+        intent.putExtra("imanuel", imanuel);
+        startActivity(intent);
+    }
+
+    public void KlikMoeloek(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        String moeloek = null;
+        intent.putExtra("moeloek", moeloek);
+        startActivity(intent);
+    }
+
+    public void KlikDKT(View view) {
+        Intent intent = new Intent(Drawer.this, List_spesialis_Advent.class);
+        String dkt = null;
+        intent.putExtra("dkt", dkt);
+        startActivity(intent);
+    }
 }

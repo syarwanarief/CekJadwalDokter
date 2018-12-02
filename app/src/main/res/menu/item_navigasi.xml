@@ -15,6 +15,11 @@
         android:title="Lainnya">
         <menu>
             <item
+            android:id="@+id/musik"
+            android:checked="false"
+            android:icon="@drawable/help"
+            android:title="Musik" />
+            <item
                 android:id="@+id/bantuan"
                 android:checked="false"
                 android:icon="@drawable/help"

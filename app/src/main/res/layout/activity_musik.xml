@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuUtama.Musik">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="100dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gamolanbg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playDo">
+
+                    <ImageView
+                        android:id="@+id/icDo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="200dp"
+                        android:src="@drawable/noteji"
+                        android:onClick="playDo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:text="Do"
+                        android:textColor="#000"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playRe">
+
+                    <ImageView
+                        android:id="@+id/icRe"
+                        android:layout_width="match_parent"
+                        android:layout_height="190dp"
+                        android:src="@drawable/notero" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:text="Re"
+                        android:textColor="#000"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playMi">
+
+                    <ImageView
+                        android:id="@+id/icMi"
+                        android:layout_width="match_parent"
+                        android:layout_height="178dp"
+                        android:src="@drawable/notelu" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:text="Mi"
+                        android:textColor="#000"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playFa">
+
+                    <ImageView
+                        android:id="@+id/icFa"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:src="@drawable/notepat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:textColor="#000"
+                        android:text="Fa"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playSo">
+
+                    <ImageView
+                        android:id="@+id/icSo"
+                        android:layout_width="match_parent"
+                        android:layout_height="165dp"
+                        android:src="@drawable/notemo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:textColor="#000"
+                        android:text="So"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playLa">
+
+                    <ImageView
+                        android:id="@+id/icLa"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:src="@drawable/notenem" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:textColor="#000"
+                        android:layout_margin="5dp"
+                        android:text="La"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:onClick="playSi">
+
+                    <ImageView
+                        android:id="@+id/icSi"
+                        android:layout_width="match_parent"
+                        android:layout_height="155dp"
+                        android:src="@drawable/notetu" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="bottom"
+                        android:layout_margin="5dp"
+                        android:textColor="#000"
+                        android:text="Si"
+                        android:textAlignment="center"
+                        android:textSize="20pt" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v4.widget.DrawerLayout>
