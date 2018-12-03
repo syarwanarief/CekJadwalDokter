@@ -12,8 +12,10 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,17 +28,19 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import mobile.project.cekjadwaldokter.ListInfoDokterSpesialis;
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapter;
-import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModul;
+import mobile.project.cekjadwaldokter.adapterRecyclerView.ViewHolder;
+import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
 
 public class ListDokterSpesialis extends AppCompatActivity {
 
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-    List<FirebaseModul> list;
+    List<FirebaseModelListSpesialis> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,16 +55,18 @@ public class ListDokterSpesialis extends AppCompatActivity {
         //display data here
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.idSpesialis);
 
-        if (bundle.equals("dadi")) {
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis A Dadi");
+        if (bundle.equals("bumiwaras")) {
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Bumi Waras");
+            reference.keepSynced(true);
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                    list = new ArrayList<FirebaseModelListSpesialis>();
+
                     for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                        FirebaseModul model = new FirebaseModul();
-                        list = new ArrayList<FirebaseModul>();
-                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        FirebaseModelListSpesialis model = new FirebaseModelListSpesialis();
+                        FirebaseModelListSpesialis value = dataSnapshot1.getValue(FirebaseModelListSpesialis.class);
                         String vSpesialis = value.getSpesialis();
                         String gambar = value.getImage();
                         model.setSpesialis(vSpesialis);
@@ -71,6 +77,43 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                            @Override
+                            public void getPosition(int pos) {
+                                if (pos == 0){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Spesialis Bedah Saraf";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+
+                                }else if (pos == 1){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Spesialis Gigi";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+
+                                }else if (pos == 2){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Spesialis Baju";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+
+                                }else{
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Data Tidak Ditemukan";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
                     }
 
                 }
@@ -84,15 +127,16 @@ public class ListDokterSpesialis extends AppCompatActivity {
 
         } else if (bundle.equals("imanuel")) {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Imanuel");
+            reference.keepSynced(true);
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    FirebaseModul model = new FirebaseModul();
-                    list = new ArrayList<FirebaseModul>();
+                    list = new ArrayList<FirebaseModelListSpesialis>();
 
                     for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        FirebaseModelListSpesialis model = new FirebaseModelListSpesialis();
+                        FirebaseModelListSpesialis value = dataSnapshot1.getValue(FirebaseModelListSpesialis.class);
                         String vSpesialis = value.getSpesialis();
                         String gambar = value.getImage();
                         model.setSpesialis(vSpesialis);
@@ -115,18 +159,18 @@ public class ListDokterSpesialis extends AppCompatActivity {
                 }
             });
 
-
         } else if (bundle.equals("moeloek")) {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Abdul Moeloek");
+            reference.keepSynced(true);
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    FirebaseModul model = new FirebaseModul();
-                    list = new ArrayList<FirebaseModul>();
+                    list = new ArrayList<FirebaseModelListSpesialis>();
 
                     for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        FirebaseModelListSpesialis model = new FirebaseModelListSpesialis();
+                        FirebaseModelListSpesialis value = dataSnapshot1.getValue(FirebaseModelListSpesialis.class);
                         String vSpesialis = value.getSpesialis();
                         String gambar = value.getImage();
                         model.setSpesialis(vSpesialis);
@@ -151,15 +195,16 @@ public class ListDokterSpesialis extends AppCompatActivity {
 
         } else if (bundle.equals("advent")) {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Advent");
+            reference.keepSynced(true);
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    FirebaseModul model = new FirebaseModul();
-                    list = new ArrayList<FirebaseModul>();
+                    list = new ArrayList<FirebaseModelListSpesialis>();
 
                     for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        FirebaseModelListSpesialis model = new FirebaseModelListSpesialis();
+                        FirebaseModelListSpesialis value = dataSnapshot1.getValue(FirebaseModelListSpesialis.class);
                         String vSpesialis = value.getSpesialis();
                         String gambar = value.getImage();
                         model.setSpesialis(vSpesialis);
@@ -182,18 +227,18 @@ public class ListDokterSpesialis extends AppCompatActivity {
                 }
             });
 
-
         } else if (bundle.equals("dkt")) {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis DKT");
+            reference.keepSynced(true);
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                    FirebaseModul model = new FirebaseModul();
-                    list = new ArrayList<FirebaseModul>();
+                    list = new ArrayList<FirebaseModelListSpesialis>();
 
                     for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                        FirebaseModul value = dataSnapshot1.getValue(FirebaseModul.class);
+                        FirebaseModelListSpesialis model = new FirebaseModelListSpesialis();
+                        FirebaseModelListSpesialis value = dataSnapshot1.getValue(FirebaseModelListSpesialis.class);
                         String vSpesialis = value.getSpesialis();
                         String gambar = value.getImage();
                         model.setSpesialis(vSpesialis);

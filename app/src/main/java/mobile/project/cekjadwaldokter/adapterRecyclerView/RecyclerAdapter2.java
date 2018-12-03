@@ -14,15 +14,13 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import mobile.project.cekjadwaldokter.R;
-import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
+import mobile.project.cekjadwaldokter.paket.firebase.ModelInfoSpesialis;
 
-
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-
-    List<FirebaseModelListSpesialis> list;
+public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.ViewHolder> {
+    List<ModelInfoSpesialis> list;
     Context context;
 
-    public RecyclerAdapter(List<FirebaseModelListSpesialis> list, Context context) {
+    public RecyclerAdapter2(List<ModelInfoSpesialis> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -30,7 +28,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_list_spesialis,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.list_info_dokter,parent,false);
         ViewHolder myHoder = new ViewHolder(view);
 
         return myHoder;
@@ -38,10 +36,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-
-        FirebaseModelListSpesialis mylist = list.get(position);
-        holder.spesial.setText(mylist.getSpesialis());
+        ModelInfoSpesialis mylist = list.get(position);
+        holder.NamaDokter.setText(mylist.getNamaDokter());
         Picasso.with(context).load(mylist.getImage()).into(holder.imageView);
+        holder.Ruangan.setText(mylist.getImage());
+        holder.Hari.setText(mylist.getHari());
+        holder.Jam.setText(mylist.getJam());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,14 +52,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView spesial;
+        TextView NamaDokter;
+        TextView Ruangan;
+        TextView Hari;
+        TextView Jam;
         ImageView imageView;
 
 
         public ViewHolder(View itemView) {
             super(itemView);
-            spesial = (TextView) itemView.findViewById(R.id.Vspesialis);
-            imageView = (ImageView) itemView.findViewById(R.id.imV);
+            NamaDokter = (TextView) itemView.findViewById(R.id.namaDokter);
+            Ruangan = (TextView) itemView.findViewById(R.id.idRuangan);
+            Hari = (TextView) itemView.findViewById(R.id.idHari);
+            Jam = (TextView) itemView.findViewById(R.id.idJam);
+            imageView = (ImageView) itemView.findViewById(R.id.fotoDokter);
 
         }
     }
@@ -81,9 +87,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return arr;
     }
 
-    OnItemClick onItemClick;
+    RecyclerAdapter.OnItemClick onItemClick;
 
-    public void setOnItemClick(OnItemClick onItemClick) {
+    public void setOnItemClick(RecyclerAdapter.OnItemClick onItemClick) {
         this.onItemClick = onItemClick;
     }
 
