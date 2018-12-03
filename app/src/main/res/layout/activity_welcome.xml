@@ -13,7 +13,7 @@
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/flashtime"
+        android:src="@drawable/help"
         android:foregroundGravity="center"/>
 </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

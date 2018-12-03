@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="bottom"
         android:padding="30dp"
-        android:src="@drawable/icon_splash"
+        android:src="@drawable/ic_beranda"
         android:layout_alignBottom="@+id/linearLayout"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>

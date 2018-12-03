@@ -24,7 +24,6 @@ public class Drawer extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-
     boolean DoubleBackToExit = false;
 
     //flipper
@@ -35,10 +34,9 @@ public class Drawer extends AppCompatActivity {
         setContentView(R.layout.activity_drawer);
 
         //flipper
-        int images[] = {R.drawable.indonesia_sehat, R.drawable.dbd, R.drawable.germas};
+        int images[] = {R.drawable.ic_beranda, R.drawable.ic_beranda, R.drawable.ic_about};
 
         v_flipper = findViewById(R.id.v_flipper);
-
         for (int image : images) {
             flipperImage(image);
         }
@@ -146,12 +144,12 @@ public class Drawer extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void KlikDadi(View view) {
+    public void KlikBumiWaras(View view) {
         Intent intent = new Intent(Drawer.this, ListDokterSpesialis.class);
         Bundle b = new Bundle();
-        String string = "dadi";
+        String string = "bumiwaras";
         b.putString("key", string);
-        String string1 = "Dokter Spesialis RS. A. Dadi";
+        String string1 = "Dokter Spesialis RS. Bumi Waras";
         b.putString("key1", string1);
         intent.putExtras(b);
         startActivity(intent);
