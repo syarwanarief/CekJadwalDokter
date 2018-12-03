@@ -3,6 +3,7 @@ package mobile.project.cekjadwaldokter.MenuUtama;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -100,31 +101,25 @@ public class Drawer extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         //memanggil synstate
         actionBarDrawerToggle.syncState();
-
     }
 
-    public void BackPress(){
-        if (DoubleBackToExit){
+    boolean doubleBackToExitPressedOnce = false;
+    public void onBackPressed(){
+        if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
         }
-    }
-    public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Keluar")
-                .setMessage("Yakin Ingin Keluar?")
-                .setPositiveButton("Ya", new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                        System.exit(0);
-                    }
 
-                })
-                .setNegativeButton("Tidak", null)
-                .show();
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Tekan Kembali Untuk Keluar Aplikasi", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 
     public void flipperImage (int image){
