@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f2f2f2"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    tools:context=".DaftarDokterSpesialis.ListDokterSpesialis">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,6 +40,10 @@
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <android.support.v7.widget.RecyclerView
 
             android:id="@+id/idSpesialis"
@@ -47,8 +52,20 @@
 
         </android.support.v7.widget.RecyclerView>
 
+        </RelativeLayout>
+
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
         android:layout_width="wrap_content"

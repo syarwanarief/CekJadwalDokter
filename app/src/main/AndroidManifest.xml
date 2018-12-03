@@ -13,9 +13,9 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@drawable/icon_splash"
+        android:icon="@drawable/icon_applikasi"
         android:label="Cek Jadwal Dokter"
-        android:roundIcon="@drawable/icon_splash"
+        android:roundIcon="@drawable/icon_applikasi"
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/AppTheme">

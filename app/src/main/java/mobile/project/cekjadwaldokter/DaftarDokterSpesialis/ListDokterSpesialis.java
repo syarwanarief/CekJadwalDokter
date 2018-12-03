@@ -77,6 +77,8 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+
+                        findViewById(R.id.loading).setVisibility(View.GONE);
                         adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
                             @Override
                             public void getPosition(int pos) {
@@ -84,22 +86,6 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Spesialis Bedah Saraf";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-
-                                }else if (pos == 1){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Spesialis Gigi";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-
-                                }else if (pos == 2){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Spesialis Baju";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -149,6 +135,29 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
 
+                        findViewById(R.id.loading).setVisibility(View.GONE);
+                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                            @Override
+                            public void getPosition(int pos) {
+                                if (pos == 0){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Spesialis Bedah Saraf";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+
+                                }else{
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Data Tidak Ditemukan";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+
                     }
 
                 }
@@ -182,6 +191,29 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+
+                        findViewById(R.id.loading).setVisibility(View.GONE);
+                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                            @Override
+                            public void getPosition(int pos) {
+                                if (pos == 0){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Spesialis Bedah Saraf";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+
+                                }else{
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Data Tidak Ditemukan";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
 
                     }
 
@@ -217,6 +249,29 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
 
+                        findViewById(R.id.loading).setVisibility(View.GONE);
+                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                            @Override
+                            public void getPosition(int pos) {
+                                if (pos == 0){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Spesialis Bedah Saraf";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+
+                                }else{
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Data Tidak Ditemukan";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
+
                     }
 
                 }
@@ -250,6 +305,29 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+
+                        findViewById(R.id.loading).setVisibility(View.GONE);
+                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                            @Override
+                            public void getPosition(int pos) {
+                                if (pos == 0){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Spesialis Bedah Saraf";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+
+                                }else{
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Data Tidak Ditemukan";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }
+                            }
+                        });
 
                     }
 

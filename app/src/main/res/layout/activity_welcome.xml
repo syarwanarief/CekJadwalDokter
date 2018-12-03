@@ -9,11 +9,29 @@
     android:layout_height="match_parent"
     android:background="#FF0DBFAC">
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/help"
+        android:src="@drawable/icon_applikasi"
         android:foregroundGravity="center"/>
+
+    <ImageView
+        android:id="@+id/tekno"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/icon_tekno" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/icon_ff" />
 </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

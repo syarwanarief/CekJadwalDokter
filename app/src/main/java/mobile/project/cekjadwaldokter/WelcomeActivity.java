@@ -11,7 +11,7 @@ import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 
 public class WelcomeActivity extends Activity {
 
-    public static int SPLASH_TIME_OUT = 2500;
+    public static int SPLASH_TIME_OUT = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
