@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.ListDokterSpesialis;
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.MenuUtama.Musik;
@@ -19,7 +20,7 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.activity_welcome);
         new Handler().postDelayed(new Runnable() {
         public void run() {
-            Intent homeIntent = new Intent(WelcomeActivity.this, Drawer.class);
+            Intent homeIntent = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(homeIntent);
             finish();
         }

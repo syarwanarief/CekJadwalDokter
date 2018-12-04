@@ -8,35 +8,48 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-feature android:glEsVersion="0x00030001" android:required="true" />
+
+    <uses-feature
+        android:glEsVersion="0x00030001"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/icon_applikasi"
         android:label="Cek Jadwal Dokter"
+        android:largeHeap="true"
         android:roundIcon="@drawable/icon_applikasi"
         android:supportsRtl="true"
-        android:largeHeap="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WelcomeActivity" android:screenOrientation="portrait">
+        <activity
+            android:name=".WelcomeActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuUtama.Drawer" android:screenOrientation="portrait" />
         <activity
-            android:name=".DaftarDokterSpesialis.ListDokterSpesialis" android:screenOrientation="portrait"
-            android:label="Daftar Spesialis" />
+            android:name=".MenuUtama.Drawer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DaftarDokterSpesialis.ListDokterSpesialis"
+            android:label="Daftar Spesialis"
+            android:screenOrientation="portrait" />
         <activity android:name=".InfoDokterSpesialis.NamaDokter" />
         <activity
             android:name=".MenuUtama.Musik"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
-        <activity android:name=".CustomeList.ListSpesialis" android:screenOrientation="portrait"/>
-        <activity android:name=".ListInfoDokterSpesialis" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".CustomeList.ListSpesialis"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListInfoDokterSpesialis"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Akun.LoginActivity"></activity>
     </application>
 
 </manifest>

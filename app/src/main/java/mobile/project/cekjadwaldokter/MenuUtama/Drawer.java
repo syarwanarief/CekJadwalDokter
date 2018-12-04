@@ -36,7 +36,6 @@ public class Drawer extends AppCompatActivity {
 
         //flipper
         int images[] = {R.drawable.ic_beranda, R.drawable.ic_beranda, R.drawable.ic_about};
-
         v_flipper = findViewById(R.id.v_flipper);
         for (int image : images) {
             flipperImage(image);
