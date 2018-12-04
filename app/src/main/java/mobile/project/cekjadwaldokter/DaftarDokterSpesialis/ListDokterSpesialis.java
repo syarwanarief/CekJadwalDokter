@@ -12,10 +12,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,11 +26,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import mobile.project.cekjadwaldokter.ListInfoDokterSpesialis;
+import mobile.project.cekjadwaldokter.ViewDokterSpesialis.ListInfoDokterSpesialis;
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapter;
-import mobile.project.cekjadwaldokter.adapterRecyclerView.ViewHolder;
 import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
 
 public class ListDokterSpesialis extends AppCompatActivity {
@@ -85,7 +82,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Spesialis Bedah Saraf";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -93,7 +90,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 }else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Tidak Ditemukan";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -142,7 +139,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Spesialis Bedah Saraf";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -150,7 +147,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 }else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Tidak Ditemukan";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -199,7 +196,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Spesialis Bedah Saraf";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -207,7 +204,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 }else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Tidak Ditemukan";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -256,7 +253,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Spesialis Bedah Saraf";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -264,7 +261,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 }else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Tidak Ditemukan";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -313,7 +310,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Spesialis Bedah Saraf";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
@@ -321,7 +318,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 }else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Tidak Ditemukan";
+                                    String string1 = "Data Dokter Spesialis";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);

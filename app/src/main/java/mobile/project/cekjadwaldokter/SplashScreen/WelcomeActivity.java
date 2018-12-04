@@ -1,4 +1,4 @@
-package mobile.project.cekjadwaldokter;
+package mobile.project.cekjadwaldokter.SplashScreen;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,6 +9,7 @@ import android.os.Handler;
 
 import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
+import mobile.project.cekjadwaldokter.R;
 
 public class WelcomeActivity extends Activity {
 

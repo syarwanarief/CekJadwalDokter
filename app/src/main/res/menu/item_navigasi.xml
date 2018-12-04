@@ -6,6 +6,11 @@
             android:checked="false"
             android:icon="@drawable/ic_beranda"
             android:title="Beranda" />
+        <item
+            android:id="@+id/akun"
+            android:checked="false"
+            android:icon="@drawable/ic_person"
+            android:title="Akun" />
 
     </group>
 

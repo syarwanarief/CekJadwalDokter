@@ -23,7 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".SplashScreen.WelcomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,10 +47,12 @@
             android:name=".CustomeList.ListSpesialis"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ListInfoDokterSpesialis"
+            android:name=".ViewDokterSpesialis.ListInfoDokterSpesialis"
             android:screenOrientation="portrait" />
         <activity android:name=".Akun.LoginActivity" />
-        <activity android:name=".Akun.DaftarActivity"></activity>
+        <activity android:name=".Akun.DaftarActivity" />
+        <activity android:name=".Layanan.Bantuan" />
+        <activity android:name=".Layanan.Tentang"></activity>
     </application>
 
 </manifest>

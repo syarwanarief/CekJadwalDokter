@@ -18,6 +18,8 @@ import android.widget.ViewFlipper;
 
 import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.ListDokterSpesialis;
+import mobile.project.cekjadwaldokter.Layanan.Bantuan;
+import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.R;
 
 public class Drawer extends AppCompatActivity {
@@ -74,23 +76,24 @@ public class Drawer extends AppCompatActivity {
                     case R.id.musik:
                         Intent intent1 = new Intent(Drawer.this, Musik.class);
                         startActivity(intent1);
-                        finish();
                         return true;
                     case R.id.bantuan:
-                        Toast.makeText(getApplicationContext(), "Bantuan telah dipilih", Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(Drawer.this, Bantuan.class);
+                        startActivity(intent2);
                         return true;
                     case R.id.tentang:
-                        Toast.makeText(getApplicationContext(), "Tentang telah dipilih", Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(Drawer.this, Tentang.class);
+                        startActivity(intent3);
                         return true;
                     case R.id.logOut:{
-                        Intent intent2 = new Intent(Drawer.this, LoginActivity.class);
+                        Intent intent4 = new Intent(Drawer.this, LoginActivity.class);
                         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.remove(Emaill);
                         editor.remove(Pass);
                         editor.commit(); // commit changes
 
-                        startActivity(intent2);
+                        startActivity(intent4);
                         finish();
                         return true;
                     }

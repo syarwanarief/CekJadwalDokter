@@ -37,35 +37,26 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.View
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         ModelInfoSpesialis mylist = list.get(position);
-        holder.NamaDokter.setText(mylist.getNamaDokter());
-        Picasso.with(context).load(mylist.getImage()).into(holder.imageView);
-        holder.Ruangan.setText(mylist.getImage());
+
         holder.Hari.setText(mylist.getHari());
+        Picasso.with(context).load(mylist.getImage()).into(holder.Image);
         holder.Jam.setText(mylist.getJam());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onItemClick.getPosition(position);
-            }
-        });
+        holder.NamaDokter.setText(mylist.getNamaDokter());
 
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView NamaDokter;
-        TextView Ruangan;
         TextView Hari;
         TextView Jam;
-        ImageView imageView;
-
+        ImageView Image;
 
         public ViewHolder(View itemView) {
             super(itemView);
             NamaDokter = (TextView) itemView.findViewById(R.id.namaDokter);
-            Ruangan = (TextView) itemView.findViewById(R.id.idRuangan);
             Hari = (TextView) itemView.findViewById(R.id.idHari);
             Jam = (TextView) itemView.findViewById(R.id.idJam);
-            imageView = (ImageView) itemView.findViewById(R.id.fotoDokter);
+            Image = (ImageView) itemView.findViewById(R.id.fotoDokter);
 
         }
     }

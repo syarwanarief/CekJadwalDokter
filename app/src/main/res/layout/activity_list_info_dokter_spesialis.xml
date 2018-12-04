@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#f2f2f2"
     android:fitsSystemWindows="true"
-    tools:context=".ListInfoDokterSpesialis">
+    tools:context=".ViewDokterSpesialis.ListInfoDokterSpesialis">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
 
         <android.support.v7.widget.RecyclerView
 
-            android:id="@+id/idSpesialis"
+            android:id="@+id/infoSpesialis"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
