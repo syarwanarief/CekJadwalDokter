@@ -20,6 +20,7 @@
             android:layout_centerInParent="true"/>
 
         <TextView
+            android:id="@+id/idDaftar"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:text="Daftar"
@@ -27,7 +28,8 @@
             android:textStyle="bold"
             android:layout_alignParentEnd="true"
             android:gravity="center|center_vertical"
-            android:paddingRight="10dp"/>
+            android:paddingRight="10dp"
+            android:onClick="Daftar"/>
 
     </RelativeLayout>
 
@@ -46,15 +48,18 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="30dp"
-        android:text="Ponsel atau nama pengguna"
+        android:text="Masukan Email"
         android:textColor="#000"
         android:textSize="14dp"/>
 
     <EditText
+        android:id="@+id/idEmailMasuk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Email"
         android:paddingRight="10dp"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        android:inputType="textEmailAddress"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,9 +71,11 @@
         android:textSize="14dp"/>
 
     <EditText
+        android:id="@+id/id_PasswordMasuk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
+        android:hint="Password"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"/>
 
@@ -77,13 +84,13 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp">
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/masuk"
+            <Button
+                android:id="@+id/idLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#FF0DBFAC"
                 android:layout_marginRight="10dp"
-                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
                 android:text="Masuk"
                 android:textStyle="bold"
                 android:textColor="#000"

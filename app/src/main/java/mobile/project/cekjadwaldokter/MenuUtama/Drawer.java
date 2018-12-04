@@ -1,13 +1,13 @@
 package mobile.project.cekjadwaldokter.MenuUtama;
 
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -16,10 +16,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.ListDokterSpesialis;
 import mobile.project.cekjadwaldokter.R;
 
 public class Drawer extends AppCompatActivity {
+
+    //loginsession
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String Pass = "passKey";
+    public static final String Emaill = "emailKey";
+    SharedPreferences sharedpreferences;
 
     //Mendefinisikan variabel
     private Toolbar toolbar;
@@ -75,6 +82,18 @@ public class Drawer extends AppCompatActivity {
                     case R.id.tentang:
                         Toast.makeText(getApplicationContext(), "Tentang telah dipilih", Toast.LENGTH_SHORT).show();
                         return true;
+                    case R.id.logOut:{
+                        Intent intent2 = new Intent(Drawer.this, LoginActivity.class);
+                        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.remove(Emaill);
+                        editor.remove(Pass);
+                        editor.commit(); // commit changes
+
+                        startActivity(intent2);
+                        finish();
+                        return true;
+                    }
                     default:
                         Toast.makeText(getApplicationContext(), "Kesalahan Terjadi ", Toast.LENGTH_SHORT).show();
                         return true;

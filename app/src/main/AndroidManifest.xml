@@ -49,7 +49,8 @@
         <activity
             android:name=".ListInfoDokterSpesialis"
             android:screenOrientation="portrait" />
-        <activity android:name=".Akun.LoginActivity"></activity>
+        <activity android:name=".Akun.LoginActivity" />
+        <activity android:name=".Akun.DaftarActivity"></activity>
     </application>
 
 </manifest>
