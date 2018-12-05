@@ -1,6 +1,8 @@
 package mobile.project.cekjadwaldokter.DaftarDokterSpesialis;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -26,6 +28,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import mobile.project.cekjadwaldokter.Akun.LoginActivity;
+import mobile.project.cekjadwaldokter.Layanan.Bantuan;
+import mobile.project.cekjadwaldokter.Layanan.Tentang;
+import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.ViewDokterSpesialis.ListInfoDokterSpesialis;
 import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
 import mobile.project.cekjadwaldokter.R;
@@ -38,6 +44,12 @@ public class ListDokterSpesialis extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     List<FirebaseModelListSpesialis> list;
+
+    //loginsession
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String Pass = "passKey";
+    public static final String Emaill = "emailKey";
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -196,12 +208,97 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Dokter Spesialis";
+                                    String string1 = "Syaraf Abdul Moeloek";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
 
-                                }else{
+                                }else if (pos == 1){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Bedah Tulang Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 2){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Saluran Kemih Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 3){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Rehabilitasi Medik Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 4){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Paru Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 5){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Gigi Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 6){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Kebidanan Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 7){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Anak Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 8){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Penyakit Dalam Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 9){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Jantung Dan Pembuluh Darah Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 10){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "THT Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 11){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Mata Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 12){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Bedah Umum Abdul Moeloek";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }
+                                else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
@@ -253,12 +350,90 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Dokter Spesialis";
+                                    String string1 = "Saraf Advent";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
 
-                                }else{
+                                }else if (pos == 1){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Radiologi Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 2){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Bedah Tulang Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 3){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Kulit Dan Kelamin Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 4){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Bedah Saluran Kemih Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 5){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Gigi Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 6){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Bedah Umum Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 7){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Penyakit Dalam Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 8){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Mata Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 9){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "THT Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 10){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Anak Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 11){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Kandungan Dan Kebidanan Advent";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }
+                                else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
@@ -310,11 +485,88 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Dokter Spesialis";
+                                    String string1 = "Syaraf DKT";
                                     b.putString("key1", string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
 
+                                }else if (pos == 1){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Kulit Dan Kelamin DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 2){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Bedah Umum DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 3){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Bedah Tulang DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 4){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Gigi DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 5){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Rehabilitasi Medik DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 6){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Saluran Kemih DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 7){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Anak DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 8){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Penyakit Dalam DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 9){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Paru DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 10){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "Mata DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
+                                }else if (pos == 11){
+                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
+                                    Bundle b = new Bundle();
+                                    String string1 = "THT DKT";
+                                    b.putString("key1", string1);
+                                    intent.putExtras(b);
+                                    startActivity(intent);
                                 }else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
@@ -358,16 +610,33 @@ public class ListDokterSpesialis extends AppCompatActivity {
                     //dengan intent activity
                     case R.id.beranda:
                         Intent intent = new Intent(ListDokterSpesialis.this, Drawer.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
                         return true;
+                    case R.id.musik:
+                        Intent intent1 = new Intent(ListDokterSpesialis.this, Musik.class);
+                        startActivity(intent1);
+                        return true;
                     case R.id.bantuan:
-                        Toast.makeText(getApplicationContext(),"Bantuan telah dipilih",Toast.LENGTH_SHORT).show();
+                        Intent intent2 = new Intent(ListDokterSpesialis.this, Bantuan.class);
+                        startActivity(intent2);
                         return true;
                     case R.id.tentang:
-                        Toast.makeText(getApplicationContext(),"Bantuan telah dipilih",Toast.LENGTH_SHORT).show();
+                        Intent intent3 = new Intent(ListDokterSpesialis.this, Tentang.class);
+                        startActivity(intent3);
                         return true;
+                    case R.id.logOut:{
+                        Intent intent4 = new Intent(ListDokterSpesialis.this, LoginActivity.class);
+                        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.remove(Emaill);
+                        editor.remove(Pass);
+                        editor.commit(); // commit changes
+
+                        startActivity(intent4);
+                        finish();
+                        return true;
+                    }
                     default:
                         Toast.makeText(getApplicationContext(),"Kesalahan Terjadi ",Toast.LENGTH_SHORT).show();
                         return true;

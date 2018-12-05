@@ -4,8 +4,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
-    android:layout_margin="3dp"
-    app:cardCornerRadius="5dp">
+    app:cardCornerRadius="2pt"
+    android:layout_marginTop="3pt">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,27 +15,27 @@
 
         <ImageView
             android:id="@+id/fotoDokter"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="40pt"
+            android:layout_height="40pt"
             android:src="@drawable/icon_profile"
             android:layout_gravity="center"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:paddingLeft="10dp"
+            android:layout_height="45pt"
+            android:paddingLeft="3pt"
             android:orientation="vertical"
             android:layout_gravity="center">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="40dp">
+                android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/nama"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
+                    android:paddingTop="3pt"
+                    android:paddingBottom="3pt"
                     android:text="Nama : "
                     android:textColor="#000"/>
 
@@ -47,8 +47,8 @@
                     android:layout_toRightOf="@+id/nama"
                     android:textColor="#000"
                     android:textStyle="bold"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp"/>
+                    android:paddingBottom="3pt"
+                    android:paddingTop="3pt"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -58,7 +58,7 @@
                     android:id="@+id/hari"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="5dp"
+                    android:paddingBottom="3pt"
                     android:text="Hari    : "
                     android:textColor="#000"/>
                 <TextView
@@ -69,7 +69,7 @@
                     android:textColor="#000"
                     android:text="Hari"
                     android:textStyle="bold"
-                    android:paddingBottom="5dp"/>
+                    android:paddingBottom="3pt"/>
 
             </RelativeLayout>
 
@@ -80,7 +80,7 @@
                     android:id="@+id/jam"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="5dp"
+                    android:paddingBottom="3pt"
                     android:text="Jam    : "
                     android:textColor="#000"/>
                 <TextView
@@ -91,7 +91,7 @@
                     android:textColor="#000"
                     android:textStyle="bold"
                     android:text="Jam"
-                    android:paddingBottom="5dp"/>
+                    android:paddingBottom="3pt"/>
 
             </RelativeLayout>
 

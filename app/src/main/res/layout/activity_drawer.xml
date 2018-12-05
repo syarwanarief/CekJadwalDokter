@@ -13,10 +13,8 @@
         android:layout_height="match_parent"
         android:background="#FF0DBFAC"
         android:measureWithLargestChild="false"
-        android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:paddingRight="10dp">
+        android:paddingTop="1pt"
+        android:orientation="vertical">
 
         <include
             android:id="@+id/toolbar"
@@ -24,22 +22,22 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5pt"
+            android:layout_marginBottom="5pt"
             android:orientation="horizontal">
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:padding="5dp"
-                app:cardCornerRadius="10dp">
+                android:layout_margin="5pt"
+                android:padding="5pt"
+                app:cardCornerRadius="5pt">
 
                 <ViewFlipper
                     android:id="@+id/v_flipper"
                     android:layout_width="match_parent"
-                    android:layout_height="230dp"
+                    android:layout_height="90pt"
                     android:layout_centerVertical="true"></ViewFlipper>
             </android.support.v7.widget.CardView>
 
@@ -55,20 +53,20 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="0pt"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_margin="5dp"
-                        app:cardCornerRadius="10dp">
+                        android:layout_height="50pt"
+                        android:layout_margin="2pt"
+                        app:cardCornerRadius="5pt">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="50pt"
                             android:onClick="KlikBumiWaras"
                             android:orientation="vertical">
 
@@ -77,7 +75,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="bottom|center"
-                                android:paddingBottom="20dp"
+                                android:paddingBottom="20pt"
                                 android:src="@mipmap/rs_bumi_waras" />
 
                         </LinearLayout>
@@ -86,21 +84,20 @@
                             android:layout_height="match_parent"
                             android:gravity="bottom|center"
                             android:text="RS. Bumi Waras"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="5pt"
                             android:textColor="#000"
-                            android:textSize="14dp"
                             android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_margin="5dp"
-                        app:cardCornerRadius="10dp">
+                        android:layout_height="50pt"
+                        android:layout_margin="2pt"
+                        app:cardCornerRadius="5pt">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="50pt"
                             android:onClick="advent"
                             android:orientation="vertical">
 
@@ -109,9 +106,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:paddingTop="7dp"
-                                android:paddingBottom="15dp"
-                                android:layout_marginBottom="10dp"
+                                android:paddingTop="7pt"
+                                android:paddingBottom="10pt"
+                                android:layout_marginBottom="5pt"
                                 android:src="@mipmap/rs_advent" />
 
                         </LinearLayout>
@@ -119,23 +116,22 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="5pt"
                             android:text="RS. Advent"
                             android:textColor="#000"
-                            android:textSize="14dp"
                             android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_margin="5dp"
-                        app:cardCornerRadius="10dp">
+                        android:layout_height="50pt"
+                        android:layout_margin="2pt"
+                        app:cardCornerRadius="5pt">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="0dp"
+                            android:layout_height="50pt"
+                            android:layout_margin="0pt"
                             android:orientation="vertical"
                             android:onClick="KlikDKT">
 
@@ -144,8 +140,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:paddingTop="5dp"
-                                android:paddingBottom="20dp"
+                                android:paddingTop="5pt"
+                                android:paddingBottom="20pt"
                                 android:src="@mipmap/rs_dkt" />
 
                         </LinearLayout>
@@ -153,32 +149,31 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="5pt"
                             android:text="RS. DKT"
                             android:textColor="#000"
-                            android:textSize="14dp"
                             android:textStyle="bold" />
                     </android.support.v7.widget.CardView>
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="0pt"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_margin="5dp"
+                        android:layout_height="50pt"
+                        android:layout_margin="2pt"
                         android:onClick="musik"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="5pt">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="0dp"
+                            android:layout_height="50pt"
+                            android:layout_margin="0pt"
                             android:onClick="KlikImanuel"
                             android:orientation="vertical">
 
@@ -187,32 +182,31 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:paddingTop="5dp"
-                                android:paddingBottom="20dp"
+                                android:paddingTop="5pt"
+                                android:paddingBottom="20pt"
                                 android:src="@mipmap/rs_imanuel" />
                         </LinearLayout>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="5pt"
                             android:text="RS. Imanuel Way Halim"
                             android:textColor="#000"
-                            android:textSize="14dp"
                             android:textStyle="bold" />
 
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_margin="5dp"
-                        app:cardCornerRadius="10dp">
+                        android:layout_height="50pt"
+                        android:layout_margin="2pt"
+                        app:cardCornerRadius="5pt">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="0dp"
+                            android:layout_height="50pt"
+                            android:layout_margin="0pt"
                             android:onClick="KlikMoeloek"
                             android:orientation="vertical">
 
@@ -221,9 +215,9 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:paddingTop="10dp"
-                                android:paddingBottom="15dp"
-                                android:layout_marginBottom="10dp"
+                                android:paddingTop="5pt"
+                                android:paddingBottom="10pt"
+                                android:layout_marginBottom="5pt"
                                 android:src="@mipmap/rs_abdul_moeloek" />
 
                         </LinearLayout>
@@ -231,27 +225,26 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="5pt"
                             android:text="RS. Abdoel Moeloek"
                             android:textColor="#000"
-                            android:textSize="14dp"
                             android:textStyle="bold" />
 
                     </android.support.v7.widget.CardView>
 
                     <android.support.v7.widget.CardView
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:layout_margin="5dp"
+                        android:layout_height="50pt"
+                        android:layout_margin="2pt"
                         android:onClick="musik"
-                        app:cardCornerRadius="10dp">
+                        app:cardCornerRadius="5pt">
 
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
-                            android:layout_margin="0dp"
-                            android:layout_marginBottom="0dp"
+                            android:layout_height="50pt"
+                            android:layout_margin="0pt"
+                            android:layout_marginBottom="0pt"
                             android:orientation="vertical">
 
                             <ImageView
@@ -259,8 +252,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_gravity="center"
-                                android:paddingTop="5dp"
-                                android:paddingBottom="15dp"
+                                android:paddingTop="5pt"
+                                android:paddingBottom="15pt"
                                 android:src="@drawable/musik" />
 
                         </LinearLayout>
@@ -268,15 +261,12 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:gravity="bottom|center"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="5pt"
                             android:text="Musik"
                             android:textColor="#000"
-                            android:textSize="14dp"
                             android:textStyle="bold" />
 
                     </android.support.v7.widget.CardView>
-
-
                 </LinearLayout>
             </LinearLayout>
 

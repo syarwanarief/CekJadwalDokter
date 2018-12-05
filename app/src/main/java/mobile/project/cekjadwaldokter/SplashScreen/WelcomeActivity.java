@@ -27,9 +27,13 @@ public class WelcomeActivity extends Activity {
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         if (sharedpreferences.contains(Emaill) && sharedpreferences.contains(Pass)) {
-            Intent intent  = new Intent(this, Drawer.class);
-            startActivity(intent);
-            finish();
+            new Handler().postDelayed(new Runnable() {
+                public void run() {
+                    Intent homeIntent = new Intent(WelcomeActivity.this, Drawer.class);
+                    startActivity(homeIntent);
+                    finish();
+                }
+            },SPLASH_TIME_OUT);
 
         }else {
             new Handler().postDelayed(new Runnable() {
