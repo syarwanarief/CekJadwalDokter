@@ -33,7 +33,7 @@ import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.ViewDokterSpesialis.ListInfoDokterSpesialis;
-import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
+import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapter;
 import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
@@ -609,7 +609,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                     // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
                     //dengan intent activity
                     case R.id.beranda:
-                        Intent intent = new Intent(ListDokterSpesialis.this, Drawer.class);
+                        Intent intent = new Intent(ListDokterSpesialis.this, Home.class);
                         startActivity(intent);
                         finish();
                         return true;
@@ -643,7 +643,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                 }
             }
         });
-        // Menginisasi Drawer Layout dan ActionBarToggle
+        // Menginisasi Home Layout dan ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
             @Override

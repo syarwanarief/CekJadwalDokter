@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -31,7 +32,7 @@ import java.util.List;
 import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
-import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
+import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapter2;
@@ -51,6 +52,8 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
 
     List<ModelInfoSpesialis> list;
     ProgressDialog dialog;
+
+    SwipeRefreshLayout mySwipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,7 +197,6 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
             dialog.setMessage("Memuat Data...");
             dialog.setIndeterminate(true);
             dialog.show();
-
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Kulit Dan Kelamin Advent");
             reference.keepSynced(true);
             reference.addValueEventListener(new ValueEventListener() {
@@ -666,7 +668,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                     // pilihan menu item navigasi akan menampilkan pesan toast klik kalian bisa menggantinya
                     //dengan intent activity
                     case R.id.beranda:
-                        Intent intent = new Intent(ListInfoDokterSpesialis.this, Drawer.class);
+                        Intent intent = new Intent(ListInfoDokterSpesialis.this, Home.class);
                         startActivity(intent);
                         finish();
                         return true;
@@ -700,7 +702,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                 }
             }
         });
-        // Menginisasi Drawer Layout dan ActionBarToggle
+        // Menginisasi Home Layout dan ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
             @Override

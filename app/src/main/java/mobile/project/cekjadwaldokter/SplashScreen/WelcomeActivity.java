@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import mobile.project.cekjadwaldokter.Akun.LoginActivity;
-import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
+import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.R;
 
 public class WelcomeActivity extends Activity {
@@ -29,7 +29,7 @@ public class WelcomeActivity extends Activity {
         if (sharedpreferences.contains(Emaill) && sharedpreferences.contains(Pass)) {
             new Handler().postDelayed(new Runnable() {
                 public void run() {
-                    Intent homeIntent = new Intent(WelcomeActivity.this, Drawer.class);
+                    Intent homeIntent = new Intent(WelcomeActivity.this, Home.class);
                     startActivity(homeIntent);
                     finish();
                 }

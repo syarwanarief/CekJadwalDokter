@@ -22,7 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-import mobile.project.cekjadwaldokter.MenuUtama.Drawer;
+import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (mUser != null) {
-                    Intent intent = new Intent(LoginActivity.this, Drawer.class);
+                    Intent intent = new Intent(LoginActivity.this, Home.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                     finish();
@@ -134,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
         else {*/
-            Intent intent = new Intent(LoginActivity.this, Drawer.class);
+            Intent intent = new Intent(LoginActivity.this, Home.class);
 
             // Sending Email to Dashboard Activity using intent.
             intent.putExtra(userEmail,email);
