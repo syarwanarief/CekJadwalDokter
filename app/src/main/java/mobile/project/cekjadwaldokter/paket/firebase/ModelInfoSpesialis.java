@@ -3,7 +3,7 @@ package mobile.project.cekjadwaldokter.paket.firebase;
 public class ModelInfoSpesialis {
 
     String Hari;
-    String Image;
+    String Poli;
     String Jam;
     String NamaDokter;
 
@@ -15,12 +15,12 @@ public class ModelInfoSpesialis {
         Hari = hari;
     }
 
-    public String getImage() {
-        return Image;
+    public String getPoli() {
+        return Poli;
     }
 
-    public void setImage(String image) {
-        Image = image;
+    public void setPoli(String poli) {
+        Poli = poli;
     }
 
     public String getJam() {

@@ -2,25 +2,23 @@ package mobile.project.cekjadwaldokter.adapterRecyclerView;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.paket.firebase.ModelInfoSpesialis;
 
-public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.ViewHolder> {
+public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAdapterDetailDokter.ViewHolder> {
     List<ModelInfoSpesialis> list;
     Context context;
 
-    public RecyclerAdapter2(List<ModelInfoSpesialis> list, Context context) {
+    public RecyclerAdapterDetailDokter(List<ModelInfoSpesialis> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -39,7 +37,7 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.View
         ModelInfoSpesialis mylist = list.get(position);
 
         holder.Hari.setText(mylist.getHari());
-        Picasso.with(context).load(mylist.getImage()).into(holder.Image);
+        holder.Poli.setText(mylist.getPoli());
         holder.Jam.setText(mylist.getJam());
         holder.NamaDokter.setText(mylist.getNamaDokter());
 
@@ -49,14 +47,16 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.View
         TextView NamaDokter;
         TextView Hari;
         TextView Jam;
-        ImageView Image;
+        TextView Poli;
+        CardView view;
 
         public ViewHolder(View itemView) {
             super(itemView);
             NamaDokter = (TextView) itemView.findViewById(R.id.namaDokter);
             Hari = (TextView) itemView.findViewById(R.id.idHari);
             Jam = (TextView) itemView.findViewById(R.id.idJam);
-            Image = (ImageView) itemView.findViewById(R.id.fotoDokter);
+            Poli = (TextView) itemView.findViewById(R.id.idPoli);
+            view = (CardView) itemView.findViewById(R.id.card);
 
         }
     }
@@ -78,9 +78,9 @@ public class RecyclerAdapter2 extends RecyclerView.Adapter<RecyclerAdapter2.View
         return arr;
     }
 
-    RecyclerAdapter.OnItemClick onItemClick;
+    RecyclerAdapterSpesialis.OnItemClick onItemClick;
 
-    public void setOnItemClick(RecyclerAdapter.OnItemClick onItemClick) {
+    public void setOnItemClick(RecyclerAdapterSpesialis.OnItemClick onItemClick) {
         this.onItemClick = onItemClick;
     }
 

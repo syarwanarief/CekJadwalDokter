@@ -34,6 +34,7 @@ import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.ListDokterSpesialis;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
+import mobile.project.cekjadwaldokter.MenuTambah.MenuTambahSpesialis;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterRS;
 import mobile.project.cekjadwaldokter.paket.firebase.ModelRS;
@@ -183,6 +184,10 @@ public class Home extends AppCompatActivity {
                         Intent intent = new Intent(Home.this, Home.class);
                         startActivity(intent);
                         finish();
+                        return true;
+                    case R.id.tambah:
+                        Intent intent5 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        startActivity(intent5);
                         return true;
                     case R.id.musik:
                         Intent intent1 = new Intent(Home.this, Musik.class);

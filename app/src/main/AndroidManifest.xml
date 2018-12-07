@@ -31,14 +31,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MenuUtama.Home"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".DaftarDokterSpesialis.ListDokterSpesialis"
             android:label="Daftar Spesialis"
             android:screenOrientation="portrait" />
-        <activity android:name=".InfoDokterSpesialis.NamaDokter" />
+
+        <activity android:name=".InfoDokterSpesialis.NamaDokter"
+            android:parentActivityName=".MenuUtama.Home">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MenuUtama.Home" /> />
+        </activity>
+
         <activity
             android:name=".MenuUtama.Musik"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -48,11 +57,21 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ViewDokterSpesialis.ListInfoDokterSpesialis"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:label="Dokter Spesialis"/>
+
         <activity android:name=".Akun.LoginActivity" />
+
         <activity android:name=".Akun.DaftarActivity" />
-        <activity android:name=".Layanan.Bantuan" />
-        <activity android:name=".Layanan.Tentang"></activity>
+
+        <activity android:name=".Layanan.Bantuan"
+            android:label="Bantuan" />
+
+        <activity android:name=".Layanan.Tentang"
+            android:label="Tentang" />
+
+        <activity android:name=".MenuTambah.MenuTambahSpesialis"
+            android:label="Tambah"></activity>
     </application>
 
 </manifest>

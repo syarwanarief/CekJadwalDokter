@@ -35,7 +35,7 @@ import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.ViewDokterSpesialis.ListInfoDokterSpesialis;
 import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.R;
-import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapter;
+import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterSpesialis;
 import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
 
 public class ListDokterSpesialis extends AppCompatActivity {
@@ -81,14 +81,14 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         model.setSpesialis(vSpesialis);
                         model.setImage(gambar);
                         list.add(model);
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerAdapterSpesialis adapter = new RecyclerAdapterSpesialis(list,ListDokterSpesialis.this);
                         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
-                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                        adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
                             @Override
                             public void getPosition(int pos) {
                                 if (pos == 0){
@@ -138,14 +138,14 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         model.setImage(gambar);
                         list.add(model);
 
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerAdapterSpesialis adapter = new RecyclerAdapterSpesialis(list,ListDokterSpesialis.this);
                         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
-                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                        adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
                             @Override
                             public void getPosition(int pos) {
                                 if (pos == 0){
@@ -195,14 +195,14 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         model.setImage(gambar);
                         list.add(model);
 
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerAdapterSpesialis adapter = new RecyclerAdapterSpesialis(list,ListDokterSpesialis.this);
                         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
-                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                        adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
                             @Override
                             public void getPosition(int pos) {
                                 if (pos == 0){
@@ -337,14 +337,14 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         model.setImage(gambar);
                         list.add(model);
 
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerAdapterSpesialis adapter = new RecyclerAdapterSpesialis(list,ListDokterSpesialis.this);
                         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
-                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                        adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
                             @Override
                             public void getPosition(int pos) {
                                 if (pos == 0){
@@ -472,14 +472,14 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         model.setImage(gambar);
                         list.add(model);
 
-                        RecyclerAdapter adapter = new RecyclerAdapter(list,ListDokterSpesialis.this);
+                        RecyclerAdapterSpesialis adapter = new RecyclerAdapterSpesialis(list,ListDokterSpesialis.this);
                         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListDokterSpesialis.this,1);
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
-                        adapter.setOnItemClick(new RecyclerAdapter.OnItemClick() {
+                        adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
                             @Override
                             public void getPosition(int pos) {
                                 if (pos == 0){

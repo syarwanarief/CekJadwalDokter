@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
@@ -17,12 +18,12 @@ import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
 
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class RecyclerAdapterSpesialis extends RecyclerView.Adapter<RecyclerAdapterSpesialis.ViewHolder> {
 
     List<FirebaseModelListSpesialis> list;
     Context context;
 
-    public RecyclerAdapter(List<FirebaseModelListSpesialis> list, Context context) {
+    public RecyclerAdapterSpesialis(List<FirebaseModelListSpesialis> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -54,12 +55,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     class ViewHolder extends RecyclerView.ViewHolder {
         TextView spesial;
         ImageView imageView;
-
+        LinearLayout view;
 
         public ViewHolder(View itemView) {
             super(itemView);
             spesial = (TextView) itemView.findViewById(R.id.Vspesialis);
             imageView = (ImageView) itemView.findViewById(R.id.imV);
+            view = (LinearLayout) itemView.findViewById(R.id.cardView);
 
         }
     }
