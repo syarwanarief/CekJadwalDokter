@@ -7,15 +7,39 @@
             android:icon="@drawable/ic_beranda"
             android:title="Beranda" />
         <item
-            android:id="@+id/tambah"
-            android:checked="false"
-            android:icon="@drawable/ic_person"
-            android:title="Tambah Dokter Spesialis" />
-        <item
             android:id="@+id/akun"
             android:checked="false"
             android:icon="@drawable/ic_person"
             android:title="Akun" />
+        <item
+            android:id="@+id/tambahAdvent"
+            android:checked="false"
+            android:icon="@drawable/ic_tambah_sp"
+            android:title="Tambah Dokter Spesialis" />
+
+        <item
+            android:id="@+id/tambahAbdulMoeloek"
+            android:checked="false"
+            android:icon="@drawable/ic_tambah_sp"
+            android:title="Tambah Dokter Spesialis" />
+
+        <item
+            android:id="@+id/tambahBumiWaras"
+            android:checked="false"
+            android:icon="@drawable/ic_tambah_sp"
+            android:title="Tambah Dokter Spesialis" />
+
+        <item
+            android:id="@+id/tambahDKT"
+            android:checked="false"
+            android:icon="@drawable/ic_tambah_sp"
+            android:title="Tambah Dokter Spesialis" />
+
+        <item
+            android:id="@+id/tambahImanuel"
+            android:checked="false"
+            android:icon="@drawable/ic_tambah_sp"
+            android:title="Tambah Dokter Spesialis" />
     </group>
 
 
@@ -41,7 +65,7 @@
             <item
                 android:id="@+id/logOut"
                 android:checked="false"
-                android:icon="@drawable/ic_person"
+                android:icon="@drawable/ic_logout"
                 android:title="Keluar" />
 
         </menu>

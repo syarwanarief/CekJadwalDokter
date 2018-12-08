@@ -15,9 +15,11 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -42,7 +44,7 @@ import mobile.project.cekjadwaldokter.paket.firebase.ModelRS;
 public class Home extends AppCompatActivity {
 
     //loginsession
-    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String MyPREFERENCES = "MyPrefs";
     public static final String Pass = "passKey";
     public static final String Emaill = "emailKey";
     SharedPreferences sharedpreferences;
@@ -53,114 +55,45 @@ public class Home extends AppCompatActivity {
     private Toolbar toolbar;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
-    boolean DoubleBackToExit = false;
 
     //flipper
     ViewFlipper v_flipper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         dialog = new ProgressDialog(this);
 
-        //flipper
-        int images[] = {R.drawable.img_phbs, R.drawable.img_tips, R.drawable.img_phbs};
-        v_flipper = findViewById(R.id.v_flipper);
-        for (int image : images) {
-            flipperImage(image);
+        //login akses tambah
+        NavigationView navigationView = (NavigationView) findViewById(R.id. navigation_view);
+        TextView textView = (TextView) navigationView.getHeaderView(0).findViewById(R.id.idAkun);
+        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        textView.setText(sharedpreferences.getString(Emaill, ""));
+        Menu nav_Menu = navigationView.getMenu();
+
+        if (textView.getText().toString() == "advent@gmail.com"){
+            nav_Menu.findItem(R.id.tambahAdvent).setVisible(true);
+
+        }else if (textView.equals("abdulmoeloek@gmail.com")){
+            nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(true);
+
+        }else if (textView.equals("bumiwaras@gmail.com")){
+            nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(true);
+
+        }else if (textView.equals("dkt@gmail.com")){
+            nav_Menu.findItem(R.id.tambahDKT).setVisible(true);
+
+        }else if (textView.equals("imanuel@gmail.com")){
+            nav_Menu.findItem(R.id.tambahImanuel).setVisible(true);
         }
-
-        dialog.setMessage("Mohon Tunggu...");
-        dialog.setIndeterminate(true);
-        dialog.show();
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listRS);
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Rumah Sakit");
-        reference.keepSynced(true);
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                list = new ArrayList<ModelRS>();
-
-                for (DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
-                    ModelRS model = new ModelRS();
-                    ModelRS value = dataSnapshot1.getValue(ModelRS.class);
-                    String vNamaRS = value.getNama();
-                    String vAlamatRS = value.getAlamat();
-                    String gambarRS = value.getImage();
-                    model.setNama(vNamaRS);
-                    model.setAlamat(vAlamatRS);
-                    model.setImage(gambarRS);
-                    list.add(model);
-
-                    RecyclerAdapterRS adapter = new RecyclerAdapterRS(list,Home.this);
-                    RecyclerView.LayoutManager layoutManager = new GridLayoutManager(Home.this,1);
-                    recyclerView.setLayoutManager(layoutManager);
-                    recyclerView.setItemAnimator(new DefaultItemAnimator());
-                    recyclerView.setAdapter(adapter);
-                    dialog.dismiss();
-
-                    adapter.setOnItemClick(new RecyclerAdapterRS.OnItemClick() {
-                        @Override
-                        public void getPosition(int pos) {
-                            if (pos == 0){
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "moeloek";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. Abdul Moeloek";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
-
-                            }else if (pos == 1){
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "advent";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. Advent";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
-                            }else if (pos == 2){
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();String string = "bumiwaras";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. Bumi Waras";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
-                            }else if (pos == 3){
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "dkt";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. DKT";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
-                            }else if (pos == 4){
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "imanuel";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. Imanuel";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
-                            }
-                        }
-                    });
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+        else{
+            nav_Menu.findItem(R.id.tambahAdvent).setVisible(false);
+            nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(false);
+            nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(false);
+            nav_Menu.findItem(R.id.tambahDKT).setVisible(false);
+            nav_Menu.findItem(R.id.tambahImanuel).setVisible(false);
+        }
 
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -185,9 +118,30 @@ public class Home extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                         return true;
-                    case R.id.tambah:
+                    case R.id.tambahAdvent:
                         Intent intent5 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        intent5.putExtra("keyTambah","Tambah Advent");
                         startActivity(intent5);
+                        return true;
+                    case R.id.tambahAbdulMoeloek:
+                        Intent intent6 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        intent6.putExtra("keyTambah","Tambah Moeloek");
+                        startActivity(intent6);
+                        return true;
+                    case R.id.tambahBumiWaras:
+                        Intent intent7 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        intent7.putExtra("keyTambah","Tambah Bumi Waras");
+                        startActivity(intent7);
+                        return true;
+                    case R.id.tambahDKT:
+                        Intent intent8 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        intent8.putExtra("keyTambah","Tambah DKT");
+                        startActivity(intent8);
+                        return true;
+                    case R.id.tambahImanuel:
+                        Intent intent9 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        intent9.putExtra("keyTambah","Tambah Imanuel");
+                        startActivity(intent9);
                         return true;
                     case R.id.musik:
                         Intent intent1 = new Intent(Home.this, Musik.class);
@@ -201,7 +155,7 @@ public class Home extends AppCompatActivity {
                         Intent intent3 = new Intent(Home.this, Tentang.class);
                         startActivity(intent3);
                         return true;
-                    case R.id.logOut:{
+                    case R.id.logOut: {
                         Intent intent4 = new Intent(Home.this, LoginActivity.class);
                         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedpreferences.edit();
@@ -220,14 +174,115 @@ public class Home extends AppCompatActivity {
             }
         });
 
+        //flipper
+        int images[] = {R.drawable.img_phbs, R.drawable.img_tips, R.drawable.img_phbs};
+        v_flipper = findViewById(R.id.v_flipper);
+        for (int image : images) {
+            flipperImage(image);
+        }
+
+        dialog.setMessage("Mohon Tunggu...");
+        dialog.setIndeterminate(true);
+        dialog.show();
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listRS);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Rumah Sakit");
+        reference.keepSynced(true);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                list = new ArrayList<ModelRS>();
+
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    ModelRS model = new ModelRS();
+                    ModelRS value = dataSnapshot1.getValue(ModelRS.class);
+                    String vNamaRS = value.getNama();
+                    String vAlamatRS = value.getAlamat();
+                    String gambarRS = value.getImage();
+                    model.setNama(vNamaRS);
+                    model.setAlamat(vAlamatRS);
+                    model.setImage(gambarRS);
+                    list.add(model);
+
+                    RecyclerAdapterRS adapter = new RecyclerAdapterRS(list, Home.this);
+                    RecyclerView.LayoutManager layoutManager = new GridLayoutManager(Home.this, 1);
+                    recyclerView.setLayoutManager(layoutManager);
+                    recyclerView.setItemAnimator(new DefaultItemAnimator());
+                    recyclerView.setAdapter(adapter);
+                    dialog.dismiss();
+
+                    adapter.setOnItemClick(new RecyclerAdapterRS.OnItemClick() {
+                        @Override
+                        public void getPosition(int pos) {
+                            if (pos == 0) {
+                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
+                                Bundle b = new Bundle();
+                                String string = "moeloek";
+                                b.putString("key", string);
+                                String string1 = "Dokter Spesialis RS. Abdul Moeloek";
+                                b.putString("key1", string1);
+                                intent.putExtras(b);
+                                startActivity(intent);
+
+                            } else if (pos == 1) {
+                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
+                                Bundle b = new Bundle();
+                                String string = "advent";
+                                b.putString("key", string);
+                                String string1 = "Dokter Spesialis RS. Advent";
+                                b.putString("key1", string1);
+                                intent.putExtras(b);
+                                startActivity(intent);
+                            } else if (pos == 2) {
+                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
+                                Bundle b = new Bundle();
+                                String string = "bumiwaras";
+                                b.putString("key", string);
+                                String string1 = "Dokter Spesialis RS. Bumi Waras";
+                                b.putString("key1", string1);
+                                intent.putExtras(b);
+                                startActivity(intent);
+                            } else if (pos == 3) {
+                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
+                                Bundle b = new Bundle();
+                                String string = "dkt";
+                                b.putString("key", string);
+                                String string1 = "Dokter Spesialis RS. DKT";
+                                b.putString("key1", string1);
+                                intent.putExtras(b);
+                                startActivity(intent);
+                            } else if (pos == 4) {
+                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
+                                Bundle b = new Bundle();
+                                String string = "imanuel";
+                                b.putString("key", string);
+                                String string1 = "Dokter Spesialis RS. Imanuel";
+                                b.putString("key1", string1);
+                                intent.putExtras(b);
+                                startActivity(intent);
+                            }
+                        }
+                    });
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         // Menginisasi Home Layout dan ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.openDrawer, R.string.closeDrawer){
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
             @Override
             public void onDrawerClosed(View drawerView) {
                 // Kode di sini akan merespons setelah drawer menutup disini kita biarkan kosong
                 super.onDrawerClosed(drawerView);
             }
+
             @Override
             public void onDrawerOpened(View drawerView) {
                 //  Kode di sini akan merespons setelah drawer terbuka disini kita biarkan kosong
@@ -241,7 +296,8 @@ public class Home extends AppCompatActivity {
     }
 
     boolean doubleBackToExitPressedOnce = false;
-    public void onBackPressed(){
+
+    public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
             return;
@@ -254,12 +310,12 @@ public class Home extends AppCompatActivity {
 
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
             }
         }, 2000);
     }
 
-    public void flipperImage (int image){
+    public void flipperImage(int image) {
         ImageView imageView = new ImageView(this);
         imageView.setBackgroundResource(image);
 

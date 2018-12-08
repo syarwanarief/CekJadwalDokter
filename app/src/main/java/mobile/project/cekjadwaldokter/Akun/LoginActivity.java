@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(LoginActivity.this, Home.class);
 
             // Sending Email to Dashboard Activity using intent.
-            intent.putExtra(userEmail,email);
+            intent.putExtra("email",email);
             startActivity(intent);
             finish();
     }
@@ -149,6 +149,9 @@ public class LoginActivity extends AppCompatActivity {
         editor.putString(Emaill, email);
         editor.putString(Pass, password);
         editor.commit();
+
+        Intent intent = new Intent(LoginActivity.this, Home.class);
+        intent.putExtra("email",email);
     }
 
     public void Daftar(View view) {
