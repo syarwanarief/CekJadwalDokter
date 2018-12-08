@@ -66,25 +66,31 @@ public class Home extends AppCompatActivity {
         dialog = new ProgressDialog(this);
 
         //login akses tambah
-        NavigationView navigationView = (NavigationView) findViewById(R.id. navigation_view);
+        navigationView = (NavigationView) findViewById(R.id. navigation_view);
         TextView textView = (TextView) navigationView.getHeaderView(0).findViewById(R.id.idAkun);
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         textView.setText(sharedpreferences.getString(Emaill, ""));
         Menu nav_Menu = navigationView.getMenu();
 
-        if (textView.getText().toString() == "advent@gmail.com"){
+        nav_Menu.findItem(R.id.tambahAdvent).setVisible(false);
+        nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(false);
+        nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(false);
+        nav_Menu.findItem(R.id.tambahDKT).setVisible(false);
+        nav_Menu.findItem(R.id.tambahImanuel).setVisible(false);
+
+        if (textView.getText().toString().trim().equals("advent@gmail.com")){
             nav_Menu.findItem(R.id.tambahAdvent).setVisible(true);
 
-        }else if (textView.equals("abdulmoeloek@gmail.com")){
+        }else if (textView.getText().toString().trim().equals("abdulmoeloek@gmail.com")){
             nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(true);
 
-        }else if (textView.equals("bumiwaras@gmail.com")){
+        }else if (textView.getText().toString().trim().equals("bumiwaras@gmail.com")){
             nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(true);
 
-        }else if (textView.equals("dkt@gmail.com")){
+        }else if (textView.getText().toString().trim().equals("dkt@gmail.com")){
             nav_Menu.findItem(R.id.tambahDKT).setVisible(true);
 
-        }else if (textView.equals("imanuel@gmail.com")){
+        }else if (textView.getText().toString().trim().equals("imanuel@gmail.com")){
             nav_Menu.findItem(R.id.tambahImanuel).setVisible(true);
         }
         else{

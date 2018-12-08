@@ -15,31 +15,31 @@
             android:id="@+id/tambahAdvent"
             android:checked="false"
             android:icon="@drawable/ic_tambah_sp"
-            android:title="Tambah Dokter Spesialis" />
+            android:title="Tambah Dokter Spesialis RS.Advent" />
 
         <item
             android:id="@+id/tambahAbdulMoeloek"
             android:checked="false"
             android:icon="@drawable/ic_tambah_sp"
-            android:title="Tambah Dokter Spesialis" />
+            android:title="Tambah Dokter Spesialis RS.Abdul Moeloek" />
 
         <item
             android:id="@+id/tambahBumiWaras"
             android:checked="false"
             android:icon="@drawable/ic_tambah_sp"
-            android:title="Tambah Dokter Spesialis" />
+            android:title="Tambah Dokter Spesialis RS.Bumi Waras" />
 
         <item
             android:id="@+id/tambahDKT"
             android:checked="false"
             android:icon="@drawable/ic_tambah_sp"
-            android:title="Tambah Dokter Spesialis" />
+            android:title="Tambah Dokter Spesialis RS.DKT" />
 
         <item
             android:id="@+id/tambahImanuel"
             android:checked="false"
             android:icon="@drawable/ic_tambah_sp"
-            android:title="Tambah Dokter Spesialis" />
+            android:title="Tambah Dokter Spesialis RS.Imanuel" />
     </group>
 
 
