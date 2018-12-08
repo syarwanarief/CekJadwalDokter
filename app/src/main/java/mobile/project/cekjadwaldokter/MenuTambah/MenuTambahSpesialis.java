@@ -26,13 +26,13 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import mobile.project.cekjadwaldokter.Akun.InfoAkun;
 import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.R;
-import mobile.project.cekjadwaldokter.TambahSpesialis;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterSpesialis;
 import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
 
@@ -80,6 +80,10 @@ public class MenuTambahSpesialis extends AppCompatActivity {
                         Intent intent = new Intent(MenuTambahSpesialis.this, Home.class);
                         startActivity(intent);
                         finish();
+                        return true;
+                        case R.id.akun:
+                        Intent intent10 = new Intent(MenuTambahSpesialis.this, InfoAkun.class);
+                        startActivity(intent10);
                         return true;
                     case R.id.tambahAdvent:
                         Intent intent5 = new Intent(MenuTambahSpesialis.this, MenuTambahSpesialis.class);

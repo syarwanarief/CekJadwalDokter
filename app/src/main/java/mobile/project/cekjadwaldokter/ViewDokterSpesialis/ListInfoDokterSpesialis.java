@@ -29,9 +29,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import mobile.project.cekjadwaldokter.Akun.InfoAkun;
 import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
+import mobile.project.cekjadwaldokter.MenuTambah.MenuTambahSpesialis;
 import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.R;
@@ -672,6 +674,35 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         Intent intent = new Intent(ListInfoDokterSpesialis.this, Home.class);
                         startActivity(intent);
                         finish();
+                        return true;
+                    case R.id.akun:
+                        Intent intent10 = new Intent(ListInfoDokterSpesialis.this, InfoAkun.class);
+                        startActivity(intent10);
+                        return true;
+                    case R.id.tambahAdvent:
+                        Intent intent5 = new Intent(ListInfoDokterSpesialis.this, MenuTambahSpesialis.class);
+                        intent5.putExtra("keyTambah","Tambah Advent");
+                        startActivity(intent5);
+                        return true;
+                    case R.id.tambahAbdulMoeloek:
+                        Intent intent6 = new Intent(ListInfoDokterSpesialis.this, MenuTambahSpesialis.class);
+                        intent6.putExtra("keyTambah","Tambah Moeloek");
+                        startActivity(intent6);
+                        return true;
+                    case R.id.tambahBumiWaras:
+                        Intent intent7 = new Intent(ListInfoDokterSpesialis.this, MenuTambahSpesialis.class);
+                        intent7.putExtra("keyTambah","Tambah Bumi Waras");
+                        startActivity(intent7);
+                        return true;
+                    case R.id.tambahDKT:
+                        Intent intent8 = new Intent(ListInfoDokterSpesialis.this, MenuTambahSpesialis.class);
+                        intent8.putExtra("keyTambah","Tambah DKT");
+                        startActivity(intent8);
+                        return true;
+                    case R.id.tambahImanuel:
+                        Intent intent9 = new Intent(ListInfoDokterSpesialis.this, MenuTambahSpesialis.class);
+                        intent9.putExtra("keyTambah","Tambah Imanuel");
+                        startActivity(intent9);
                         return true;
                     case R.id.musik:
                         Intent intent1 = new Intent(ListInfoDokterSpesialis.this, Musik.class);

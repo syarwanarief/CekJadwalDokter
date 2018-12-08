@@ -1,4 +1,4 @@
-package mobile.project.cekjadwaldokter;
+package mobile.project.cekjadwaldokter.MenuTambah;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import mobile.project.cekjadwaldokter.R;
 
 public class TambahSpesialis extends AppCompatActivity {
 

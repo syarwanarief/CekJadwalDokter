@@ -67,9 +67,10 @@
             android:label="Tentang" />
         <activity
             android:name=".MenuTambah.MenuTambahSpesialis"
-            android:label="Tambah Dokter Spesialis"
-            />
-        <activity android:name=".TambahSpesialis"></activity>
+            android:label="Tambah Dokter Spesialis" />
+        <activity android:name=".MenuTambah.TambahSpesialis" />
+        <activity android:name=".Akun.InfoAkun" />
+        <activity android:name=".Akun.UbahPassword"></activity>
     </application>
 
 </manifest>
