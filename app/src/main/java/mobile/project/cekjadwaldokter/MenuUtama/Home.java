@@ -23,6 +23,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -59,6 +64,7 @@ public class Home extends AppCompatActivity {
 
     //flipper
     ViewFlipper v_flipper;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +72,37 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         dialog = new ProgressDialog(this);
 
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        MobileAds.initialize(this, "ca-app-pub-3797575949971621~7107973295");
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
+        adView.setAdUnitId("ca-app-pub-3797575949971621/4334594008");
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+            }
+
+            @Override
+            public void onAdClosed() {
+                Toast.makeText(getApplicationContext(), "Ad is closed!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Toast.makeText(getApplicationContext(), "Ad failed to load! error code: " + errorCode, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                Toast.makeText(getApplicationContext(), "Ad left application!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         //login akses tambah
-        navigationView = (NavigationView) findViewById(R.id. navigation_view);
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
         TextView textView = (TextView) navigationView.getHeaderView(0).findViewById(R.id.idAkun);
         sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         textView.setText(sharedpreferences.getString(Emaill, ""));
@@ -79,22 +114,21 @@ public class Home extends AppCompatActivity {
         nav_Menu.findItem(R.id.tambahDKT).setVisible(false);
         nav_Menu.findItem(R.id.tambahImanuel).setVisible(false);
 
-        if (textView.getText().toString().trim().equals("advent@gmail.com")){
+        if (textView.getText().toString().trim().equals("advent@gmail.com")) {
             nav_Menu.findItem(R.id.tambahAdvent).setVisible(true);
 
-        }else if (textView.getText().toString().trim().equals("abdulmoeloek@gmail.com")){
+        } else if (textView.getText().toString().trim().equals("abdulmoeloek@gmail.com")) {
             nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(true);
 
-        }else if (textView.getText().toString().trim().equals("bumiwaras@gmail.com")){
+        } else if (textView.getText().toString().trim().equals("bumiwaras@gmail.com")) {
             nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(true);
 
-        }else if (textView.getText().toString().trim().equals("dkt@gmail.com")){
+        } else if (textView.getText().toString().trim().equals("dkt@gmail.com")) {
             nav_Menu.findItem(R.id.tambahDKT).setVisible(true);
 
-        }else if (textView.getText().toString().trim().equals("imanuel@gmail.com")){
+        } else if (textView.getText().toString().trim().equals("imanuel@gmail.com")) {
             nav_Menu.findItem(R.id.tambahImanuel).setVisible(true);
-        }
-        else{
+        } else {
             nav_Menu.findItem(R.id.tambahAdvent).setVisible(false);
             nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(false);
             nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(false);
@@ -131,27 +165,27 @@ public class Home extends AppCompatActivity {
                         return true;
                     case R.id.tambahAdvent:
                         Intent intent5 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent5.putExtra("keyTambah","Tambah Advent");
+                        intent5.putExtra("keyTambah", "Tambah Advent");
                         startActivity(intent5);
                         return true;
                     case R.id.tambahAbdulMoeloek:
                         Intent intent6 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent6.putExtra("keyTambah","Tambah Moeloek");
+                        intent6.putExtra("keyTambah", "Tambah Moeloek");
                         startActivity(intent6);
                         return true;
                     case R.id.tambahBumiWaras:
                         Intent intent7 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent7.putExtra("keyTambah","Tambah Bumi Waras");
+                        intent7.putExtra("keyTambah", "Tambah Bumi Waras");
                         startActivity(intent7);
                         return true;
                     case R.id.tambahDKT:
                         Intent intent8 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent8.putExtra("keyTambah","Tambah DKT");
+                        intent8.putExtra("keyTambah", "Tambah DKT");
                         startActivity(intent8);
                         return true;
                     case R.id.tambahImanuel:
                         Intent intent9 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent9.putExtra("keyTambah","Tambah Imanuel");
+                        intent9.putExtra("keyTambah", "Tambah Imanuel");
                         startActivity(intent9);
                         return true;
                     case R.id.musik:
@@ -336,5 +370,29 @@ public class Home extends AppCompatActivity {
 
         v_flipper.setInAnimation(this, android.R.anim.slide_in_left);
         v_flipper.setInAnimation(this, android.R.anim.slide_out_right);
+    }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
     }
 }
