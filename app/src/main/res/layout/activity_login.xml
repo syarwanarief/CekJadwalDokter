@@ -109,4 +109,16 @@
 
         </RelativeLayout>
 
+    <TextView
+        android:id="@+id/IdresetPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:text="Lupa Kata Sandi? \nReset Disini!"
+        android:textColor="#FF0DBFAC"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="14dp"/>
+
 </LinearLayout>

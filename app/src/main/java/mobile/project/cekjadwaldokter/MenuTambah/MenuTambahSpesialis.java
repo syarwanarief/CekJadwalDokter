@@ -13,6 +13,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -64,6 +65,13 @@ public class MenuTambahSpesialis extends AppCompatActivity {
 
         // Menginisiasi  NavigationView
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        Menu nav_Menu = navigationView.getMenu();
+        nav_Menu.findItem(R.id.tambahAdvent).setVisible(false);
+        nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(false);
+        nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(false);
+        nav_Menu.findItem(R.id.tambahDKT).setVisible(false);
+        nav_Menu.findItem(R.id.tambahImanuel).setVisible(false);
+
         //Mengatur Navigasi View Item yang akan dipanggil untuk menangani item klik menu navigasi
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             // This method will trigger on item Click of navigation menu

@@ -73,9 +73,12 @@
         <activity
             android:name=".MenuTambah.MenuTambahSpesialis"
             android:label="Tambah Dokter Spesialis" />
-        <activity android:name=".MenuTambah.TambahSpesialis" />
-        <activity android:name=".Akun.InfoAkun" />
-        <activity android:name=".Akun.UbahPassword"></activity>
+        <activity android:name=".MenuTambah.TambahSpesialis"
+            android:label="Tambah Spesialis"/>
+        <activity android:name=".Akun.InfoAkun"
+            android:label="Akun Anda"/>
+        <activity android:name=".Akun.UbahPassword"
+            android:label="Ubah Password"></activity>
     </application>
 
 </manifest>

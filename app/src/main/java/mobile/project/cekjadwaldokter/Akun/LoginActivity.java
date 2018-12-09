@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -74,6 +75,15 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
+        TextView resetPass = (TextView) findViewById(R.id.IdresetPass);
+        resetPass.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                senResetPass();
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -123,6 +133,25 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void senResetPass(){
+        email = Email.getText().toString().trim();
+        if (email.isEmpty()){
+            Log.d("EMAILTAG", "Isi Email Anda Pada Kolom Diatas");
+            Toast.makeText(LoginActivity.this, "Isi Email Anda Pada Kolom Diatas", Toast.LENGTH_SHORT).show();
+        }else {
+            FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(LoginActivity.this, "Sukses! \nPeriksa Email Anda Untuk Ubah Kata Sandi", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(LoginActivity.this, "Gagal, Email Belum Terdaftar \nSilahkan Daftar Terlebih Dahulu ", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
     }
 
     //This function helps in verifying whether the email is verified or not.
