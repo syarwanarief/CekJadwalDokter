@@ -2,11 +2,12 @@ package mobile.project.cekjadwaldokter.Akun;
 
 class User {
 
-    String DisplayName,NoTelp, EmailUser, Password;
+    String Photo, DisplayName,NoTelp, EmailUser, Password;
     long createdAt;
 
     public User(){};
-    public User(String displayName,String noTelp, String email, String password, final long createdAt){
+    public User(String photo, String displayName,String noTelp, String email, String password, final long createdAt){
+        this.Photo=photo;
         this.DisplayName=displayName;
         this.EmailUser=email;
         this.NoTelp=noTelp;
@@ -30,5 +31,13 @@ class User {
 
     public String getNoTelp() {
         return NoTelp;
+    }
+
+    public String getPhoto() {
+        return Photo;
+    }
+
+    public void setPhoto(String photo) {
+        Photo = photo;
     }
 }

@@ -1,7 +1,6 @@
 package mobile.project.cekjadwaldokter.ViewDokterSpesialis;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -30,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mobile.project.cekjadwaldokter.Akun.InfoAkun;
-import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuTambah.MenuTambahSpesialis;
@@ -716,18 +714,6 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         Intent intent3 = new Intent(ListInfoDokterSpesialis.this, Tentang.class);
                         startActivity(intent3);
                         return true;
-                    case R.id.logOut: {
-                        Intent intent4 = new Intent(ListInfoDokterSpesialis.this, LoginActivity.class);
-                        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedpreferences.edit();
-                        editor.remove(Emaill);
-                        editor.remove(Pass);
-                        editor.commit(); // commit changes
-
-                        startActivity(intent4);
-                        finish();
-                        return true;
-                    }
                     default:
                         Toast.makeText(getApplicationContext(), "Kesalahan Terjadi ", Toast.LENGTH_SHORT).show();
                         return true;

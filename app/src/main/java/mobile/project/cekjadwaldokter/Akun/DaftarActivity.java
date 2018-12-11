@@ -2,6 +2,7 @@ package mobile.project.cekjadwaldokter.Akun;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,7 +21,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
 import java.util.Date;
 
 import mobile.project.cekjadwaldokter.R;
@@ -31,7 +37,7 @@ public class DaftarActivity extends AppCompatActivity implements View.OnClickLis
     TextView mLoginPageBack;
     FirebaseAuth mAuth;
     DatabaseReference mdatabase;
-    String Name,Email,Password, NoTelp;
+    String Photo, Name,Email,Password, NoTelp;
     ProgressDialog mDialog;
 
     @Override
@@ -120,6 +126,37 @@ public class DaftarActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    private void uploadProfileImage(){
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final StorageReference mStorageReference = FirebaseStorage.getInstance()
+                .getReference()
+                .child( "Users" +
+                         user.getUid()+
+                        Photo.substring( Photo.lastIndexOf( "." ) ) );
+
+        UploadTask uploadTask = ((StorageReference) mStorageReference).putFile( Uri.fromFile( new File( Photo ) ) );
+        uploadTask.continueWithTask( new Continuation< UploadTask.TaskSnapshot, Task< Uri > >(){
+            @Override
+            public Task< Uri > then( @NonNull Task< UploadTask.TaskSnapshot > task ) throws Exception{
+                if( !task.isSuccessful() )
+                    throw task.getException();
+
+                return mStorageReference.getDownloadUrl();
+            }
+        } ).addOnCompleteListener( new OnCompleteListener< Uri >(){
+            @Override
+            public void onComplete( @NonNull Task<Uri> task ){
+                if( task.isSuccessful() ){
+                    Photo = task.getResult().toString();
+                    FirebaseDatabase.getInstance().getReference( "Users" )
+                            .child( user.getUid() )
+                            .child( "image" )
+                            .setValue( Photo );
+                }
+            }
+        } );
+    }
+
     private void OnAuth(FirebaseUser user) {
         createAnewUser(user.getUid());
     }
@@ -133,11 +170,16 @@ public class DaftarActivity extends AppCompatActivity implements View.OnClickLis
     private User BuildNewuser(){
         return new User(
                 getDisplayName(),
+                getPhoto(),
                 getNoTelp(),
                 getUserEmail(),
                 getPassword(),
                 new Date().getTime()
         );
+    }
+
+    public String getPhoto(){
+        return Photo;
     }
 
     public String getDisplayName() {

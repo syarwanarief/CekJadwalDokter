@@ -1,15 +1,14 @@
 package mobile.project.cekjadwaldokter.DaftarDokterSpesialis;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -29,14 +28,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mobile.project.cekjadwaldokter.Akun.InfoAkun;
-import mobile.project.cekjadwaldokter.Akun.LoginActivity;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuTambah.MenuTambahSpesialis;
-import mobile.project.cekjadwaldokter.MenuUtama.Musik;
-import mobile.project.cekjadwaldokter.ViewDokterSpesialis.ListInfoDokterSpesialis;
 import mobile.project.cekjadwaldokter.MenuUtama.Home;
+import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.R;
+import mobile.project.cekjadwaldokter.ViewDokterSpesialis.ListInfoDokterSpesialis;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterSpesialis;
 import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
 
@@ -655,18 +653,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         Intent intent3 = new Intent(ListDokterSpesialis.this, Tentang.class);
                         startActivity(intent3);
                         return true;
-                    case R.id.logOut:{
-                        Intent intent4 = new Intent(ListDokterSpesialis.this, LoginActivity.class);
-                        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedpreferences.edit();
-                        editor.remove(Emaill);
-                        editor.remove(Pass);
-                        editor.commit(); // commit changes
 
-                        startActivity(intent4);
-                        finish();
-                        return true;
-                    }
                     default:
                         Toast.makeText(getApplicationContext(),"Kesalahan Terjadi ",Toast.LENGTH_SHORT).show();
                         return true;
