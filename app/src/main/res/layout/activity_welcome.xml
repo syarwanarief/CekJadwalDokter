@@ -3,35 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FF0DBFAC"
     tools:context=".SplashScreen.WelcomeActivity">
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff">
+    android:layout_marginBottom="15pt">
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:id="@+id/logoApp"
+        android:layout_width="50pt"
+        android:layout_height="50pt"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:src="@drawable/icon_applikasi"
         android:foregroundGravity="center"/>
-
-    <ImageView
-        android:id="@+id/tekno"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentBottom="true"
-        android:src="@mipmap/icon_tekno" />
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:src="@mipmap/icon_ff" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CEK JADWAL DOKTER"
+        android:gravity="center"
+        android:textSize="8pt"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_below="@id/logoApp"/>
 </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/tekno"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/icon_tekno" />
+
+        <ImageView
+            android:id="@+id/dev"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/icon_ff" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
