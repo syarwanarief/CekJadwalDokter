@@ -25,7 +25,6 @@ import android.widget.ViewFlipper;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.database.DataSnapshot;
@@ -71,17 +70,16 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         dialog = new ProgressDialog(this);
 
+        MobileAds.initialize(this, "ca-app-pub-3797575949971621~7107973295");
+
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-        MobileAds.initialize(this, "ca-app-pub-3797575949971621~7107973295");
-        AdView adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3797575949971621/4334594008");
 
         mAdView.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
+
             }
 
             @Override

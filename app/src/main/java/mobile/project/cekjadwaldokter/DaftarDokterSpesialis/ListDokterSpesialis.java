@@ -13,11 +13,14 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -55,11 +58,29 @@ public class ListDokterSpesialis extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_dokter_spesialis);
+
         ActionBar actionBar = getSupportActionBar();
         Bundle extras = getIntent().getExtras();
         String bundle = extras.getString("key");
         TextView textView = (TextView) findViewById(R.id.vtext);
         textView.setText(extras.getString("key1"));
+
+        //hide menu tambah
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        Menu nav_Menu = navigationView.getMenu();
+
+        nav_Menu.findItem(R.id.tambahAdvent).setVisible(false);
+        nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(false);
+        nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(false);
+        nav_Menu.findItem(R.id.tambahDKT).setVisible(false);
+        nav_Menu.findItem(R.id.tambahImanuel).setVisible(false);
+
+        TextView emailDrawer = (TextView) navigationView.getHeaderView(0).findViewById(R.id.idAkun);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null){
+            emailDrawer.setText(user.getEmail());
+        }
 
         //display data here
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.idSpesialis);

@@ -42,21 +42,22 @@ public class InfoAkun extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_akun);
 
-
+        navigationView = (NavigationView) findViewById(R.id.navigation_view);
         TextView nama = (TextView)findViewById(R.id.displayNama);
         TextView email = (TextView)findViewById(R.id.Displayemail);
+        TextView textView = (TextView) navigationView.getHeaderView(0).findViewById(R.id.idAkun);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null){
             nama.setText(user.getDisplayName());
             email.setText(user.getEmail());
+            textView.setText(user.getEmail());
         }
 
         //sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
         //textView.setText(sharedpreferences.getString(Emaill, ""));
 
         //hide menu tambah
-        navigationView = (NavigationView) findViewById(R.id.navigation_view);
         Menu nav_Menu = navigationView.getMenu();
 
         nav_Menu.findItem(R.id.tambahAdvent).setVisible(false);
