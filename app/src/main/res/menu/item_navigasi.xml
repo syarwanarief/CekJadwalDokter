@@ -12,6 +12,11 @@
             android:icon="@drawable/ic_person"
             android:title="Akun" />
         <item
+            android:id="@+id/maps"
+            android:checked="false"
+            android:icon="@drawable/ic_lokasi"
+            android:title="Lokasi" />
+        <item
             android:id="@+id/tambahAdvent"
             android:checked="false"
             android:icon="@drawable/ic_tambah_sp"

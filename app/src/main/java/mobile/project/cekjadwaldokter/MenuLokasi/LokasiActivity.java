@@ -1,11 +1,12 @@
-package mobile.project.cekjadwaldokter.MenuUtama;
+package mobile.project.cekjadwaldokter.MenuLokasi;
 
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -18,7 +19,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
@@ -37,16 +37,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mobile.project.cekjadwaldokter.Akun.InfoAkun;
-import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.ListDokterSpesialis;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
-import mobile.project.cekjadwaldokter.MenuLokasi.LokasiActivity;
-import mobile.project.cekjadwaldokter.MenuTambah.MenuTambahSpesialis;
+import mobile.project.cekjadwaldokter.MenuUtama.Home;
+import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterRS;
 import mobile.project.cekjadwaldokter.paket.firebase.ModelRS;
 
-public class Home extends AppCompatActivity {
+public class LokasiActivity extends AppCompatActivity {
 
     //loginsession
     public static final String MyPREFERENCES = "MyPrefs";
@@ -63,20 +62,22 @@ public class Home extends AppCompatActivity {
 
     //flipper
     ViewFlipper v_flipper;
-    private AdView mAdView;
+    private AdView mAdView, adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_lokasi);
 
         dialog = new ProgressDialog(this);
 
         MobileAds.initialize(this, "ca-app-pub-3797575949971621~7107973295");
 
         mAdView = findViewById(R.id.adView);
+        adView = findViewById(R.id.adView2);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
+        adView.loadAd(adRequest);
 
         mAdView.setAdListener(new AdListener() {
             @Override
@@ -113,28 +114,6 @@ public class Home extends AppCompatActivity {
         nav_Menu.findItem(R.id.tambahDKT).setVisible(false);
         nav_Menu.findItem(R.id.tambahImanuel).setVisible(false);
 
-        if (textView.getText().toString().trim().equals("advent@gmail.com")) {
-            nav_Menu.findItem(R.id.tambahAdvent).setVisible(true);
-
-        } else if (textView.getText().toString().trim().equals("abdulmoeloek@gmail.com")) {
-            nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(true);
-
-        } else if (textView.getText().toString().trim().equals("bumiwaras@gmail.com")) {
-            nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(true);
-
-        } else if (textView.getText().toString().trim().equals("dkt@gmail.com")) {
-            nav_Menu.findItem(R.id.tambahDKT).setVisible(true);
-
-        } else if (textView.getText().toString().trim().equals("imanuel@gmail.com")) {
-            nav_Menu.findItem(R.id.tambahImanuel).setVisible(true);
-        } else {
-            nav_Menu.findItem(R.id.tambahAdvent).setVisible(false);
-            nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(false);
-            nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(false);
-            nav_Menu.findItem(R.id.tambahDKT).setVisible(false);
-            nav_Menu.findItem(R.id.tambahImanuel).setVisible(false);
-        }
-
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -154,53 +133,29 @@ public class Home extends AppCompatActivity {
                 //Memeriksa untuk melihat item yang akan dilklik dan melalukan aksi
                 switch (menuItem.getItemId()) {
                     case R.id.beranda:
-                        Intent intent = new Intent(Home.this, Home.class);
+                        Intent intent = new Intent(LokasiActivity.this, Home.class);
                         startActivity(intent);
                         finish();
                         return true;
                     case R.id.akun:
-                        Intent intent10 = new Intent(Home.this, InfoAkun.class);
+                        Intent intent10 = new Intent(LokasiActivity.this, InfoAkun.class);
                         startActivity(intent10);
                         return true;
                     case R.id.maps:
-                        Intent intent11 = new Intent(Home.this, LokasiActivity.class);
+                        Intent intent11 = new Intent(LokasiActivity.this, InfoAkun.class);
                         startActivity(intent11);
-                        return true;
-                    case R.id.tambahAdvent:
-                        Intent intent5 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent5.putExtra("keyTambah", "Tambah Advent");
-                        startActivity(intent5);
-                        return true;
-                    case R.id.tambahAbdulMoeloek:
-                        Intent intent6 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent6.putExtra("keyTambah", "Tambah Moeloek");
-                        startActivity(intent6);
-                        return true;
-                    case R.id.tambahBumiWaras:
-                        Intent intent7 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent7.putExtra("keyTambah", "Tambah Bumi Waras");
-                        startActivity(intent7);
-                        return true;
-                    case R.id.tambahDKT:
-                        Intent intent8 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent8.putExtra("keyTambah", "Tambah DKT");
-                        startActivity(intent8);
-                        return true;
-                    case R.id.tambahImanuel:
-                        Intent intent9 = new Intent(Home.this, MenuTambahSpesialis.class);
-                        intent9.putExtra("keyTambah", "Tambah Imanuel");
-                        startActivity(intent9);
+                        finish();
                         return true;
                     case R.id.musik:
-                        Intent intent1 = new Intent(Home.this, Musik.class);
+                        Intent intent1 = new Intent(LokasiActivity.this, Musik.class);
                         startActivity(intent1);
                         return true;
                     case R.id.bantuan:
-                        Intent intent2 = new Intent(Home.this, Bantuan.class);
+                        Intent intent2 = new Intent(LokasiActivity.this, Bantuan.class);
                         startActivity(intent2);
                         return true;
                     case R.id.tentang:
-                        Intent intent3 = new Intent(Home.this, Tentang.class);
+                        Intent intent3 = new Intent(LokasiActivity.this, Tentang.class);
                         startActivity(intent3);
                         return true;
                     default:
@@ -209,13 +164,6 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
-
-        //flipper
-        int images[] = {R.drawable.img_phbs, R.drawable.img_tips, R.drawable.img_phbs};
-        v_flipper = findViewById(R.id.v_flipper);
-        for (int image : images) {
-            flipperImage(image);
-        }
 
         dialog.setMessage("Mohon Tunggu...");
         dialog.setIndeterminate(true);
@@ -240,8 +188,8 @@ public class Home extends AppCompatActivity {
                     model.setImage(gambarRS);
                     list.add(model);
 
-                    RecyclerAdapterRS adapter = new RecyclerAdapterRS(list, Home.this);
-                    RecyclerView.LayoutManager layoutManager = new GridLayoutManager(Home.this, 1);
+                    RecyclerAdapterRS adapter = new RecyclerAdapterRS(list, LokasiActivity.this);
+                    RecyclerView.LayoutManager layoutManager = new GridLayoutManager(LokasiActivity.this, 1);
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setAdapter(adapter);
@@ -250,52 +198,133 @@ public class Home extends AppCompatActivity {
                     adapter.setOnItemClick(new RecyclerAdapterRS.OnItemClick() {
                         @Override
                         public void getPosition(int pos) {
-                            if (pos == 0) {
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "moeloek";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. Abdul Moeloek";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
+                            switch (pos){
+                                case 0:{
+                                    //code navigation
+                                    /*Uri uri = Uri.parse("google.navigation:q=" + 12f + "," + 2f + " (" + "RSUD Dr.H Abdul Moeloek" + ")");
+                                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, uri);
+                                    mapIntent.setPackage("com.google.android.apps.maps");*/
+                                    //startActivity(mapIntent);
+                                    String uri = "http://maps.google.com/maps?daddr=" + 12f + "," + 2f + "RSUD Dr.H Abdul Moelok";
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                    intent.setPackage("com.google.android.apps.maps");
 
-                            } else if (pos == 1) {
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "advent";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. Advent";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
-                            } else if (pos == 2) {
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "bumiwaras";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. Bumi Waras";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
-                            } else if (pos == 3) {
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "dkt";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. DKT";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
-                            } else if (pos == 4) {
-                                Intent intent = new Intent(Home.this, ListDokterSpesialis.class);
-                                Bundle b = new Bundle();
-                                String string = "imanuel";
-                                b.putString("key", string);
-                                String string1 = "Dokter Spesialis RS. Imanuel";
-                                b.putString("key1", string1);
-                                intent.putExtras(b);
-                                startActivity(intent);
+                                    try
+                                    {
+                                        startActivity(intent);
+                                    }
+                                    catch(ActivityNotFoundException ex)
+                                    {
+                                        try
+                                        {
+                                            Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                            startActivity(unrestrictedIntent);
+                                        }
+                                        catch(ActivityNotFoundException innerEx)
+                                        {
+                                            Toast.makeText(LokasiActivity.this, "Silahkan Install Aplikasi Maps Terlebih Dahulu", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                    break;
+
+                                }case 1:{
+
+                                    String uri = "http://maps.google.com/maps?daddr=" + 12f + "," + 2f + "Rumah Sakit Advent Bandar Lampung";
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                    intent.setPackage("com.google.android.apps.maps");
+
+                                    try
+                                    {
+                                        startActivity(intent);
+                                    }
+                                    catch(ActivityNotFoundException ex)
+                                    {
+                                        try
+                                        {
+                                            Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                            startActivity(unrestrictedIntent);
+                                        }
+                                        catch(ActivityNotFoundException innerEx)
+                                        {
+                                            Toast.makeText(LokasiActivity.this, "Silahkan Install Aplikasi Maps Terlebih Dahulu", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                    break;
+
+                                }case 2:{
+
+                                    String uri = "http://maps.google.com/maps?daddr=" + "Rumah Sakit Bumi Waras";
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                    intent.setPackage("com.google.android.apps.maps");
+
+                                    try
+                                    {
+                                        startActivity(intent);
+                                    }
+                                    catch(ActivityNotFoundException ex)
+                                    {
+                                        try
+                                        {
+                                            Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                            startActivity(unrestrictedIntent);
+                                        }
+                                        catch(ActivityNotFoundException innerEx)
+                                        {
+                                            Toast.makeText(LokasiActivity.this, "Silahkan Install Aplikasi Maps Terlebih Dahulu", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                    break;
+
+                                }case 3:{
+
+                                    String uri = "http://maps.google.com/maps?daddr=" + "Rumah Sakit DKT";
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                    intent.setPackage("com.google.android.apps.maps");
+
+                                    try
+                                    {
+                                        startActivity(intent);
+                                    }
+                                    catch(ActivityNotFoundException ex)
+                                    {
+                                        try
+                                        {
+                                            Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                            startActivity(unrestrictedIntent);
+                                        }
+                                        catch(ActivityNotFoundException innerEx)
+                                        {
+                                            Toast.makeText(LokasiActivity.this, "Silahkan Install Aplikasi Maps Terlebih Dahulu", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                    break;
+
+                                }case 4:{
+
+                                    String uri = "http://maps.google.com/maps?daddr=" + "Rumah Sakit Imanuel Way Halim";
+                                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                    intent.setPackage("com.google.android.apps.maps");
+
+                                    try
+                                    {
+                                        startActivity(intent);
+                                    }
+                                    catch(ActivityNotFoundException ex)
+                                    {
+                                        try
+                                        {
+                                            Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                                            startActivity(unrestrictedIntent);
+                                        }
+                                        catch(ActivityNotFoundException innerEx)
+                                        {
+                                            Toast.makeText(LokasiActivity.this, "Silahkan Install Aplikasi Maps Terlebih Dahulu", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                    break;
+
+                                }default:
+                                    return;
                             }
                         }
                     });
@@ -329,61 +358,5 @@ public class Home extends AppCompatActivity {
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
         //memanggil synstate
         actionBarDrawerToggle.syncState();
-    }
-
-    boolean doubleBackToExitPressedOnce = false;
-
-    public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
-            super.onBackPressed();
-            return;
-        }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Tekan Kembali Untuk Keluar Aplikasi", Toast.LENGTH_SHORT).show();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce = false;
-            }
-        }, 2000);
-    }
-
-    public void flipperImage(int image) {
-        ImageView imageView = new ImageView(this);
-        imageView.setBackgroundResource(image);
-
-        v_flipper.addView(imageView);
-        v_flipper.setFlipInterval(5000);
-        v_flipper.setAutoStart(true);
-
-        v_flipper.setInAnimation(this, android.R.anim.slide_in_left);
-        v_flipper.setInAnimation(this, android.R.anim.slide_out_right);
-    }
-
-    @Override
-    public void onPause() {
-        if (mAdView != null) {
-            mAdView.pause();
-        }
-        super.onPause();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (mAdView != null) {
-            mAdView.resume();
-        }
-    }
-
-    @Override
-    public void onDestroy() {
-        if (mAdView != null) {
-            mAdView.destroy();
-        }
-        super.onDestroy();
     }
 }

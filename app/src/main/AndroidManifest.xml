@@ -23,10 +23,12 @@
         android:roundIcon="@drawable/icon_applikasi"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.ca-app-pub-3797575949971621~7107973295"
-            android:value="[ca-app-pub-3797575949971621~7107973295]"/>
+            android:value="[ca-app-pub-3797575949971621~7107973295]" />
+
         <activity
             android:name=".SplashScreen.WelcomeActivity"
             android:screenOrientation="portrait">
@@ -73,12 +75,16 @@
         <activity
             android:name=".MenuTambah.MenuTambahSpesialis"
             android:label="Tambah Dokter Spesialis" />
-        <activity android:name=".MenuTambah.TambahSpesialis"
-            android:label="Tambah Spesialis"/>
-        <activity android:name=".Akun.InfoAkun"
-            android:label="Akun Anda"/>
-        <activity android:name=".Akun.UbahPassword"
-            android:label="Ubah Password"></activity>
+        <activity
+            android:name=".MenuTambah.TambahSpesialis"
+            android:label="Tambah Spesialis" />
+        <activity
+            android:name=".Akun.InfoAkun"
+            android:label="Akun Anda" />
+        <activity
+            android:name=".Akun.UbahPassword"
+            android:label="Ubah Password" />
+        <activity android:name=".MenuLokasi.LokasiActivity"></activity>
     </application>
 
 </manifest>
