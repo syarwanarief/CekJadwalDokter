@@ -42,7 +42,7 @@ import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.ListDokterSpesialis;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuLokasi.LokasiActivity;
-import mobile.project.cekjadwaldokter.MenuTambah.MenuTambahSpesialis;
+import mobile.project.cekjadwaldokter.MenuTambah.TambahSpesialisAdvent;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterRS;
 import mobile.project.cekjadwaldokter.paket.firebase.ModelRS;
@@ -169,27 +169,27 @@ public class Home extends AppCompatActivity {
                         startActivity(intent11);
                         return true;
                     case R.id.tambahAdvent:
-                        Intent intent5 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        Intent intent5 = new Intent(Home.this, TambahSpesialisAdvent.class);
                         intent5.putExtra("keyTambah", "Tambah Advent");
                         startActivity(intent5);
                         return true;
                     case R.id.tambahAbdulMoeloek:
-                        Intent intent6 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        Intent intent6 = new Intent(Home.this, TambahSpesialisAdvent.class);
                         intent6.putExtra("keyTambah", "Tambah Moeloek");
                         startActivity(intent6);
                         return true;
                     case R.id.tambahBumiWaras:
-                        Intent intent7 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        Intent intent7 = new Intent(Home.this, TambahSpesialisAdvent.class);
                         intent7.putExtra("keyTambah", "Tambah Bumi Waras");
                         startActivity(intent7);
                         return true;
                     case R.id.tambahDKT:
-                        Intent intent8 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        Intent intent8 = new Intent(Home.this, TambahSpesialisAdvent.class);
                         intent8.putExtra("keyTambah", "Tambah DKT");
                         startActivity(intent8);
                         return true;
                     case R.id.tambahImanuel:
-                        Intent intent9 = new Intent(Home.this, MenuTambahSpesialis.class);
+                        Intent intent9 = new Intent(Home.this, TambahSpesialisAdvent.class);
                         intent9.putExtra("keyTambah", "Tambah Imanuel");
                         startActivity(intent9);
                         return true;

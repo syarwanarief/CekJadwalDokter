@@ -28,6 +28,22 @@
     <string name="TempDadi">title</string>
     <string name="TempDKT">title</string>
 
+    <string-array name="pilihSpesialis">
+        <item> </item>
+        <item>Spesialis Syaraf</item>
+        <item>Spesialis Radiologi</item>
+        <item>Spesialis Bedah Tulang</item>
+        <item>Spesialis Kulit Dan Kelamin</item>
+        <item>Spesialis Bedah Saluran Kemih</item>
+        <item>Spesialis Gigi</item>
+        <item>Spesialis Bedah Umum</item>
+        <item>Spesialis Penyakit Dalam</item>
+        <item>Spesialis Mata</item>
+        <item>Spesialis THT</item>
+        <item>Spesialis Anak</item>
+        <item>Spesialis Kandungan dan Kebidanan</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

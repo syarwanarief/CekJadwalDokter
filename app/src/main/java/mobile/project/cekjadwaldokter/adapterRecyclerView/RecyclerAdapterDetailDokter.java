@@ -5,10 +5,13 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -39,13 +42,46 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         ModelInfoSpesialis mylist = list.get(position);
 
         holder.Hari.setText(mylist.getHari());
         holder.Poli.setText(mylist.getPoli());
         holder.Jam.setText(mylist.getJam());
         holder.NamaDokter.setText(mylist.getNamaDokter());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                onItemClick.getPosition(position);
+
+                //creating a popup menu
+                PopupMenu popup = new PopupMenu(context, holder.view);
+                //inflating menu from xml resource
+                popup.inflate(R.menu.menu_long_click);
+                //adding click listener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.edit:
+                                //handle menu1 click
+                                Toast.makeText(context.getApplicationContext(), "Edit ", Toast.LENGTH_SHORT).show();
+                                return true;
+                            case R.id.delete:
+                                //handle menu2 click
+                                Toast.makeText(context.getApplicationContext(), "Hapus ", Toast.LENGTH_SHORT).show();
+                                return true;
+                            default:
+                                Toast.makeText(context.getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
+                                return false;
+                        }
+                    }
+                });
+                //displaying the popup
+                popup.show();
+            }
+        });
 
         if (warna.equals("advent")) {
             if (position == 0) {

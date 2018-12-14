@@ -5,30 +5,31 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Akun.LoginActivity"
-    android:background="#fff"
+    android:background="#FF0DBFAC"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="22pt"
+        android:layout_marginTop="5pt">
 
         <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="20pt"
+            android:layout_height="20pt"
             android:src="@drawable/icon_applikasi"
             android:layout_centerInParent="true"/>
 
         <TextView
             android:id="@+id/idDaftar"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="15pt"
             android:text="Daftar"
-            android:textColor="#FF0DBFAC"
+            android:textColor="#000"
             android:textStyle="bold"
+            android:textSize="8pt"
             android:layout_alignParentEnd="true"
             android:gravity="center|center_vertical"
-            android:paddingRight="10dp"
+            android:paddingRight="5pt"
             android:onClick="Daftar"/>
 
     </RelativeLayout>
@@ -36,39 +37,39 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="6pt"
+        android:layout_marginTop="10pt"
         android:text="Masuk Ke Cek Jadwal Dokter."
         android:textStyle="bold"
         android:textColor="#000"
-        android:textSize="20dp"/>
+        android:textSize="9pt"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="15pt"
         android:text="Masukan Email"
         android:textColor="#000"
-        android:textSize="14dp"/>
+        android:textSize="7pt"/>
 
     <EditText
         android:id="@+id/idEmailMasuk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
+        android:paddingRight="5pt"
+        android:paddingLeft="5pt"
         android:inputType="textEmailAddress"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="10pt"
         android:text="Kata Sandi"
         android:textColor="#000"
-        android:textSize="14dp"/>
+        android:textSize="7pt"/>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -82,8 +83,8 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Password"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"/>
+            android:paddingRight="5pt"
+            android:paddingLeft="5pt"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -92,19 +93,19 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="10dp">
+            android:paddingTop="5pt">
 
             <Button
                 android:id="@+id/idLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#FF0DBFAC"
+                android:background="#b3ffff"
                 android:layout_marginRight="10dp"
                 android:layout_centerInParent="true"
                 android:text="Masuk"
                 android:textStyle="bold"
                 android:textColor="#000"
-                android:textSize="16dp"
+                android:textSize="8pt"
                 android:onClick="Masuk"/>
 
         </RelativeLayout>
@@ -113,12 +114,12 @@
         android:id="@+id/IdresetPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5pt"
+        android:layout_marginTop="15pt"
         android:text="Lupa Kata Sandi? \nReset Disini!"
-        android:textColor="#FF0DBFAC"
+        android:textColor="#000"
         android:gravity="center"
         android:textStyle="bold"
-        android:textSize="14dp"/>
+        android:textSize="7pt"/>
 
 </LinearLayout>

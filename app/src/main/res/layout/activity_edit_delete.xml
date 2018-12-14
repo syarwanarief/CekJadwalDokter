@@ -2,28 +2,32 @@
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer"
+    android:background="#FF0DBFAC"
     android:fitsSystemWindows="true"
-    tools:context=".MenuTambah.MenuTambahSpesialis">
+    tools:context=".EditDeleteActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FF0DBFAC"
+        android:measureWithLargestChild="false"
         android:orientation="vertical">
 
         <include
             android:id="@+id/toolbar"
-            layout="@layout/layout_toolbar"/>
+            layout="@layout/layout_toolbar" />
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/menuTambahSP"
+
+            android:id="@+id/infoSpesialis"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="2pt">
 
         </android.support.v7.widget.RecyclerView>
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -32,6 +36,5 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/layout_header"
-        app:menu="@menu/item_navigasi"/>
-
+        app:menu="@menu/item_navigasi" />
 </android.support.v4.widget.DrawerLayout>

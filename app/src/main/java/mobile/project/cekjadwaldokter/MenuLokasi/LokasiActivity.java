@@ -42,6 +42,7 @@ import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.R;
+import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterLokasi;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterRS;
 import mobile.project.cekjadwaldokter.paket.firebase.ModelRS;
 
@@ -181,15 +182,14 @@ public class LokasiActivity extends AppCompatActivity {
                     ModelRS model = new ModelRS();
                     ModelRS value = dataSnapshot1.getValue(ModelRS.class);
                     String vNamaRS = value.getNama();
-                    String vAlamatRS = value.getAlamat();
                     String gambarRS = value.getImage();
                     model.setNama(vNamaRS);
-                    model.setAlamat(vAlamatRS);
                     model.setImage(gambarRS);
                     list.add(model);
 
-                    RecyclerAdapterRS adapter = new RecyclerAdapterRS(list, LokasiActivity.this);
-                    RecyclerView.LayoutManager layoutManager = new GridLayoutManager(LokasiActivity.this, 1);
+                    RecyclerAdapterLokasi adapter = new RecyclerAdapterLokasi(list, LokasiActivity.this) {
+                    };
+                    RecyclerView.LayoutManager layoutManager = new GridLayoutManager(LokasiActivity.this, 2);
                     recyclerView.setLayoutManager(layoutManager);
                     recyclerView.setItemAnimator(new DefaultItemAnimator());
                     recyclerView.setAdapter(adapter);
