@@ -96,18 +96,22 @@ public class InfoAkun extends AppCompatActivity {
                     case R.id.maps:
                         Intent intent11 = new Intent(InfoAkun.this, LokasiActivity.class);
                         startActivity(intent11);
+                        finish();
                         return true;
                     case R.id.musik:
                         Intent intent1 = new Intent(InfoAkun.this, Musik.class);
                         startActivity(intent1);
+                        finish();
                         return true;
                     case R.id.bantuan:
                         Intent intent2 = new Intent(InfoAkun.this, Bantuan.class);
                         startActivity(intent2);
+                        finish();
                         return true;
                     case R.id.tentang:
                         Intent intent3 = new Intent(InfoAkun.this, Tentang.class);
                         startActivity(intent3);
+                        finish();
                         return true;
                     default:
                         Toast.makeText(getApplicationContext(), "Kesalahan Terjadi ", Toast.LENGTH_SHORT).show();

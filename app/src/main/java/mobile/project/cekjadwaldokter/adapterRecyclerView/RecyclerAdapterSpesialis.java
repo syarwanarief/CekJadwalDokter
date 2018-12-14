@@ -1,6 +1,7 @@
 package mobile.project.cekjadwaldokter.adapterRecyclerView;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -22,6 +23,15 @@ public class RecyclerAdapterSpesialis extends RecyclerView.Adapter<RecyclerAdapt
 
     List<FirebaseModelListSpesialis> list;
     Context context;
+    String warna;
+
+    public String getWarna() {
+        return warna;
+    }
+
+    public void setWarna(String warna) {
+        this.warna = warna;
+    }
 
     public RecyclerAdapterSpesialis(List<FirebaseModelListSpesialis> list, Context context) {
         this.list = list;
@@ -31,7 +41,7 @@ public class RecyclerAdapterSpesialis extends RecyclerView.Adapter<RecyclerAdapt
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_list_spesialis,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_list_spesialis, parent, false);
         ViewHolder myHoder = new ViewHolder(view);
 
         return myHoder;
@@ -49,7 +59,37 @@ public class RecyclerAdapterSpesialis extends RecyclerView.Adapter<RecyclerAdapt
                 onItemClick.getPosition(position);
             }
         });
-
+        if (warna.equals("advent")) {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#99ffbb"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#99ffbb"));
+            }
+        } else if (warna.equals("bumiwaras")) {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#99ffff"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#99ffff"));
+            }
+        }else if (warna.equals("dkt")) {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#adebad"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#adebad"));
+            }
+        }else if (warna.equals("imanuel")) {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#99ccff"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#99ccff"));
+            }
+        }else{
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#ffffb3"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#ffffb3"));
+            }
+        }
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -70,15 +110,14 @@ public class RecyclerAdapterSpesialis extends RecyclerView.Adapter<RecyclerAdapt
     public int getItemCount() {
         int arr = 0;
 
-        try{
-            if(list.size()==0){
+        try {
+            if (list.size() == 0) {
                 arr = 0;
-            }
-            else{
+            } else {
 
-                arr=list.size();
+                arr = list.size();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
         }
         return arr;
     }

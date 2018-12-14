@@ -49,8 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="10pt"
-            android:layout_marginBottom="5pt"
-            android:onClick="changePass">
+            android:layout_marginBottom="5pt">
             <TextView
                 android:id="@+id/Displayemail"
                 android:layout_width="wrap_content"
@@ -92,7 +91,7 @@
             android:layout_height="wrap_content"
             app:cardCornerRadius="10pt"
             android:layout_marginBottom="5pt"
-            android:onClick="changePass">
+            android:onClick="logOut">
             <TextView
                 android:id="@+id/keluar"
                 android:layout_width="wrap_content"

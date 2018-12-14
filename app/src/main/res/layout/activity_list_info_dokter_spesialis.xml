@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FF0DBFAC"
     android:fitsSystemWindows="true"
-    tools:context=".ViewDokterSpesialis.ListInfoDokterSpesialis">
+    tools:context=".DaftarDokterSpesialis.ListInfoDokterSpesialis">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,37 +19,12 @@
             android:id="@+id/toolbar"
             layout="@layout/layout_toolbar" />
 
-        <RelativeLayout
-            android:layout_width="140pt"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5pt"
-            android:background="#f2f2f2"
-            android:layout_marginBottom="5pt">
-
-            <TextView
-                android:id="@+id/vtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:gravity="center"
-                android:paddingLeft="25dp"
-                android:paddingTop="20dp"
-                android:paddingRight="25dp"
-                android:paddingBottom="20dp"
-                android:text="Dokter Spesialis"
-                android:textColor="#000"
-                android:textSize="8pt"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
         <android.support.v7.widget.RecyclerView
 
             android:id="@+id/infoSpesialis"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="2pt">
 
         </android.support.v7.widget.RecyclerView>
 

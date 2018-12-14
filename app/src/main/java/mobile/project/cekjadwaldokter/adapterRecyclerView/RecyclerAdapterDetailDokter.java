@@ -1,12 +1,13 @@
 package mobile.project.cekjadwaldokter.adapterRecyclerView;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -17,6 +18,11 @@ import mobile.project.cekjadwaldokter.paket.firebase.ModelInfoSpesialis;
 public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAdapterDetailDokter.ViewHolder> {
     List<ModelInfoSpesialis> list;
     Context context;
+    String warna;
+
+    public void setWarna(String warna) {
+        this.warna = warna;
+    }
 
     public RecyclerAdapterDetailDokter(List<ModelInfoSpesialis> list, Context context) {
         this.list = list;
@@ -41,6 +47,38 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
         holder.Jam.setText(mylist.getJam());
         holder.NamaDokter.setText(mylist.getNamaDokter());
 
+        if (warna.equals("advent")) {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#99ffbb"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#99ffbb"));
+            }
+        } else if (warna.equals("bumiwaras")) {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#99ffff"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#99ffff"));
+            }
+        }else if (warna.equals("dkt")) {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#adebad"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#adebad"));
+            }
+        }else if (warna.equals("imanuel")) {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#99ccff"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#99ccff"));
+            }
+        }else {
+            if (position == 0) {
+                holder.view.setBackgroundColor(Color.parseColor("#ffffb3"));
+            } else {
+                holder.view.setBackgroundColor(Color.parseColor("#ffffb3"));
+            }
+        }
+
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {
@@ -48,7 +86,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
         TextView Hari;
         TextView Jam;
         TextView Poli;
-        CardView view;
+        LinearLayout view;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -56,7 +94,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
             Hari = (TextView) itemView.findViewById(R.id.idHari);
             Jam = (TextView) itemView.findViewById(R.id.idJam);
             Poli = (TextView) itemView.findViewById(R.id.idPoli);
-            view = (CardView) itemView.findViewById(R.id.card);
+            view = (LinearLayout) itemView.findViewById(R.id.card);
 
         }
     }

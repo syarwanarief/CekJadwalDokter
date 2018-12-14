@@ -61,7 +61,7 @@
             android:name=".CustomeList.ListSpesialis"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ViewDokterSpesialis.ListInfoDokterSpesialis"
+            android:name=".DaftarDokterSpesialis.ListInfoDokterSpesialis"
             android:label="Dokter Spesialis"
             android:screenOrientation="portrait" />
         <activity android:name=".Akun.LoginActivity" />

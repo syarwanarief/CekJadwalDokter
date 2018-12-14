@@ -20,31 +20,9 @@
             layout="@layout/layout_toolbar" />
 
         <RelativeLayout
-            android:layout_width="130pt"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5pt"
-            android:layout_marginBottom="5pt"
-            android:background="#f2f2f2">
-            <TextView
-                android:id="@+id/vtext"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="8pt"
-                android:paddingBottom="8pt"
-                android:paddingLeft="4pt"
-                android:paddingRight="4pt"
-                android:textColor="#000"
-                android:text="text"
-                android:textSize="8pt"
-                android:textStyle="bold"
-                android:gravity="center"/>
-
-        </RelativeLayout>
-
-        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="2pt">
 
         <android.support.v7.widget.RecyclerView
 

@@ -52,8 +52,8 @@ public class RecyclerAdapterRS extends RecyclerView.Adapter<RecyclerAdapterRS.Vi
             }
         });
         if (position == 0){
-            holder.view.setCardBackgroundColor(Color.parseColor("#ffffff"));
-            holder.view2.setCardBackgroundColor(Color.parseColor("#ffffff"));
+            holder.view.setCardBackgroundColor(Color.parseColor("#ffffb3"));
+            holder.view2.setCardBackgroundColor(Color.parseColor("#ffffb3"));
         }else if (position == 1){
             holder.view.setCardBackgroundColor(Color.parseColor("#99ffbb"));
             holder.view2.setCardBackgroundColor(Color.parseColor("#99ffbb"));
@@ -61,8 +61,8 @@ public class RecyclerAdapterRS extends RecyclerView.Adapter<RecyclerAdapterRS.Vi
             holder.view2.setCardBackgroundColor(Color.parseColor("#99ffff"));
             holder.view.setCardBackgroundColor(Color.parseColor("#99ffff"));
         }else if (position == 3){
-            holder.view2.setCardBackgroundColor(Color.parseColor("#73e600"));
-            holder.view.setCardBackgroundColor(Color.parseColor("#73e600"));
+            holder.view2.setCardBackgroundColor(Color.parseColor("#adebad"));
+            holder.view.setCardBackgroundColor(Color.parseColor("#adebad"));
         }else if (position == 4){
             holder.view2.setCardBackgroundColor(Color.parseColor("#99ccff"));
             holder.view.setCardBackgroundColor(Color.parseColor("#99ccff"));

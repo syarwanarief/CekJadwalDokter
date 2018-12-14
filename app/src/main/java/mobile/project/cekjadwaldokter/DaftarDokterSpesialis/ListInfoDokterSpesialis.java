@@ -1,4 +1,4 @@
-package mobile.project.cekjadwaldokter.ViewDokterSpesialis;
+package mobile.project.cekjadwaldokter.DaftarDokterSpesialis;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -80,8 +80,6 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
         }
 
         Bundle extras = getIntent().getExtras();
-        TextView textView = (TextView) findViewById(R.id.vtext);
-        textView.setText(textView.getText() + " " + extras.getString("key1"));
         String Temp = extras.getString("key1");
         dialog = new ProgressDialog(this);
 
@@ -118,6 +116,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -160,6 +159,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -201,6 +201,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -241,6 +242,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -282,6 +284,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -323,6 +326,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -365,6 +369,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -406,6 +411,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -447,6 +453,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -488,6 +495,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -529,6 +537,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -570,6 +579,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -611,6 +621,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 
@@ -653,6 +664,7 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
                         dialog.dismiss();
                     }
 

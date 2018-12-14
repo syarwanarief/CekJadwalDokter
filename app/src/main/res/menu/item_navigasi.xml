@@ -67,6 +67,11 @@
                 android:checked="false"
                 android:icon="@drawable/ic_about"
                 android:title="Tentang" />
+            <item
+                android:id="@+id/logOut"
+                android:checked="false"
+                android:icon="@drawable/ic_logout"
+                android:title="Keluar" />
 
         </menu>
     </item>

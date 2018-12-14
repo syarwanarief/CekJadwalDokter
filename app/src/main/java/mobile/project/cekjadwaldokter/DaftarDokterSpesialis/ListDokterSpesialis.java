@@ -37,7 +37,6 @@ import mobile.project.cekjadwaldokter.MenuLokasi.LokasiActivity;
 import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.MenuUtama.Musik;
 import mobile.project.cekjadwaldokter.R;
-import mobile.project.cekjadwaldokter.ViewDokterSpesialis.ListInfoDokterSpesialis;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterSpesialis;
 import mobile.project.cekjadwaldokter.paket.firebase.FirebaseModelListSpesialis;
 
@@ -62,8 +61,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         Bundle extras = getIntent().getExtras();
         String bundle = extras.getString("key");
-        TextView textView = (TextView) findViewById(R.id.vtext);
-        textView.setText(extras.getString("key1"));
+        //textView.setText(extras.getString("key1"));
 
         //hide menu tambah
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -107,8 +105,10 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("bumiwaras");
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
+
                         adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
                             @Override
                             public void getPosition(int pos) {
@@ -164,6 +164,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("imanuel");
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
                         adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
@@ -221,6 +222,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("moeloek");
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
                         adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
@@ -363,6 +365,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("advent");
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
                         adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
@@ -498,6 +501,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
+                        adapter.setWarna("dkt");
 
                         findViewById(R.id.loading).setVisibility(View.GONE);
                         adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {

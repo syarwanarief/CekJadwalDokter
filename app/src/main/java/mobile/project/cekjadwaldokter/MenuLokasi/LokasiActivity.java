@@ -142,7 +142,7 @@ public class LokasiActivity extends AppCompatActivity {
                         startActivity(intent10);
                         return true;
                     case R.id.maps:
-                        Intent intent11 = new Intent(LokasiActivity.this, InfoAkun.class);
+                        Intent intent11 = new Intent(LokasiActivity.this, LokasiActivity.class);
                         startActivity(intent11);
                         finish();
                         return true;
