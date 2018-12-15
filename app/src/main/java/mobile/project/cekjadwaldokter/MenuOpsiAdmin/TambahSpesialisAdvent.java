@@ -138,15 +138,23 @@ public class TambahSpesialisAdvent extends AppCompatActivity {
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
 
         //display
+
+        final String keyRS = "key1";
+        final String keyFirebase = "keyFB";
         cek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String spesialis = spinner.getSelectedItem().toString();
                 if (spesialis.equals("Spesialis Syaraf")){
                     Intent intent = (new Intent(TambahSpesialisAdvent.this,EditDeleteActivity.class));
-                    intent.putExtra("key1","Saraf Advent");
-                    Intent intent2 = (new Intent(TambahSpesialisAdvent.this,EditActivity.class));
-                    intent2.putExtra("keySp",spesialis);
+
+                    Bundle b = new Bundle();
+                    String string1 = "List Dokter Spesialis Syaraf Advent";
+                    b.putString(keyFirebase, string1);
+                    String string = "Advent";
+                    b.putString(keyRS, string);
+                    intent.putExtras(b);
+
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), "Pilih Spesialis Terlebih Dahulu\nPada Kolom Diatas", Toast.LENGTH_SHORT).show();

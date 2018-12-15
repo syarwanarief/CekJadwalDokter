@@ -13,6 +13,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -60,6 +61,14 @@ public class EditDeleteActivity extends AppCompatActivity {
 
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         TextView emailDrawer = (TextView) navigationView.getHeaderView(0).findViewById(R.id.idAkun);
+        //hide menu tambah
+        Menu nav_Menu = navigationView.getMenu();
+
+        nav_Menu.findItem(R.id.tambahAdvent).setVisible(false);
+        nav_Menu.findItem(R.id.tambahAbdulMoeloek).setVisible(false);
+        nav_Menu.findItem(R.id.tambahBumiWaras).setVisible(false);
+        nav_Menu.findItem(R.id.tambahDKT).setVisible(false);
+        nav_Menu.findItem(R.id.tambahImanuel).setVisible(false);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null){
@@ -73,12 +82,14 @@ public class EditDeleteActivity extends AppCompatActivity {
         //display data here
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.infoSpesialis);
 
-        if (Temp.equals("Saraf Advent")) {
+        final String keyFirebase = extras.getString("keyFB","");
+
+        if (Temp.equals("Advent")) {
             dialog.setMessage("Memuat Data...");
             dialog.setIndeterminate(true);
             dialog.show();
 
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Syaraf Advent");
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(keyFirebase);
             reference.keepSynced(true);
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -93,51 +104,7 @@ public class EditDeleteActivity extends AppCompatActivity {
                         String Poli = value.getPoli();
                         String hari = value.getHari();
                         String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
                         model.setKey(dataSnapshot1.getKey());
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        adapter.setSpesialis("List Dokter Spesialis Syaraf Advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-
-        } else if (Temp.equals("Radiologi Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Radiologi Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
                         model.setNamaDokter(vNamaDokter);
                         model.setPoli(Poli);
                         model.setHari(hari);
@@ -149,468 +116,7 @@ public class EditDeleteActivity extends AppCompatActivity {
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
                         adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Bedah Tulang Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Bedah Tulang Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Kulit Dan Kelamin Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Kulit Dan Kelamin Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Bedah Saluran Kemih Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Bedah Saluran Kemih Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Gigi Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Gigi Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Bedah Umum Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Bedah Umum Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Penyakit Dalam Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Penyakit Dalam Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Mata Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Mata Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("THT Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis THT Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Anak Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Anak Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Kandungan Dan Kebidanan Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Kandungan Dan Kebidanan Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else if (Temp.equals("Radiologi Advent")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Radiologi Advent");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
+                        adapter.setSpesialis(keyFirebase);
                         dialog.dismiss();
                     }
 
@@ -623,52 +129,24 @@ public class EditDeleteActivity extends AppCompatActivity {
                 }
             });
 
-        } else if (Temp.equals("Rehabilitasi Bumi Waras")) {
-            dialog.setMessage("Memuat Data...");
-            dialog.setIndeterminate(true);
-            dialog.show();
-
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Rehabilitasi Bumi Waras");
-            reference.keepSynced(true);
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    list = new ArrayList<ModelInfoSpesialis>();
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        ModelInfoSpesialis model = new ModelInfoSpesialis();
-                        ModelInfoSpesialis value = dataSnapshot1.getValue(ModelInfoSpesialis.class);
-                        String vNamaDokter = value.getNamaDokter();
-                        String Poli = value.getPoli();
-                        String hari = value.getHari();
-                        String jam = value.getJam();
-                        model.setNamaDokter(vNamaDokter);
-                        model.setPoli(Poli);
-                        model.setHari(hari);
-                        model.setJam(jam);
-                        list.add(model);
-                        RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
-                        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
-                        recyclerView.setLayoutManager(layoutManager);
-                        recyclerView.setItemAnimator(new DefaultItemAnimator());
-                        recyclerView.setAdapter(adapter);
-                        adapter.setWarna("advent");
-                        dialog.dismiss();
-                    }
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
-                    dialog.dismiss();
-                }
-            });
-        } else {
+        }else if (Temp.equals("bumiwaras")){
+            Toast.makeText(getApplicationContext(), "Data Belum Tersedia Untuk RS Bumi Waras ", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        }else if (Temp.equals("dkt")){
+            Toast.makeText(getApplicationContext(), "Data Belum Tersedia Untuk RS DKT ", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        }else if (Temp.equals("moeloek")){
+            Toast.makeText(getApplicationContext(), "Data Belum Tersedia Untuk RS Abdul Moeloek ", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        }else if (Temp.equals("imanuel")){
+            Toast.makeText(getApplicationContext(), "Data Belum Tersedia Untuk RS Imanuel ", Toast.LENGTH_SHORT).show();
+            dialog.dismiss();
+        }
+        else {
             Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         }
+
         // Menginisiasi Toolbar dan mensetting sebagai actionbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

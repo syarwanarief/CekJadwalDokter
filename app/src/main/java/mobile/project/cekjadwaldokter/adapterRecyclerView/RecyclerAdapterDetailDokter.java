@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -64,7 +65,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         ModelInfoSpesialis mylist = list.get(position);
 
-        final String key = mylist.getKey();
+        final String keyid = mylist.getKey();
         holder.Hari.setText(mylist.getHari());
         holder.Poli.setText(mylist.getPoli());
         holder.Jam.setText(mylist.getJam());
@@ -86,12 +87,17 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
 
                         switch (item.getItemId()) {
                             case R.id.edit:
+                                String uid = "key";
+                                final String keyFirebase = "keyFB";
                                 Intent intent = (new Intent(context,EditActivity.class));
-                                intent.putExtra("key",key);
-                                intent.putExtra("spesialis", spesialis);
+                                Bundle b = new Bundle();
+                                b.putString(keyFirebase, spesialis);
+                                b.putString(uid, keyid);
+                                intent.putExtras(b);
                                 context.startActivity(intent);
                                 return true;
                             case R.id.delete:
+
                                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                                 builder
                                         .setTitle("Yakin Ingin Hapus?")
@@ -100,7 +106,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
                                             public void onClick(DialogInterface dialog, int which) {
 
                                                 FirebaseDatabase.getInstance().getReference(spesialis)
-                                                        .child(key).removeValue();
+                                                        .child(keyid).removeValue();
                                             }
                                         })
                                         .setNegativeButton("Tidak", null)//Do nothing on no

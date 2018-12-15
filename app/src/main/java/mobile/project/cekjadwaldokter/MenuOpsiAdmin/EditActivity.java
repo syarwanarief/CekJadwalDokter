@@ -141,27 +141,31 @@ public class EditActivity extends AppCompatActivity {
         final TextView poli = (TextView) findViewById(R.id.tambahPoli);
 
         final Bundle bundle = getIntent().getExtras();
-        String key = bundle.getString("key","");
-        String sp = bundle.getString("spesialis", "");
-        final String vspesialis = bundle.getString("keySp","");
+        final String keyFirebase = "keyFB";
+        final String keyid = "key";
+        String key = bundle.getString(keyid,"");
+        String sp = bundle.getString(keyFirebase, "");
 
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(sp).child(key);
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                nama.setText(dataSnapshot.child("NamaDokter").getValue().toString());
-                hari.setText(dataSnapshot.child("Hari").getValue().toString());
-                jam.setText(dataSnapshot.child("Jam").getValue().toString());
-                poli.setText(dataSnapshot.child("Poli").getValue().toString());
+        if (reference != null) {
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-            }
+                    nama.setText(dataSnapshot.child("NamaDokter").getValue().toString());
+                    hari.setText(dataSnapshot.child("Hari").getValue().toString());
+                    jam.setText(dataSnapshot.child("Jam").getValue().toString());
+                    poli.setText(dataSnapshot.child("Poli").getValue().toString());
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
 
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
