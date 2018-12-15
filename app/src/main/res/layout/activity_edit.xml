@@ -18,48 +18,14 @@
             android:id="@+id/toolbar"
             layout="@layout/layout_toolbar" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10pt">
-            <TextView
-                android:id="@+id/pilihSP"
-                android:layout_marginLeft="5pt"
-                android:layout_width="60pt"
-                android:layout_height="wrap_content"
-                android:text="Pilih Spesialis"
-                android:textColor="#000"
-                android:textSize="7pt" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/pilihSP"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="2pt"
-                android:layout_marginTop="10pt"
-                android:entries="@array/pilihSpesialis"
-                android:textColor="#000"></Spinner>
-
-            <EditText
-                android:layout_width="110pt"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5pt"
-                android:layout_marginLeft="5pt"
-                android:layout_below="@id/pilihSP"
-                android:enabled="false"/>
-        </RelativeLayout>
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                android:layout_marginTop="10pt"
                 android:layout_marginLeft="5pt"
+                android:layout_marginTop="5pt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama Dokter"

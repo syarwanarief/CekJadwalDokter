@@ -145,6 +145,8 @@ public class TambahSpesialisAdvent extends AppCompatActivity {
                 if (spesialis.equals("Spesialis Syaraf")){
                     Intent intent = (new Intent(TambahSpesialisAdvent.this,EditDeleteActivity.class));
                     intent.putExtra("key1","Saraf Advent");
+                    Intent intent2 = (new Intent(TambahSpesialisAdvent.this,EditActivity.class));
+                    intent2.putExtra("keySp",spesialis);
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(), "Pilih Spesialis Terlebih Dahulu\nPada Kolom Diatas", Toast.LENGTH_SHORT).show();

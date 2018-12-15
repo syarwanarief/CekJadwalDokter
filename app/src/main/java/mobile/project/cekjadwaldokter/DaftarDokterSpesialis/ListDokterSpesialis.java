@@ -61,7 +61,6 @@ public class ListDokterSpesialis extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         Bundle extras = getIntent().getExtras();
         String bundle = extras.getString("key");
-        //textView.setText(extras.getString("key1"));
 
         //hide menu tambah
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
@@ -82,6 +81,8 @@ public class ListDokterSpesialis extends AppCompatActivity {
 
         //display data here
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.idSpesialis);
+        final String keyFirebase = "keyFB";
+        final String keyRS = "key1";
 
         if (bundle.equals("bumiwaras")) {
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Bumi Waras");
@@ -116,7 +117,9 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "bumiwaras";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
 
@@ -124,7 +127,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }
@@ -174,7 +177,9 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "imanuel";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
 
@@ -182,7 +187,9 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "imanuel";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }
@@ -232,7 +239,9 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Syaraf Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
 
@@ -240,84 +249,108 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Bedah Tulang Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 2){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Saluran Kemih Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 3){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Rehabilitasi Medik Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 4){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Paru Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 5){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Gigi Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 6){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Kebidanan Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 7){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Anak Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 8){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Penyakit Dalam Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 9){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Jantung Dan Pembuluh Darah Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 10){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "THT Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 11){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Mata Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 12){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Bedah Umum Abdul Moeloek";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }
@@ -325,7 +358,9 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "moeloek";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }
@@ -343,6 +378,7 @@ public class ListDokterSpesialis extends AppCompatActivity {
             });
 
         } else if (bundle.equals("advent")) {
+
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("List Dokter Spesialis Advent");
             reference.keepSynced(true);
             reference.addValueEventListener(new ValueEventListener() {
@@ -367,93 +403,123 @@ public class ListDokterSpesialis extends AppCompatActivity {
                         recyclerView.setAdapter(adapter);
                         adapter.setWarna("advent");
 
+                        if (recyclerView.isClickable()){
+
+                        }
+
                         findViewById(R.id.loading).setVisibility(View.GONE);
                         adapter.setOnItemClick(new RecyclerAdapterSpesialis.OnItemClick() {
+
                             @Override
                             public void getPosition(int pos) {
+
                                 if (pos == 0){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Saraf Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Syaraf Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
 
                                 }else if (pos == 1){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Radiologi Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Radiologi Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 2){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Bedah Tulang Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Bedah Tulang Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 3){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Kulit Dan Kelamin Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Kulit Dan Kelamin Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 4){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Bedah Saluran Kemih Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Bedah Saluran Kemih Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 5){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Gigi Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Gigi Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 6){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Bedah Umum Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Bedah Umum Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 7){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Penyakit Dalam Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Penyakit Dalam Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 8){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Mata Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Mata Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 9){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "THT Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis THT Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 10){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Anak Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Anak Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }else if (pos == 11){
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Kandungan Dan Kebidanan Advent";
-                                    b.putString("key1", string1);
+                                    String string1 = "List Dokter Spesialis Kandungan Dan Kebidanan Advent";
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }
@@ -461,7 +527,9 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "Advent";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }
@@ -511,92 +579,19 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Syaraf DKT";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "dkt";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
 
-                                }else if (pos == 1){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Kulit Dan Kelamin DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 2){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Bedah Umum DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 3){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Bedah Tulang DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 4){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Gigi DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 5){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Rehabilitasi Medik DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 6){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Saluran Kemih DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 7){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Anak DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 8){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Penyakit Dalam DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 9){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Paru DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 10){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "Mata DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
-                                }else if (pos == 11){
-                                    Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
-                                    Bundle b = new Bundle();
-                                    String string1 = "THT DKT";
-                                    b.putString("key1", string1);
-                                    intent.putExtras(b);
-                                    startActivity(intent);
                                 }else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
                                     String string1 = "Data Dokter Spesialis";
-                                    b.putString("key1", string1);
+                                    b.putString(keyFirebase, string1);
+                                    String string = "dkt";
+                                    b.putString(keyRS, string);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }

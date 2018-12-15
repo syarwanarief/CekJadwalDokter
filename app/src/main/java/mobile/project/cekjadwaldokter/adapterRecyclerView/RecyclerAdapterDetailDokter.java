@@ -87,6 +87,8 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
                         switch (item.getItemId()) {
                             case R.id.edit:
                                 Intent intent = (new Intent(context,EditActivity.class));
+                                intent.putExtra("key",key);
+                                intent.putExtra("spesialis", spesialis);
                                 context.startActivity(intent);
                                 return true;
                             case R.id.delete:

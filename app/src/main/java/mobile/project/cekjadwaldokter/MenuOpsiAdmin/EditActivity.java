@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,12 +14,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import mobile.project.cekjadwaldokter.Akun.InfoAkun;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
@@ -134,12 +139,60 @@ public class EditActivity extends AppCompatActivity {
         final TextView hari = (TextView) findViewById(R.id.tambahHari);
         final TextView jam = (TextView) findViewById(R.id.tambahWaktu);
         final TextView poli = (TextView) findViewById(R.id.tambahPoli);
-        final Spinner spinner = (Spinner) findViewById(R.id.spinner);
+
+        final Bundle bundle = getIntent().getExtras();
+        String key = bundle.getString("key","");
+        String sp = bundle.getString("spesialis", "");
+        final String vspesialis = bundle.getString("keySp","");
+
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child(sp).child(key);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                nama.setText(dataSnapshot.child("NamaDokter").getValue().toString());
+                hari.setText(dataSnapshot.child("Hari").getValue().toString());
+                jam.setText(dataSnapshot.child("Jam").getValue().toString());
+                poli.setText(dataSnapshot.child("Poli").getValue().toString());
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(EditActivity.this);
+                builder
+                        .setTitle("Simpan Perubahan?")
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                String vnama = nama.getText().toString();
+                                String vhari = hari.getText().toString();
+                                String vjam = jam.getText().toString();
+                                String vpoli = poli.getText().toString();
 
+                                DatabaseReference keyNama = reference.child("NamaDokter");
+                                DatabaseReference keyHari = reference.child("Hari");
+                                DatabaseReference keyJam = reference.child("Jam");
+                                DatabaseReference keyPoli = reference.child("Poli");
+
+                                keyNama.setValue(vnama);
+                                keyHari.setValue(vhari);
+                                keyJam.setValue(vjam);
+                                keyPoli.setValue(vpoli);
+
+                                Toast.makeText(getApplicationContext(), "Data Berhasil Diubah", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("Tidak", null)//Do nothing on no
+                        .show();
             }
         });
     }
