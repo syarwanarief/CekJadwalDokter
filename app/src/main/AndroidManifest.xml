@@ -46,14 +46,6 @@
             android:label="Daftar Spesialis"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".InfoDokterSpesialis.NamaDokter"
-            android:parentActivityName=".MenuUtama.Home">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MenuUtama.Home" />
-            />
-        </activity>
-        <activity
             android:name=".MenuUtama.Musik"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="landscape" />
@@ -73,10 +65,7 @@
             android:name=".Layanan.Tentang"
             android:label="Tentang" />
         <activity
-            android:name=".MenuTambah.MenuTambahSpesialis"
-            android:label="Tambah Dokter Spesialis" />
-        <activity
-            android:name=".MenuTambah.TambahSpesialisAdvent"
+            android:name=".MenuOpsiAdmin.TambahSpesialisAdvent"
             android:label="Tambah Spesialis" />
         <activity
             android:name=".Akun.InfoAkun"
@@ -84,8 +73,12 @@
         <activity
             android:name=".Akun.UbahPassword"
             android:label="Ubah Password" />
-        <activity android:name=".MenuLokasi.LokasiActivity" />
-        <activity android:name=".EditDeleteActivity"></activity>
+        <activity android:name=".MenuLokasi.LokasiActivity"
+            android:label="Tunjukan Lokasi" />
+        <activity android:name=".MenuOpsiAdmin.EditDeleteActivity"
+            android:label="Lihat Spesialis" />
+        <activity android:name=".MenuOpsiAdmin.EditActivity"
+            android:label="Ubah Detail Spesialis"></activity>
     </application>
 
 </manifest>

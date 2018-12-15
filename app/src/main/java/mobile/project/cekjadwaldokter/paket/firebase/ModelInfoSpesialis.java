@@ -6,6 +6,15 @@ public class ModelInfoSpesialis {
     String Poli;
     String Jam;
     String NamaDokter;
+    String Key;
+
+    public String getKey() {
+        return Key;
+    }
+
+    public void setKey(String key) {
+        Key = key;
+    }
 
     public String getHari() {
         return Hari;

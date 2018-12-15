@@ -1,4 +1,4 @@
-package mobile.project.cekjadwaldokter;
+package mobile.project.cekjadwaldokter.MenuOpsiAdmin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -35,6 +35,7 @@ import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuLokasi.LokasiActivity;
 import mobile.project.cekjadwaldokter.MenuUtama.Home;
 import mobile.project.cekjadwaldokter.MenuUtama.Musik;
+import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterDetailDokter;
 import mobile.project.cekjadwaldokter.paket.firebase.ModelInfoSpesialis;
 
@@ -96,6 +97,7 @@ public class EditDeleteActivity extends AppCompatActivity {
                         model.setPoli(Poli);
                         model.setHari(hari);
                         model.setJam(jam);
+                        model.setKey(dataSnapshot1.getKey());
                         list.add(model);
                         RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, EditDeleteActivity.this);
                         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(EditDeleteActivity.this, 1);
@@ -103,6 +105,7 @@ public class EditDeleteActivity extends AppCompatActivity {
                         recyclerView.setItemAnimator(new DefaultItemAnimator());
                         recyclerView.setAdapter(adapter);
                         adapter.setWarna("advent");
+                        adapter.setSpesialis("List Dokter Spesialis Syaraf Advent");
                         dialog.dismiss();
                     }
 

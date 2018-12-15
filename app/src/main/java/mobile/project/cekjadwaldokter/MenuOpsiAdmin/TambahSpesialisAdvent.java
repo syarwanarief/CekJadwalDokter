@@ -1,4 +1,4 @@
-package mobile.project.cekjadwaldokter.MenuTambah;
+package mobile.project.cekjadwaldokter.MenuOpsiAdmin;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,7 +21,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import mobile.project.cekjadwaldokter.Akun.InfoAkun;
-import mobile.project.cekjadwaldokter.EditDeleteActivity;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuLokasi.LokasiActivity;
@@ -47,9 +46,6 @@ public class TambahSpesialisAdvent extends AppCompatActivity {
         if (user != null) {
             textView.setText(user.getEmail());
         }
-
-        //sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-        //textView.setText(sharedpreferences.getString(Emaill, ""));
 
         //hide menu tambah
         Menu nav_Menu = navigationView.getMenu();

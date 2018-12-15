@@ -1,6 +1,9 @@
 package mobile.project.cekjadwaldokter.adapterRecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,20 +11,36 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
+import mobile.project.cekjadwaldokter.MenuOpsiAdmin.EditActivity;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.paket.firebase.ModelInfoSpesialis;
 
 public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAdapterDetailDokter.ViewHolder> {
     List<ModelInfoSpesialis> list;
     Context context;
-    String warna;
+    String warna, spesialis, key;
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setSpesialis(String spesialis) {
+        this.spesialis = spesialis;
+    }
 
     public void setWarna(String warna) {
         this.warna = warna;
@@ -45,6 +64,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         ModelInfoSpesialis mylist = list.get(position);
 
+        final String key = mylist.getKey();
         holder.Hari.setText(mylist.getHari());
         holder.Poli.setText(mylist.getPoli());
         holder.Jam.setText(mylist.getJam());
@@ -53,9 +73,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                onItemClick.getPosition(position);
-
-                //creating a popup menu
+//              //creating a popup menu
                 PopupMenu popup = new PopupMenu(context, holder.view);
                 //inflating menu from xml resource
                 popup.inflate(R.menu.menu_long_click);
@@ -63,14 +81,28 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
                 popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     @Override
                     public boolean onMenuItemClick(MenuItem item) {
+                        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item
+                            .getMenuInfo();
+
                         switch (item.getItemId()) {
                             case R.id.edit:
-                                //handle menu1 click
-                                Toast.makeText(context.getApplicationContext(), "Edit ", Toast.LENGTH_SHORT).show();
+                                Intent intent = (new Intent(context,EditActivity.class));
+                                context.startActivity(intent);
                                 return true;
                             case R.id.delete:
-                                //handle menu2 click
-                                Toast.makeText(context.getApplicationContext(), "Hapus ", Toast.LENGTH_SHORT).show();
+                                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                                builder
+                                        .setTitle("Yakin Ingin Hapus?")
+                                        .setIcon(android.R.drawable.ic_dialog_alert)
+                                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+
+                                                FirebaseDatabase.getInstance().getReference(spesialis)
+                                                        .child(key).removeValue();
+                                            }
+                                        })
+                                        .setNegativeButton("Tidak", null)//Do nothing on no
+                                        .show();
                                 return true;
                             default:
                                 Toast.makeText(context.getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();

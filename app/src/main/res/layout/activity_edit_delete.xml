@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FF0DBFAC"
     android:fitsSystemWindows="true"
-    tools:context=".EditDeleteActivity">
+    tools:context=".MenuOpsiAdmin.EditDeleteActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

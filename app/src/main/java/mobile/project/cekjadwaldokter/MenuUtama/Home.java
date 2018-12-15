@@ -42,7 +42,7 @@ import mobile.project.cekjadwaldokter.DaftarDokterSpesialis.ListDokterSpesialis;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuLokasi.LokasiActivity;
-import mobile.project.cekjadwaldokter.MenuTambah.TambahSpesialisAdvent;
+import mobile.project.cekjadwaldokter.MenuOpsiAdmin.TambahSpesialisAdvent;
 import mobile.project.cekjadwaldokter.R;
 import mobile.project.cekjadwaldokter.adapterRecyclerView.RecyclerAdapterRS;
 import mobile.project.cekjadwaldokter.paket.firebase.ModelRS;
