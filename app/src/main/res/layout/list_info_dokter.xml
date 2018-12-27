@@ -9,113 +9,106 @@
     android:layout_marginLeft="5pt">
 
     <LinearLayout
+        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2pt"
-        android:orientation="vertical"
-        android:id="@+id/card">
+        android:orientation="vertical">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5pt"
-            android:layout_marginBottom="5pt">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/namaDokter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fotoDokter"
                 android:paddingTop="3pt"
-                android:gravity="center"
-                android:paddingBottom="3pt"
+                android:paddingBottom="5pt"
                 android:text="Nama Dokter"
                 android:textColor="#000"
-                android:textSize="7pt"
+                android:textSize="8pt"
                 android:textStyle="bold" />
-        </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="5pt"
-            android:layout_marginBottom="2pt">
+            <ImageView
+                android:id="@+id/fotoDokter"
+                android:layout_width="47pt"
+                android:layout_height="50pt"
+                android:src="@mipmap/icon_ff"
+                android:layout_marginRight="5pt"
+                />
 
             <TextView
                 android:id="@+id/hari"
                 android:layout_width="40pt"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fotoDokter"
+                android:layout_below="@id/namaDokter"
                 android:paddingBottom="3pt"
                 android:text="Hari "
-                android:textSize="6pt"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textSize="6pt" />
 
             <TextView
                 android:id="@+id/idHari"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/hari"
+                android:layout_below="@id/namaDokter"
                 android:paddingBottom="3pt"
                 android:text="Hari"
-                android:textSize="6pt"
                 android:textColor="#000"
+                android:textSize="6pt"
                 android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="5pt"
-            android:layout_marginBottom="2pt">
 
             <TextView
                 android:id="@+id/jam"
                 android:layout_width="40pt"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fotoDokter"
+                android:layout_below="@id/hari"
                 android:paddingBottom="3pt"
                 android:text="Jam "
-                android:textSize="6pt"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textSize="6pt" />
 
             <TextView
                 android:id="@+id/idJam"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/jam"
+                android:layout_below="@id/idHari"
                 android:paddingBottom="3pt"
                 android:text="Jam"
                 android:textColor="#000"
-                android:textStyle="bold"
-                android:textSize="6pt" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="5pt"
-            android:layout_marginBottom="2pt">
+                android:textSize="6pt"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/Poli"
                 android:layout_width="40pt"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fotoDokter"
+                android:layout_below="@id/jam"
                 android:paddingBottom="3pt"
                 android:text="Nama Poli "
-                android:textSize="6pt"
-                android:textColor="#000" />
+                android:textColor="#000"
+                android:textSize="6pt" />
 
             <TextView
                 android:id="@+id/idPoli"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/Poli"
+                android:layout_below="@id/idJam"
                 android:paddingBottom="3pt"
                 android:text="poli"
                 android:textColor="#000"
-                android:textStyle="bold"
-                android:textSize="6pt"/>
+                android:textSize="6pt"
+                android:textStyle="bold" />
 
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

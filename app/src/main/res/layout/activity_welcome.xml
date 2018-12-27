@@ -38,7 +38,7 @@
             android:layout_marginLeft="5pt"
             android:layout_marginBottom="5pt"
             android:layout_marginTop="3pt"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:src="@mipmap/icon_tekno" />
 
         <ImageView
@@ -47,7 +47,8 @@
             android:layout_height="30pt"
             android:layout_marginRight="5pt"
             android:layout_marginBottom="5pt"
-            android:layout_alignParentBottom="true"
+            android:layout_marginTop="3pt"
+            android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:src="@mipmap/icon_ff" />
     </RelativeLayout>

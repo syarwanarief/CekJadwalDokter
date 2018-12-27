@@ -107,10 +107,12 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
                         String Poli = value.getPoli();
                         String hari = value.getHari();
                         String jam = value.getJam();
+                        String gambar = value.getImage();
                         model.setNamaDokter(vNamaDokter);
                         model.setPoli(Poli);
                         model.setHari(hari);
                         model.setJam(jam);
+                        model.setImage(gambar);
                         list.add(model);
                         RecyclerAdapterDetailDokter adapter = new RecyclerAdapterDetailDokter(list, ListInfoDokterSpesialis.this);
                         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(ListInfoDokterSpesialis.this, 1);

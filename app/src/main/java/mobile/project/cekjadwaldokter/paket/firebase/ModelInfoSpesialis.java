@@ -7,6 +7,7 @@ public class ModelInfoSpesialis {
     String Jam;
     String NamaDokter;
     String Key;
+    String Image;
 
     public String getKey() {
         return Key;
@@ -48,4 +49,11 @@ public class ModelInfoSpesialis {
         NamaDokter = namaDokter;
     }
 
+    public String getImage() {
+        return Image;
+    }
+
+    public void setImage(String image) {
+        Image = image;
+    }
 }

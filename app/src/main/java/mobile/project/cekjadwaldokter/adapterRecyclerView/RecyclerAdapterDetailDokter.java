@@ -13,12 +13,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -69,6 +71,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
         holder.Hari.setText(mylist.getHari());
         holder.Poli.setText(mylist.getPoli());
         holder.Jam.setText(mylist.getJam());
+        Picasso.with(context).load(mylist.getImage()).into(holder.imageView);
         holder.NamaDokter.setText(mylist.getNamaDokter());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +165,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
         TextView Hari;
         TextView Jam;
         TextView Poli;
+        ImageView imageView;
         LinearLayout view;
 
         public ViewHolder(View itemView) {
@@ -170,6 +174,7 @@ public class RecyclerAdapterDetailDokter extends RecyclerView.Adapter<RecyclerAd
             Hari = (TextView) itemView.findViewById(R.id.idHari);
             Jam = (TextView) itemView.findViewById(R.id.idJam);
             Poli = (TextView) itemView.findViewById(R.id.idPoli);
+            imageView = (ImageView) itemView.findViewById(R.id.fotoDokter);
             view = (LinearLayout) itemView.findViewById(R.id.card);
 
         }
