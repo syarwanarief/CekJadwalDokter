@@ -126,8 +126,8 @@ public class ListDokterSpesialis extends AppCompatActivity {
                                 }else{
                                     Intent intent = new Intent(ListDokterSpesialis.this, ListInfoDokterSpesialis.class);
                                     Bundle b = new Bundle();
-                                    String string1 = "Data Dokter Spesialis";
-                                    b.putString(keyFirebase, string1);
+                                    String string1 = "bumiwaras";
+                                    b.putString(keyRS, string1);
                                     intent.putExtras(b);
                                     startActivity(intent);
                                 }

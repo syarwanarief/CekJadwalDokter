@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10pt"
+    app:cardCornerRadius="7pt"
     android:layout_marginBottom="2pt"
     android:layout_marginRight="5pt"
-    android:layout_marginLeft="5pt">
+    android:layout_marginLeft="5pt"
+    android:id="@+id/card">
 
     <LinearLayout
-        android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2pt"
@@ -33,11 +33,12 @@
 
             <ImageView
                 android:id="@+id/fotoDokter"
-                android:layout_width="47pt"
+                android:layout_width="50pt"
                 android:layout_height="50pt"
+                android:layout_margin="3pt"
                 android:src="@mipmap/icon_ff"
                 android:layout_marginRight="5pt"
-                />
+                android:background="#fff" />
 
             <TextView
                 android:id="@+id/hari"

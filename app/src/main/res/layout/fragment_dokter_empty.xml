@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".DokterEmpty"
+    android:id="@+id/fragmentDokterEmpty">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="7pt"
+        android:layout_marginBottom="2pt"
+        android:layout_marginRight="5pt"
+        android:layout_marginLeft="5pt"
+        app:cardBackgroundColor="#cc0000"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:id="@+id/card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2pt"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/namaDokter"
+                    android:layout_width="match_parent"
+                    android:layout_height="50pt"
+                    android:layout_toRightOf="@id/fotoDokter"
+                    android:paddingTop="3pt"
+                    android:paddingBottom="5pt"
+                    android:text="Sedang Dalam Pengembangan"
+                    android:textColor="#000"
+                    android:textSize="8pt"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+                <ImageView
+                    android:id="@+id/fotoDokter"
+                    android:layout_width="47pt"
+                    android:layout_height="50pt"
+                    android:src="@mipmap/icon_ff"
+                    android:layout_marginRight="5pt"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

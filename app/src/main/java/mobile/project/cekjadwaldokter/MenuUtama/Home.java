@@ -223,7 +223,7 @@ public class Home extends AppCompatActivity {
         });
 
         //flipper
-        int images[] = {R.drawable.img_phbs, R.drawable.img_tips, R.drawable.img_phbs};
+        int images[] = {R.drawable.slider1, R.drawable.slider2, R.drawable.slider3, R.drawable.slider4};
         v_flipper = findViewById(R.id.v_flipper);
         for (int image : images) {
             flipperImage(image);

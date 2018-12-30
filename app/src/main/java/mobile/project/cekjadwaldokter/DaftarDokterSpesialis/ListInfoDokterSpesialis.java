@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -32,6 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mobile.project.cekjadwaldokter.Akun.InfoAkun;
+import mobile.project.cekjadwaldokter.DokterEmpty;
 import mobile.project.cekjadwaldokter.Layanan.Bantuan;
 import mobile.project.cekjadwaldokter.Layanan.Tentang;
 import mobile.project.cekjadwaldokter.MenuLokasi.LokasiActivity;
@@ -133,19 +135,46 @@ public class ListInfoDokterSpesialis extends AppCompatActivity {
             });
 
         }else if (Temp.equals("bumiwaras")){
+            //displayfragm
+            DokterEmpty fragment = new DokterEmpty();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameFrag, fragment);
+            fragmentTransaction.commit();
             Toast.makeText(getApplicationContext(), "Data Belum Tersedia Untuk RS Bumi Waras ", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
+
         }else if (Temp.equals("dkt")){
+            //displayfragm
+            DokterEmpty fragment = new DokterEmpty();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameFrag, fragment);
+            fragmentTransaction.commit();
             Toast.makeText(getApplicationContext(), "Data Belum Tersedia Untuk RS DKT ", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         }else if (Temp.equals("moeloek")){
+            //displayfragm
+            DokterEmpty fragment = new DokterEmpty();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameFrag, fragment);
+            fragmentTransaction.commit();
             Toast.makeText(getApplicationContext(), "Data Belum Tersedia Untuk RS Abdul Moeloek ", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
+
         }else if (Temp.equals("imanuel")){
+            //displayfragm
+            DokterEmpty fragment = new DokterEmpty();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameFrag, fragment);
+            fragmentTransaction.commit();
             Toast.makeText(getApplicationContext(), "Data Belum Tersedia Untuk RS Imanuel ", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         }
         else {
+            //displayfragm
+            DokterEmpty fragment = new DokterEmpty();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frameFrag, fragment);
+            fragmentTransaction.commit();
             Toast.makeText(getApplicationContext(), "Data Tidak Ditemukan ", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         }
